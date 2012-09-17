@@ -1,0 +1,189 @@
+/* OK button */
+"OK" = "OK";
+
+/* Cancel button text */
+"Cancel" = "Cancel";
+
+/* Label for alert button Continue
+   Alert button for Continue */
+"Continue" = "Continue";
+
+/* Error string for workflow submission (do not translate workflow) */
+"Error occurred submitting workflow, workflow possibly no longer assigned to user." = "Error occurred submitting workflow, workflow possibly no longer assigned to user.";
+
+/* Workflow error message (do not translate Workflow) */
+"Unable to open Workflow: Invalid form description" = "Unable to open Workflow: Invalid form description";
+
+/* SSO certificate string */
+"Windows user name" = "Windows user name";
+
+/* SSO certificate string */
+"Windows password" = "Windows password";
+
+/* SSO certificate string */
+"Certificate password" = "Certificate password";
+
+/* SSO certificate string */
+"Certificate" = "Certificate";
+
+/* SSO certificate exception string */
+"Password Required" = "Password Required";
+
+/* SSO certificate exception string */
+"Invalid Password" = "Invalid Password";
+
+/* SSO certificate exception string */
+"Invalid Argument" = "Invalid Argument";
+
+/* SSO certificate exception string */
+"Parse Error" = "Parse Error";
+
+/* SSO certificate exception string */
+"Does Not Exist" = "Does Not Exist";
+
+/* SSO certificate exception string */
+"Not Supported" = "Not Supported";
+
+/* SSO certificate exception string */
+"Server Not Available" = "Server Not Available";
+
+/* General button string */
+"Done" = "Done";
+
+/* Incorrect password message */
+"Incorrect password. Please try again." = "Incorrect password. Please try again.";
+
+/* Password updated message */
+"Password updated successfully!" = "Password updated successfully!";
+
+/* Change password label */
+"Please enter a new password." = "Please enter a new password.";
+
+/* Password too long message */
+"The maximum password length is %d characters." = "The maximum password length is %d characters.";
+
+/* Password too short message */
+"The minimum password length is %d characters" = "The minimum password length is %d characters";
+
+/* Password too weak message */
+"A strong password is required. Avoid repetitive or consecutive digits." = "A strong password is required. Avoid repetitive or consecutive digits.";
+
+/* Password mismatch message */
+"The Password and Confirmation do not match." = "The Password and Confirmation do not match.";
+
+// From in message cell
+"From" = "From";
+
+// Subject in message cell
+"Subject" = "Subject";
+
+// Date in message cell
+"Date" = "Date";
+
+// Missing settings
+"Please go to the Settings application and enter your configuration information" = "Please go to the Settings application and enter your configuration information";
+
+// Fatal error
+"An error occurred initializing application.  Please reinstall." = "An error occurred initializing application.  Please reinstall.";
+
+// Messages folder
+"Messages" = "Messages";
+
+// When no workflows are present
+"No Workflows found" = "No Workflows found";
+
+// Navigate back in hierarchy
+"Back" = "Back";
+
+// Select a workflow or message (do not translate the word workflow)
+"Select a Workflow or message" = "Select a Workflow or message";
+
+// When no messages are present
+"No messages found" = "No messages found"; 
+
+// No Workflow or Message Selected (do not translate the word workflow)
+"No Workflow or Message Selected" = "No Workflow or Message Selected";
+
+// General connection error
+"Connection Error" = "Connection Error";
+
+// Unknown error
+"Unknown" = "Unknown";
+
+// Auto device registration authentication failure
+"Authentication Failed" = "Authentication Failed";
+
+// Auto device registration template failure
+"Template Not Found" = "Template Not Found";
+ 
+// Auto device registration not found error
+"Auto Registration Not Available" = "Auto Registration Not Available";
+
+// SSOCertManager is not able to get the certificate from the server
+"Unable to get certificate from server. Please check the server username/password" = "Unable to get certificate from server. Please check the server username/password";
+
+// SSOCertManager is not able to get the certificate from the file location
+"Unable to get certificate from given file path" = "Unable to get certificate from given file path";
+
+// When an application is provisioned, you can now specify server public key (for encryption) in the device settings. During that first connection, the below message will be displayed if the server public key they specified does not match the actual server public key on that server 
+"Server Public Key Verification Failed" = "Server Public Key Verification Failed";
+
+// In addition to the above new feature, we can also use Afaria to get a seeding/provisioning file from the server that has the iMO client connection settings that should be used. If we are unable to get that information due to some error when using Afaria, we display this error: 
+"Application is not provisioned. Please install Afaria client application and try again or go to the Settings application and enter your configuration information" = "Application is not provisioned. Please install Afaria client application and try again or go to the Settings application and enter your configuration information";
+
+// This is an error we can return if we are unable to get the single-sign-on certificate from the server via Afaria (discussed above): 
+"Unable to get the certificate from server. Please install Afaria client application and try again" = "Unable to get the certificate from server. Please install Afaria client application and try again";
+
+// Certificate challenge message to the user
+"The application can't verify the identity of the host '%@'. Do you still want to connect to the server?" = "The application can't verify the identity of the host '%@'. Do you still want to connect to the server?";
+
+/* Yes button text */
+"Yes" = "Yes";
+
+/* No button text */
+"No" = "No";
+
+// Title for HTTP Basic Authentication controller
+"Secure Host" = "Secure Host";
+
+// Label text if host is not supplied
+"Enter Credentials" = "Enter Credentials";
+
+// Label text when host is supplied
+"Enter Credentials for Host '%@' at %@" = "Enter Credentials for Host '%@' at %@";
+
+// Placeholder for Name textbox in HTTP Basic Authentication controller
+"Name" = "Name";
+
+// Placeholder for Password textbox in HTTP Basic Authentication controller
+"Password" = "Password";
+
+// HTTP Basic Authentication Log In button
+"Log In" = "Log In";
+
+// Error title
+"Error" = "Error";
+
+// This error message is returned when Afaria static library does not have Aafria server settings to connect and get the certificate for the user
+"Afaria server settings are requested from the Afaria client application. Please try again" = "Afaria server settings are requested from the Afaria client application. Please try again";
+
+// Unable to save image string
+"Unable to save image to photo album." = "Unable to save image to photo album.";
+
+// This error message is displayed when Afaria static library is unable to generate the certificate requested by user
+"Error in getting certificate from Afaria. Error code: %d" = "Error in getting certificate from Afaria. Error code: %d";
+
+// This error message is displayed when Afaria client application is installed but not configured
+"Afaria client application is installed but not configured. Please configure Afaria client application and try again or go to the Settings application and enter your configuration information" = "Afaria client application is installed but not configured. Please configure Afaria client application and try again or go to the Settings application and enter your configuration information";
+
+// Automatic device registration error strings
+"Connection to authentication service failed" = "Connection to authentication service failed";
+"No template was found for given application identifier and/or security configuration" = "No template was found for given application identifier and/or security configuration";
+"Auto registration was not enabled in the template" = "Auto registration was not enabled in the template";
+"Wrong User For Device" = "Wrong User For Device";
+"User Name Too Long" = "User Name Too Long";
+// used for COMMERR_SESSION_TIMEOUT during auto device registration
+"Cannot Connect To Server\nCheck Server, Port or Co ID" = "Cannot Connect To Server\nCheck Server, Port or Co ID";
+"Unknown Client Library error." = "Unknown Client Library error.";
+
+
