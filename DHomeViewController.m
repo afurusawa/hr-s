@@ -23,16 +23,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDel.isManager = [self isAManager];
     isManager = [self isAManager];
-    self.btnAddEmployee.enabled = NO;
+    //self.btnAddEmployee.enabled = NO;
     
-    if(isManager)
+    if(!isManager)
     {
         //[self.btnAddEmployee titleLabel].textColor = [UIColor blackColor];
-        self.btnAddEmployee.enabled = YES;
-        CALayer *layer = self.btnAddEmployee.layer;
-        layer.opacity = .50;
+        NSLog(@"Here");
+        self.btnAddEmployee.enabled = NO;
+        [self.btnAddEmployee setAlpha:.50];
     }
 	// Do any additional setup after loading the view.
 }

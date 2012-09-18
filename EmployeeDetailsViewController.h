@@ -45,5 +45,7 @@
 
 - (IBAction)saveEdit:(id)sender;
 - (IBAction)dropDownManagers:(id)sender;
+- (IBAction)beginDeleteEmployee:(id)sender;
+- (IBAction)editEntryOrCancel:(id)sender;
 
 @end

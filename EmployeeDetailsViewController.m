@@ -270,7 +270,7 @@
  * Will create the alert and show it
  * The alert is handled with the delegate and the delegate called the "deleteEmployee" method
  */
--(IBAction)beginDeleteEmployee
+-(IBAction)beginDeleteEmployee:(id)sender
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deleting Employee" message:@"Are you sure you want to delete this employee?" delegate:self cancelButtonTitle:@"Yes" otherButtonTitles:@"No", nil];
     [alert show];
@@ -505,7 +505,7 @@
     UITableViewCell *cell = [managerTable dequeueReusableCellWithIdentifier:cellIndentifier];
     
     cell.textLabel.text = [managersList objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
     
     return cell;
 }

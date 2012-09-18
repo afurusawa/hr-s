@@ -2572,7 +2572,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="TAq-rq-666" kind="push" id="iY0-SS-dxd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jtb-QV-ah7">
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jtb-QV-ah7">
                                 <rect key="frame" x="252" y="379" width="265" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
@@ -3172,7 +3172,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="beginDeleteEmployee" destination="mGd-qG-xoo" eventType="touchUpInside" id="PrJ-CG-3W7"/>
+                                            <action selector="beginDeleteEmployee:" destination="mGd-qG-xoo" eventType="touchUpInside" id="VAV-f7-nHN"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="fkh-nd-mYb">
@@ -3203,29 +3203,37 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <action selector="dropDownManagers:" destination="mGd-qG-xoo" eventType="touchUpInside" id="9Va-Da-Tq9"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="34" sectionHeaderHeight="22" sectionFooterHeight="22" id="gIi-Qp-AHw">
-                                        <rect key="frame" x="189" y="572" width="452" height="159"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Contact Information:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8hA-2G-4PU">
+                                        <rect key="frame" x="49" y="338" width="230" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="z3o-Ag-lVd">
+                                        <rect key="frame" x="189" y="576" width="438" height="169"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ManagerCell" textLabel="QLf-H5-TK3" detailTextLabel="mO0-Cz-gYw" rowHeight="34" style="IBUITableViewCellStyleValue1" id="uLW-zQ-tFT">
-                                                <rect key="frame" x="0.0" y="22" width="452" height="34"/>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ManagerCell" textLabel="Yct-YN-N4V" detailTextLabel="6YG-Ke-cwz" rowHeight="32" style="IBUITableViewCellStyleValue1" id="3U0-vt-vHo">
+                                                <rect key="frame" x="0.0" y="22" width="438" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="452" height="33"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="438" height="31"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QLf-H5-TK3">
-                                                            <rect key="frame" x="10" y="6" width="35" height="21"/>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yct-YN-N4V">
+                                                            <rect key="frame" x="10" y="5" width="35" height="21"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mO0-Cz-gYw">
-                                                            <rect key="frame" x="398" y="6" width="44" height="21"/>
+                                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6YG-Ke-cwz">
+                                                            <rect key="frame" x="384" y="5" width="44" height="21"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
                                                     </subviews>
@@ -3234,17 +3242,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="mGd-qG-xoo" id="JIz-zK-eYD"/>
-                                            <outlet property="delegate" destination="mGd-qG-xoo" id="Fg9-r2-RHM"/>
+                                            <outlet property="dataSource" destination="mGd-qG-xoo" id="Gwz-Xc-eI7"/>
+                                            <outlet property="delegate" destination="veC-6g-8mB" id="3iZ-Ps-8xg"/>
                                         </connections>
                                     </tableView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Contact Information:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8hA-2G-4PU">
-                                        <rect key="frame" x="49" y="338" width="230" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -3253,10 +3254,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Profile" id="ccq-xj-my0">
                         <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="gPD-Yo-AsX">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B7j-ci-PPx">
-                                <rect key="frame" x="591" y="4" width="170" height="35"/>
+                                <rect key="frame" x="697" y="4" width="64" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Edit">
+                                <state key="normal" backgroundImage="rm_edit_button_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -3264,7 +3265,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="editEntry:" destination="mGd-qG-xoo" eventType="touchUpInside" id="6aw-ju-j0f"/>
+                                    <action selector="editEntryOrCancel:" destination="mGd-qG-xoo" eventType="touchUpInside" id="mvC-4V-xWh"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -3274,7 +3275,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="dropDownBtn" destination="itn-Yx-rgW" id="VVb-Tp-fxj"/>
                         <outlet property="editBtn" destination="B7j-ci-PPx" id="w9N-WX-3GM"/>
                         <outlet property="imagePortrait" destination="9Xf-oM-a3P" id="zpD-fB-LXi"/>
-                        <outlet property="managerTable" destination="gIi-Qp-AHw" id="OK5-wt-eCw"/>
+                        <outlet property="managerTable" destination="z3o-Ag-lVd" id="cRu-LX-t3I"/>
                         <outlet property="saveBtn" destination="3if-gV-ERP" id="2Ew-c0-ldb"/>
                         <outlet property="scrollView" destination="veC-6g-8mB" id="s0h-71-BJD"/>
                         <outlet property="tfDepartment" destination="fhq-Dp-ndd" id="eKT-bl-t75"/>
@@ -3295,6 +3296,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="rm_cancel_button_up.png" width="55" height="30"/>
         <image name="rm_done_button_up.png" width="55" height="30"/>
         <image name="rm_dotted_divider.png" width="298" height="1"/>
+        <image name="rm_edit_button_up.png" width="55" height="30"/>
         <image name="rm_home_button_dwn.png" width="50" height="30"/>
         <image name="rm_login_button_dwn.png" width="282" height="41"/>
         <image name="rm_login_button_up.png" width="282" height="41"/>
@@ -3355,7 +3357,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="EmployeeDetailsViewController" superclassName="UnderlyingView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EmployeeDetailsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="beginDeleteEmployee:"/>
+                <relationship kind="action" name="beginDeleteEntryEmployee:"/>
                 <relationship kind="action" name="dropDownManagers:"/>
+                <relationship kind="action" name="editEntryOrCancel:"/>
                 <relationship kind="action" name="saveEdit:"/>
                 <relationship kind="outlet" name="deleteBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="dropDownBtn" candidateClass="UIButton"/>
