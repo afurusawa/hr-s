@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *user; //name of the user.
 @property NSInteger manager; //set as 1 or 0.
 @property (strong, nonatomic) NSString *weekView; //type of week view; either "time entry" or "history".
+@property (nonatomic, assign) BOOL isManager; //Whether or not this person is manager
 
 @property (strong, nonatomic) NSString *selectedUser; //user that was selected.
 @property (strong, nonatomic) NSString *selectedDay; //stores current day (e.g. Monday, Tuesday, etc.).

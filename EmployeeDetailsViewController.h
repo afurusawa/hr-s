@@ -12,29 +12,24 @@
 #import "HR_SuiteHR_SuiteDB.h"
 #import "AppDelegate.h"
 
-@class EmployeeDetailsViewController;
-
-@protocol EmployeeDetailsViewControllerDelegate <NSObject>
-
-- (void)refreshView;
-
-@end
-
 @interface EmployeeDetailsViewController : UnderlyingView <UITextFieldDelegate, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     BOOL isManager;
     BOOL editing;
     
-    
+    NSMutableArray *managersList;
+    NSMutableArray *managersUsernameList;
     NSString *managerUsername;
+    __weak IBOutlet UITableView *managerTable;
 }
-@property (weak, nonatomic) id <EmployeeDetailsViewControllerDelegate> delegate;
+
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *dropDownBtn;
 
+@property HR_SuiteUsers *thisEntry;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePortrait;
 @property (weak, nonatomic) IBOutlet UITextField *tfEmployeeName;
 @property (weak, nonatomic) IBOutlet UITextField *tfId;
@@ -44,16 +39,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfDepartment;
 @property (weak, nonatomic) IBOutlet UITextView *tvAddress;
 
-- (IBAction)editEntry:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UITextField *tfTopCompName;
-
 @property (weak, nonatomic) IBOutlet UITextField *tfManager;
-@property (weak, nonatomic) IBOutlet UITableView *managerTable;
-
-
-@property (weak, nonatomic) IBOutlet UITextField *tfMngPhone; //?
-@property (weak, nonatomic) IBOutlet UITextField *tfMngFax; //?
+@property (weak, nonatomic) IBOutlet UITextField *tfMngPhone;
+@property (weak, nonatomic) IBOutlet UITextField *tfMngFax;
 
 - (IBAction)saveEdit:(id)sender;
 - (IBAction)dropDownManagers:(id)sender;

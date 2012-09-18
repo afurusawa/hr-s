@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Timesheet View Controller - Timesheet Home-->
@@ -2561,7 +2560,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C2Y-jx-9kU">
                                 <rect key="frame" x="252" y="269" width="265" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Browse Directory">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2576,19 +2575,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jtb-QV-ah7">
                                 <rect key="frame" x="252" y="379" width="265" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Add New Employee">
-                                    <color key="titleColor" red="0.52717391300000005" green="0.52717391300000005" blue="0.52717391300000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="H3X-gP-F9S" kind="push" id="R0H-Tm-8rr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="xUl-wF-RDX"/>
+                    <connections>
+                        <outlet property="btnAddEmployee" destination="jtb-QV-ah7" id="fCQ-ZX-Are"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-4835" y="3808"/>
@@ -2929,7 +2934,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xfg-RR-SKj">
-                                        <rect key="frame" x="593" y="555" width="44" height="29"/>
+                                        <rect key="frame" x="523" y="493" width="44" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                         <state key="normal" title="V">
@@ -2944,26 +2949,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="22" sectionHeaderHeight="22" sectionFooterHeight="22" id="cPJ-7T-yWV">
-                                        <rect key="frame" x="248" y="555" width="344" height="134"/>
+                                        <rect key="frame" x="223" y="521" width="344" height="134"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="x29-qZ-uAk" detailTextLabel="6bl-tt-2DD" rowHeight="22" style="IBUITableViewCellStyleValue1" id="agz-9N-7Em">
-                                                <rect key="frame" x="0.0" y="22" width="344" height="22"/>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ManagerCell" textLabel="x29-qZ-uAk" detailTextLabel="6bl-tt-2DD" rowHeight="28" style="IBUITableViewCellStyleValue1" id="agz-9N-7Em">
+                                                <rect key="frame" x="0.0" y="22" width="344" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="27"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x29-qZ-uAk">
-                                                            <rect key="frame" x="10" y="0.0" width="35" height="21"/>
+                                                            <rect key="frame" x="10" y="3" width="35" height="21"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6bl-tt-2DD">
-                                                            <rect key="frame" x="290" y="0.0" width="44" height="21"/>
+                                                            <rect key="frame" x="290" y="3" width="44" height="21"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -3028,7 +3033,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ManagersTable" destination="cPJ-7T-yWV" id="RZa-FM-eHi"/>
                         <outlet property="lblUserWarning" destination="pVs-E5-Rca" id="WQ6-jx-Y8e"/>
                         <outlet property="managersTable" destination="cPJ-7T-yWV" id="pE3-Qn-yXt"/>
                         <outlet property="scrollView" destination="vOm-LJ-Wcq" id="cQB-XH-cum"/>
@@ -3038,7 +3042,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="tfFirstName" destination="3mO-IJ-hYb" id="be5-Pm-Bgi"/>
                         <outlet property="tfId" destination="P6e-8u-lI6" id="7tD-LG-wam"/>
                         <outlet property="tfLastName" destination="pwa-6F-ekc" id="w1b-2W-bOG"/>
-                        <outlet property="tfManagerID" destination="6ru-Zt-53k" id="OvB-Dl-gco"/>
+                        <outlet property="tfManager" destination="6ru-Zt-53k" id="NRx-pF-kxY"/>
                         <outlet property="tfPhone" destination="hCl-r4-hG3" id="AO2-Fs-UzO"/>
                         <outlet property="tfPosition" destination="Mn1-rp-sLw" id="06V-0c-D3I"/>
                         <outlet property="tfUsername" destination="tuh-fF-3NM" id="rsv-hK-Kvl"/>
@@ -3070,7 +3074,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Manager" minimumFontSize="17" id="U2s-oc-P6t">
                                         <rect key="frame" x="189" y="538" width="452" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.89917883210000005" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.090196078430000007" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3078,7 +3081,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Position" minimumFontSize="17" id="Qdq-Gc-gwm">
                                         <rect key="frame" x="370" y="111" width="373" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.89917883210000005" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.090196078430000007" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3140,7 +3142,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Department" minimumFontSize="17" id="fhq-Dp-ndd">
                                         <rect key="frame" x="370" y="155" width="373" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.89917883210000005" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.090196078430000007" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3148,7 +3149,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" id="QWZ-re-MWr">
                                         <rect key="frame" x="175" y="386" width="452" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.89917883210000005" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.090196078430000007" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3156,7 +3156,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="4la-Qi-Gp1">
                                         <rect key="frame" x="175" y="423" width="452" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.89917883210000005" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.090196078430000007" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3186,7 +3185,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Address" id="sIp-p6-gcS">
                                         <rect key="frame" x="370" y="194" width="373" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.89917883210000005" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -3206,7 +3204,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="34" sectionHeaderHeight="22" sectionFooterHeight="22" id="gIi-Qp-AHw">
-                                        <rect key="frame" x="189" y="570" width="452" height="159"/>
+                                        <rect key="frame" x="189" y="572" width="452" height="159"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ManagerCell" textLabel="QLf-H5-TK3" detailTextLabel="mO0-Cz-gYw" rowHeight="34" style="IBUITableViewCellStyleValue1" id="uLW-zQ-tFT">
@@ -3317,10 +3315,33 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="tm_wednesday.png" width="71" height="71"/>
     </resources>
     <classes>
+        <class className="AddEntryViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="dropDownList:"/>
+                <relationship kind="outlet" name="lblUserWarning" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="managersTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tfAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfFirstName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfLastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPhone" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfUsername" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="DHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DHomeViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="browseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnAddEmployee" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="DayCell" superclassName="UITableViewCell">
@@ -3335,7 +3356,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EmployeeDetailsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="dropDownManagers:"/>
-                <relationship kind="action" name="editEntry:"/>
                 <relationship kind="action" name="saveEdit:"/>
                 <relationship kind="outlet" name="deleteBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="dropDownBtn" candidateClass="UIButton"/>
@@ -3353,7 +3373,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="tfMngPhone" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tfPhoneNumber" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfTopCompName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tvAddress" candidateClass="UITextView"/>
             </relationships>
         </class>
@@ -3662,6 +3681,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="R0H-Tm-8rr"/>
         <segue reference="Kvh-kc-4yI"/>
     </inferredMetricsTieBreakers>
 </document>

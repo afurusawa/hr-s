@@ -8,24 +8,19 @@
 
 #import "EmployeeDetailsViewController.h"
 #import "ResumeViewController.h"
-#import "HR_SuiteUsers.h"
-#import "HR_SuiteHR_SuiteDB.h"
-#import "AppDelegate.h"
+
+@interface EmployeeDetailsViewController ()
+
+@end
 
 @implementation EmployeeDetailsViewController
-{
-    AppDelegate *appDelegate;
-    NSMutableArray *managersList;
-    NSMutableArray *managersUsernameList;
-}
 
-@synthesize delegate;
 @synthesize editBtn = _editBtn;
 @synthesize saveBtn = _saveBtn;
 @synthesize scrollView = _scrollView;
 @synthesize deleteBtn = _deleteBtn;
 @synthesize dropDownBtn = _dropDownBtn;
-//@synthesize thisEntry = _thisEntry;
+@synthesize thisEntry = _thisEntry;
 @synthesize imagePortrait = _imagePortrait;
 
 //TextFields for Employee Information
@@ -39,102 +34,46 @@
 
 //TextField for Manager Information
 @synthesize tfManager = _tfManager;
-@synthesize managerTable;
 @synthesize tfMngPhone = _tfMngPhone;
 @synthesize tfMngFax = _tfMngFax;
 
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];	
+    [super viewDidLoad];
+	
+    NSLog(@"%@ did load", [self class]);
+    
     [self startLoadingAnimations];
-    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.managerTable.hidden = YES;
-
+    
+    //Setting manager status using login information of app delegate
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    isManager = appDelegate.isManager;
+    
+    //Initially hides the drop down list for selecting managers
+    managerTable.hidden = YES;
+    managerUsername = self.thisEntry.manager;
+    
     //If no manager, only allow edit for his own
-    if(!appDelegate.manager)
+    if(!isManager)
     {
+        NSString *user = [NSString stringWithString:appDelegate.user];
+        self.deleteBtn.hidden = YES;
         
-        // demo
-        if (appDelegate.isSUPConnection) {
-
-            self.deleteBtn.hidden = YES; // Hide delete button because only managers can delete
-            
-            // If current username is not equal to the display person's username
-            HR_SuiteUsersList *thisEntry = [HR_SuiteUsers findByEmployeeID:appDelegate.user];
-            if ([thisEntry length] > 0) {
-                self.editBtn.hidden = NO;
-            }
-            else {
-                self.editBtn.hidden = YES;
-            }
-            
-            HR_SuiteUsersList *list = [HR_SuiteUsers findAll];
-            for (HR_SuiteUsers *item in list) {
-                if ([item.employeeID isEqualToString:appDelegate.selectedUser]) {
-                    //Getting Full Name
-                    self.tfEmployeeName.text = item.employeeName;
-                    
-                    // Contact Information
-                    self.tfPhoneNumber.text = item.phone; //phone
-                    self.tfEmail.text = item.email; //email
-                    
-                    self.tfPosition.text = item.position; //position
-                    self.tfDepartment.text = item.department; //department
-                    self.tvAddress.text = item.address; //address
-                }
-            }
-
+        //If current username is not equal to the display person's username
+        if(![user isEqualToString:self.thisEntry.employeeID])
+        {   //Disallow editing
+            self.editBtn.hidden = YES;
         }
-        
-        // user
-        else {
-            self.deleteBtn.hidden = YES;
-            self.editBtn.hidden = NO;
-            
-            for (NSDictionary *item in appDelegate.hr_users) {
-                if ([[item objectForKey:@"employeeID"] isEqualToString:appDelegate.selectedUser]) {
-                    //Getting Full Name
-                    self.tfEmployeeName.text = [item objectForKey:@"employeeName"];
-                    
-                    // Contact Information
-                    self.tfPhoneNumber.text = [item objectForKey:@"phone"]; //phone
-                    self.tfEmail.text = [item objectForKey:@"email"]; //email
-                    
-                    self.tfPosition.text = [item objectForKey:@"position"]; //position
-                    self.tfDepartment.text = [item objectForKey:@"department"]; //department
-                    self.tvAddress.text = [item objectForKey:@"address"]; //address
-                }
-            }
-        }
-        
-        
-        
-        //Setting portrait
-        //    if([self.thisEntry.picture length] != 0)
-        //    {
-        //        NSURL *url = [[NSURL alloc] initWithString:self.thisEntry.picture];
-        //        NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
-        //        UIImage *image = [[UIImage alloc] initWithData:imageData];
-        //        [self.imagePortrait setImage:image];
-        //    }
-        
-        
-        //    /***********************
-        //     * Manager Information *
-        //     ***********************/
-        //    
-        //    NSString *mgrFirstName = manager.firstname;
-        //    NSString *mgrLastName = manager.lastname;
-        //    NSString *mgrName = [NSString stringWithFormat:@"%@ %@", mgrFirstName, mgrLastName];
-        //    self.tfManager.text = mgrName;
-        //    
-        //    self.tfMngPhone.text = [NSString stringWithFormat:@"%@",manager.workphone];
-        //    
-        //    self.tfMngFax.text = [NSString stringWithFormat:@"%@", (![manager.workphone isEqualToNumber:0]) ? manager.workphone : @"Not available"]; //self.thisEntry.managers.fax;
-        //    
-        //    NSLog(@"Finish updating view");
     }
     
     self.scrollView.contentSize = CGSizeMake(768, 960);
@@ -144,13 +83,17 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
 }
 
-
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self disableEditing];    
+    [self disableEditing];
+    
+    [self updateViewWithData];
+    
+    [self populateManagerLists];
+    [managerTable reloadData];
+    
     [self stopLoadingAnimations];
 }
-
 
 - (void)viewDidUnload
 {
@@ -166,12 +109,11 @@
     [self setTfMngFax:nil];
     [self setEditBtn:nil];
     [self setSaveBtn:nil];
-    [self setTfTopCompName:nil];
     [self setScrollView:nil];
     [self setDeleteBtn:nil];
     [self setTvAddress:nil];
+    managerTable = nil;
     [self setDropDownBtn:nil];
-    [self setManagerTable:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -181,6 +123,72 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+//Disables the textfields to disallow editing
+-(void)disableEditing
+{
+    self.tfEmployeeName.enabled = NO;
+    self.tfId.enabled = NO;
+    self.tfPhoneNumber.enabled = NO;
+    self.tfEmail.enabled = NO;
+    self.tfPosition.enabled = NO;
+    self.tfDepartment.enabled = NO;
+    self.tvAddress.editable = NO;
+    
+    self.tfManager.enabled = NO;
+    self.tfMngPhone.enabled = NO;
+    self.tfMngFax.enabled = NO;
+    
+    [self disableBorders];
+    
+    self.saveBtn.hidden = YES;
+    self.dropDownBtn.hidden = YES;
+    
+    //When disabling edit, change edit button back to the edit icon
+    [self.editBtn setImage:[UIImage imageNamed:@"rm_edit_button_up.png"] forState:UIControlStateNormal];
+    editing = NO;
+}
+
+//Enables the textfields to enable editing
+-(void)enableEditing
+{
+    self.tfPhoneNumber.enabled = YES;
+    self.tfEmail.enabled = YES;
+    
+    self.tfPosition.enabled = YES;
+    self.tfDepartment.enabled = YES;
+    self.tvAddress.editable = YES;
+    
+    [self enableBorders];
+    
+    self.dropDownBtn.hidden = NO;
+    self.saveBtn.hidden = NO;
+    
+    //When enabling edit, change edit button to the cancel icon
+    [self.editBtn setImage:[UIImage imageNamed:@"rm_cancel_button_up.png"] forState:UIControlStateNormal];
+    editing = YES;
+}
+
+-(void)enableBorders
+{
+    UIColor *color = [UIColor colorWithRed:(229.0/255.0) green:(229.0/255.0) blue:(229.0/255.0) alpha:1.0];
+    self.tfPhoneNumber.backgroundColor = color;
+    self.tfEmail.backgroundColor = color;
+    self.tfPosition.backgroundColor = color;
+    self.tfDepartment.backgroundColor = color;
+    self.tvAddress.backgroundColor = color;
+    self.tfManager.backgroundColor = color;
+}
+
+//Called when disabling editing
+-(void)disableBorders
+{
+    self.tfPhoneNumber.backgroundColor = [UIColor clearColor];
+    self.tfEmail.backgroundColor = [UIColor clearColor];
+    self.tfPosition.backgroundColor = [UIColor clearColor];
+    self.tfDepartment.backgroundColor = [UIColor clearColor];
+    self.tvAddress.backgroundColor = [UIColor clearColor];
+    self.tfManager.backgroundColor = [UIColor clearColor];
+}
 
 //Sets the delegates of all the textfields
 -(void)setTFDelegates
@@ -191,7 +199,7 @@
     self.tfEmail.delegate = self;
     self.tfPosition.delegate = self;
     self.tfDepartment.delegate = self;
-
+    
     self.tfManager.delegate = self;
     self.tfMngPhone.delegate = self;
     self.tfMngFax.delegate = self;
@@ -244,12 +252,19 @@
     [UIView commitAnimations];
 }
 
-
 /** Actions sections ***********************************************************************************/
 /* Edit button changes to cancel when pressed and vice versa
  * Enables and disables the text marked for editable
  */
-
+- (IBAction)editEntryOrCancel:(id)sender
+{
+    managerTable.hidden = YES;
+    
+    if(!editing)
+        [self enableEditing];
+    else if(editing)
+        [self disableEditing];
+}
 
 /* First function called when the "delete" button is pressed
  * Will create the alert and show it
@@ -264,170 +279,182 @@
 
 - (IBAction)dropDownManagers:(id)sender
 {
-    self.managerTable.hidden = !self.managerTable.hidden;
-    [self.managerTable reloadData];
+    [self.tfEmployeeName resignFirstResponder];
+    [self.tfId resignFirstResponder];
+    [self.tfPhoneNumber resignFirstResponder];
+    [self.tfEmail resignFirstResponder ];
+    [self.tfPosition resignFirstResponder];
+    [self.tfDepartment resignFirstResponder];
+    [self.tvAddress resignFirstResponder];
+    
+    [self.tfManager resignFirstResponder];
+    [self.tfMngPhone resignFirstResponder];
+    [self.tfMngFax resignFirstResponder];
+    
+    if(managerTable.hidden)
+    {
+        self.dropDownBtn.titleLabel.text = @"^";
+        managerTable.hidden = NO;
+    }
+    else
+    {
+        self.dropDownBtn.titleLabel.text = @"v";
+        managerTable.hidden = YES;
+    }
 }
 
 /* End Actions *****************************************************************************************/
 
-
+/* Methods that use SUP data ****************************************************************************/
+-(void)updateViewWithData
+{
+    NSLog(@"Updating view with data...");
+    
+    HR_SuiteUsers *manager = [self getManager:self.thisEntry.manager]; //Error expected: manager is now the identifier instead of id
+    
+    /************************
+     * Employee information *
+     ************************/
+    
+    //Setting portrait
+    if([self.thisEntry.picture length] != 0)
+    {
+        NSURL *url = [[NSURL alloc] initWithString:self.thisEntry.picture];
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
+        [self.imagePortrait setImage:image];
+    }
+    
+    //Getting Full Name
+    NSString *firstName = self.thisEntry.firstName;
+    NSString *lastName = self.thisEntry.lastName;
+    NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    self.tfEmployeeName.text = fullName;
+    
+    self.tfId.text = [NSString stringWithFormat:@"%d", self.thisEntry.id_];
+    
+    self.tfPhoneNumber.text = (self.thisEntry.phone != nil) ? [NSString stringWithFormat:@"%@", self.thisEntry.phone] : @"Not available";
+    
+    self.tfEmail.text = [NSString stringWithFormat:@"%@", self.thisEntry.email];
+    
+    self.tfPosition.text = self.thisEntry.position;
+    
+    self.tfDepartment.text = self.thisEntry.department;
+    
+    self.tvAddress.text = self.thisEntry.address;
+    
+    /***********************
+     * Manager Information *
+     ***********************/
+    
+    NSString *mgrFirstName = manager.firstName;
+    NSString *mgrLastName = manager.lastName;
+    NSString *mgrName = [NSString stringWithFormat:@"%@ %@", mgrFirstName, mgrLastName];
+    self.tfManager.text = mgrName;
+    
+    self.tfMngPhone.text = [NSString stringWithFormat:@"%@",manager.phone];
+    
+    self.tfMngFax.text = [NSString stringWithFormat:@"%@", (manager.fax != nil) ? manager.fax : @"Not available"]; //self.thisEntry.managers.fax;
+    
+    NSLog(@"Finish updating view");
+}
 
 - (IBAction)saveEdit:(id)sender
 {
+    NSLog(@"Updating entry after the edit");
+    
+    //Cannot Edit Name.
+    //Cannot Edit ID number
+    
+    self.thisEntry.phone = self.tfPhoneNumber.text;
+    
+    self.thisEntry.email = self.tfEmail.text;
+    
+    self.thisEntry.department = self.tfDepartment.text;
+    
+    self.thisEntry.position = self.tfPosition.text;
+    
+    self.thisEntry.manager = managerUsername;
+    
+    self.thisEntry.address = self.tvAddress.text;
+    
+    [self startLoadingAnimations];
+    
     //Updating entry to the SUP database
-    //[self.thisEntry update];
-    //[self.thisEntry submitPending];
+    [self.thisEntry update];
+    [self.thisEntry submitPending];
     
     //Synching database (takes time)
-    //[HR_SuiteHR_SuiteDB synchronize];  
+    [HR_SuiteHR_SuiteDB synchronize];
     
     //Updating View
-    //[self updateViewWithData];
+    [self updateViewWithData];
     
     [self disableEditing];
+    
+    NSLog(@"Finished Editing");
+    
     [self stopLoadingAnimations];
 }
 
-
-
-////Handles the actual deletion of the employee from the SUP database
-//-(void)deleteEmployee
-//{
-//    [self.thisEntry delete];
-//    [self.thisEntry submitPending];
-//    
-//    [HRDirectoryHRDirectoryDB synchronize];
-//    
-//    //Exits goes back to the list view when finished.
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
-
-//-(HR_SuiteUsers *)getManager:(NSString *)mgrUsername
-//{
-//    //return [HR_SuiteUsers findByUsername:mgrUsername]; //ERROR EXPECTED: NEED MBO
-//}
-/* End SUP Section ********************************************************************************/
-
-
-
-#pragma mark - UIAlertViewDelegate
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if([alertView.title isEqualToString:@"Deleting Employee"])
-    {
-        if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Yes"])
-        {
-           // [self deleteEmployee];
-        }
-    }
-}
-
-
-
-
-
-
-
-//
-//
-//
-//
-////for manager dropdown
-//
-///* Takes all the employees from the data base and checks if they are managers
-// * If they are managers, their names will be put into an array (managersList)
-// * Their username (unique identifier) will be put into another (managersUsernameList)
-// */
+/* Takes all the employees from the data base and checks if they are managers
+ * If they are managers, their names will be put into an array (managersList)
+ * Their username (unique identifier) will be put into another (managersUsernameList)
+ */
 -(void)populateManagerLists
 {
+    NSLog(@"Populating managers list");
+    
     managersList = [[NSMutableArray alloc] init];
     managersUsernameList = [[NSMutableArray alloc] init];
     
-    // sup
-    if (appDelegate.isSUPConnection) {
-        HR_SuiteUsersList *employeeList = [HR_SuiteUsers findAll];
-        for (HR_SuiteUsers *person in employeeList)
+    HR_SuiteUsersList *employeeList = [HR_SuiteUsers findAll];
+    for(HR_SuiteUsers *person in employeeList)
+    {
+        for(HR_SuiteUsers *managers in employeeList)
         {
-            // add manager employeeID
-            if (![person.manager isEqualToString:@""]) {
-                
-                //check if name is already in the list
-                BOOL found = NO;
-                for (NSString *mgr in managersList) {
-                    if ([mgr isEqualToString:person.manager]) {
-                        found = YES;
-                    }
-                }
-                // if not found, add it
-                if (!found) {
-                    [managersList addObject:person.manager];
-                    NSLog(@"adding manager: %@", person.manager);
-                }
-            }
-        }
-        
-        // Add managers name
-        for (NSString *item2 in managersList) {
-
-            // Add name of manager
-            HR_SuiteUsersList *list = [HR_SuiteUsers findByEmployeeID:item2.];
-            
-            if ([list length] > 0) {
-                for (HR_SuiteUsers *item in list) {
-                    [managersUsernameList addObject:item.employeeName];
-                }
+            if([person.employeeID isEqualToString:managers.manager])
+            {
+                [managersList addObject:person.employeeName];
+                [managersUsernameList addObject:person.employeeID];
+                break;
             }
         }
     }
     
-    // demo
-    else {
-        for (NSDictionary *item in appDelegate.hr_users) {
-            if (item objectForKey:@"manager"
-        }
+    NSLog(@"Manager List length: %d", [managersList count]);
+    
+    //Simple soft error checking to see if the 2 manager lists are the same size
+    if([managersList count] != [managersUsernameList count])
+    {
+        NSLog(@"The managerList and managerUsernameList have different sizes, error has occured");
     }
 }
 
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//Handles the actual deletion of the employee from the SUP database
+-(void)deleteEmployee
 {
-    return [managersList count];
+    [self.thisEntry delete];
+    [self.thisEntry submitPending];
+    
+    [HR_SuiteHR_SuiteDB synchronize];
+    
+    //Exits goes back to the list view when finished.
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(HR_SuiteUsers *)getManager:(NSString *)mgrUsername
 {
-    static NSString *cellIndentifier = @"ManagerCell";
-    UITableViewCell *cell = [managerTable dequeueReusableCellWithIdentifier:cellIndentifier];
+    HR_SuiteUsersList *users = [HR_SuiteUsers findByEmployeeID:mgrUsername];
     
-    cell.textLabel.text = [managersUsernameList objectAtIndex:indexPath.row];
+    if([users length]!= 0)
+    {
+        return [users getObject:0];
+    }
     
-    return cell;
+    return nil;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{}
-//    //Change textfield to the value selected
-//    self.tfManager.text = [managersList objectAtIndex:indexPath.row];
-//    
-//    //Changing the subsequent textfields to fit the currently selected manager man
-//    HR_SuiteUsers *manager = [self getManager:self.tfManager.text];
-//    self.tfMngPhone.text = [manager.phone stringValue];
-//    self.tfMngFax.text = [manager.fax stringValue];
-//    
-//    //Change the selected manager login (their unique identifier) to the manager selected
-//    managerUsername = [managersUsernameList objectAtIndex:indexPath.row];
-//    
-//    //Hide the drop down table
-//    managerTable.hidden = YES;
-//}
-//
-//
-
-
-
-
-
-// ui stuff
+/* End SUP Section ********************************************************************************/
 
 #pragma mark - UITextFieldDelegate
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
@@ -438,6 +465,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    NSLog(@"Return pressed");
     [textField resignFirstResponder];
     return YES;
 }
@@ -447,80 +475,55 @@
     return YES;
 }
 
-
-// when done is pressed, modify database with new values
-- (IBAction)editEntry:(id)sender {
-    NSLog(@"True or False: %@", (editing) ? @"Yes" : @"No");
-    if(!editing)
-        [self enableEditing];
-    else if(editing)
-        [self disableEditing];
+#pragma mark - UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if([alertView.title isEqualToString:@"Deleting Employee"])
+    {
+        if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Yes"])
+        {
+            [self deleteEmployee];
+        }
+    }
 }
 
-
-//Disables the textfields to disallow editing
--(void)disableEditing
+#pragma mark - UITableViewDataSource
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    self.tfEmployeeName.enabled = NO;
-    self.tfId.enabled = NO;
-    self.tfPhoneNumber.enabled = NO;
-    self.tfEmail.enabled = NO;
-    self.tfPosition.enabled = NO;
-    self.tfDepartment.enabled = NO;
-    self.tvAddress.editable = NO;
-    
-    //self.tfManager.enabled = NO;
-    //self.tfMngPhone.enabled = NO;
-    //self.tfMngFax.enabled = NO;
-    
-    [self disableBorders];
-    
-    self.saveBtn.hidden = YES;
-    self.dropDownBtn.hidden = YES;
-    
-    
-    [self.editBtn setTitle:@"Edit" forState:UIControlStateNormal];
-    editing = NO;
+    return [managersList count];
 }
 
-//Enables the textfields to enable editing
--(void)enableEditing
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Phone
-    self.tfPhoneNumber.enabled = YES;
-    self.tfPhoneNumber.borderStyle = UITextBorderStyleRoundedRect;
-    
-    // Email
-    self.tfEmail.enabled = YES;
-    self.tfEmail.borderStyle = UITextBorderStyleRoundedRect;
-    
-    // Position
-    self.tfPosition.enabled = YES;
-    self.tfPosition.borderStyle = UITextBorderStyleRoundedRect;
-    
-    // Department
-    self.tfDepartment.enabled = YES;
-    self.tfDepartment.borderStyle = UITextBorderStyleRoundedRect;
-    
-    // Address
-    self.tvAddress.editable = YES;
-    
-    // Manager
-    self.dropDownBtn.hidden = NO;
-    self.saveBtn.hidden = NO;
-    
-    //When enabling edit, change edit button to the cancel icon
-    [self.editBtn setTitle:@"Done" forState:UIControlStateNormal];
-    editing = YES;
+    return 1;
 }
 
-//Called when disabling editing
--(void)disableBorders
+#pragma mark - UITableViewDelegate
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.tfPhoneNumber.borderStyle = UITextBorderStyleNone;
-    self.tfEmail.borderStyle = UITextBorderStyleNone;
-    self.tfPosition.borderStyle = UITextBorderStyleNone;
-    self.tfDepartment.borderStyle = UITextBorderStyleNone;
+    static NSString *cellIndentifier = @"ManagerCell";
+    UITableViewCell *cell = [managerTable dequeueReusableCellWithIdentifier:cellIndentifier];
+    
+    cell.textLabel.text = [managersList objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Change textfield to the value selected
+    self.tfManager.text = [managersList objectAtIndex:indexPath.row];
+    
+    //Changing the subsequent textfields to fit the currently selected manager man
+    HR_SuiteUsers *manager = [self getManager:[managersUsernameList objectAtIndex:indexPath.row]];
+    self.tfMngPhone.text = manager.phone;
+    
+    //Change the selected manager login (their unique identifier) to the manager selected
+    managerUsername = [managersUsernameList objectAtIndex:indexPath.row];
+    
+    //Hide the drop down table
+    managerTable.hidden = YES;
 }
 
 @end

@@ -89,6 +89,7 @@
 		6AFCE40C1602A1C100892E71 /* EmployeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFCE40B1602A1C100892E71 /* EmployeeDetailsViewController.m */; };
 		6AFCE4101602A2EE00892E71 /* UnderlyingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFCE40F1602A2EE00892E71 /* UnderlyingView.m */; };
 		6AFCE4131602A31600892E71 /* ResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFCE4121602A31600892E71 /* ResumeViewController.m */; };
+		76012B4F1607DA9E0059A6A8 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */; };
 		AD0BD2CB15C9A0A1009D6CB6 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD2CA15C9A0A1009D6CB6 /* HistoryViewController.m */; };
 		AD0BD2D115C9A95C009D6CB6 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD2D015C9A95C009D6CB6 /* HistoryCell.m */; };
 		AD0BD2D315C9AEC2009D6CB6 /* historyView_retriever.php in Resources */ = {isa = PBXBuildFile; fileRef = AD0BD2D215C9AEC2009D6CB6 /* historyView_retriever.php */; };
@@ -341,6 +342,8 @@
 		6AFCE40F1602A2EE00892E71 /* UnderlyingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderlyingView.m; sourceTree = "<group>"; };
 		6AFCE4111602A31600892E71 /* ResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeViewController.h; sourceTree = "<group>"; };
 		6AFCE4121602A31600892E71 /* ResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeViewController.m; sourceTree = "<group>"; };
+		76012B4D1607DA9E0059A6A8 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEntryViewController.h; sourceTree = "<group>"; };
+		76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		AD0BD2C915C9A0A1009D6CB6 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		AD0BD2CA15C9A0A1009D6CB6 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		AD0BD2CF15C9A95C009D6CB6 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
@@ -757,6 +760,8 @@
 				6AFCE40816028FC400892E71 /* SearchViewController.m */,
 				6AFCE40A1602A1C100892E71 /* EmployeeDetailsViewController.h */,
 				6AFCE40B1602A1C100892E71 /* EmployeeDetailsViewController.m */,
+				76012B4D1607DA9E0059A6A8 /* AddEntryViewController.h */,
+				76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -1294,6 +1299,7 @@
 				6AFCE40C1602A1C100892E71 /* EmployeeDetailsViewController.m in Sources */,
 				6AFCE4101602A2EE00892E71 /* UnderlyingView.m in Sources */,
 				6AFCE4131602A31600892E71 /* ResumeViewController.m in Sources */,
+				76012B4F1607DA9E0059A6A8 /* AddEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -100,15 +100,16 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
-
-
 // number of rows for table
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [displayEmployeeArray count];
 }
 
+- (IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 // populate cells
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,18 +150,18 @@
 }
 
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if([[segue identifier] isEqualToString:@"DetailSegue"])
-//    {
-//        EmployeeDetailsViewController *edView = [segue destinationViewController];
-//        //Getting index of the cell selected
-//        UITableViewCell *cell = (UITableViewCell *)sender;
-//        NSIndexPath *indexPath = [table indexPathForCell:cell];
-//        
-//        //edView.thisEntry = [displayEmployeeArray objectAtIndex:[indexPath row]];
-//    }
-//}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"DetailSegue"])
+    {
+        EmployeeDetailsViewController *edView = [segue destinationViewController];
+        //Getting index of the cell selected
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *indexPath = [table indexPathForCell:cell];
+        
+        edView.thisEntry = [displayEmployeeArray objectAtIndex:[indexPath row]];
+    }
+}
 
 
 

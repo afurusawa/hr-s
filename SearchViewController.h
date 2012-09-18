@@ -10,7 +10,7 @@
 #import "UnderlyingView.h"
 #import "EmployeeDetailsViewController.h"
 
-@interface SearchViewController : UnderlyingView <EmployeeDetailsViewControllerDelegate,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface SearchViewController : UnderlyingView < UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 {
     //Instance Variables
     NSMutableArray *employeeArray;
