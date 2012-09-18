@@ -22,7 +22,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		self.id = _ENTITY_NUMBER_FOR_HR_SuiteLeaveRequests_;
+		self.id = 4;
 		self.name = @"LeaveRequests";
 		self.klass = [HR_SuiteLeaveRequests class];
  		self.allowPending = YES;;

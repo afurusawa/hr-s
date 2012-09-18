@@ -3242,8 +3242,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="mGd-qG-xoo" id="Gwz-Xc-eI7"/>
-                                            <outlet property="delegate" destination="veC-6g-8mB" id="3iZ-Ps-8xg"/>
+                                            <outlet property="dataSource" destination="mGd-qG-xoo" id="mqS-z6-vfj"/>
+                                            <outlet property="delegate" destination="mGd-qG-xoo" id="HOl-Za-3nD"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -3358,7 +3358,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EmployeeDetailsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="beginDeleteEmployee:"/>
-                <relationship kind="action" name="beginDeleteEntryEmployee:"/>
                 <relationship kind="action" name="dropDownManagers:"/>
                 <relationship kind="action" name="editEntryOrCancel:"/>
                 <relationship kind="action" name="saveEdit:"/>

@@ -24,7 +24,7 @@
  
 		SUPObjectList *attributes = [SUPObjectList listWithCapacity:7];
 		SUPAttributeMetaDataRBS* a_remoteId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			165:
+			166:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"remoteId":@"":@"":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -33,7 +33,7 @@
 			NO:SUPPersonalizationType_None:NO];
   		[attributes addThis:a_remoteId];
 		SUPAttributeMetaDataRBS* a_batchId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			166:
+			167:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"batchId":@"":@"":
 			@"":-1:0:0:
 			@"null":NO:@"":

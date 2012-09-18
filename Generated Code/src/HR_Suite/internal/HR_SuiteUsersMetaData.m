@@ -22,7 +22,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		self.id = _ENTITY_NUMBER_FOR_HR_SuiteUsers_;
+		self.id = 11;
 		self.name = @"Users";
 		self.klass = [HR_SuiteUsers class];
  		self.allowPending = YES;;
@@ -165,6 +165,15 @@
 			GeneratedScheme_NONE:
 			NO:SUPPersonalizationType_None:NO];
 		[a_updateManagerCalled setColumn:@"q"];
+		SUPAttributeMetaDataRBS* a_updatePasswordCalled = [SUPAttributeMetaDataRBS attributeMetaDataWith:
+			55:
+			[SUPDataType forName:@"boolean"]:@"tinyint":@"updatePasswordCalled":@"":@"r":
+			@"":-1:0:0:
+			@"null":NO:@"":
+			NO:NO:NO:NO:NO:NO:
+			GeneratedScheme_NONE:
+			NO:SUPPersonalizationType_None:NO];
+		[a_updatePasswordCalled setColumn:@"r"];
 		SUPAttributeMetaDataRBS* a_pending = [SUPAttributeMetaDataRBS attributeMetaDataWith:
 			20001:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"pending":@"":@"_pf":
@@ -244,6 +253,7 @@
 		[attributes addThis:a_lastName];
 		[attributes addThis:a_fax];
 		[attributes addThis:a_updateManagerCalled];
+		[attributes addThis:a_updatePasswordCalled];
 		[attributes addThis:a_pending];
 		[attributes addThis:a_pendingChange];
 		[attributes addThis:a_replayPending];
@@ -272,12 +282,22 @@
 		[o_addEmployee_0 setIsCreate:YES];
 		[o_addEmployee_0 setIsUpdate:NO];
 		[o_addEmployee_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_findAll_0 = [SUPOperationMetaData createOperationMetaData:4:(SUPString)@"findAll":[SUPDataType forName:@"Users*"]:true];
+ 		SUPOperationMetaData* o_delete_0 = [SUPOperationMetaData createOperationMetaData:4:(SUPString)@"delete":[SUPDataType forName:@"void"]:true];
+		[o_delete_0 setIsStatic:NO];
+		[o_delete_0 setIsCreate:NO];
+		[o_delete_0 setIsUpdate:NO];
+		[o_delete_0 setIsDelete:YES]; 		
+ 		SUPOperationMetaData* o_updatePassword_0 = [SUPOperationMetaData createOperationMetaData:5:(SUPString)@"updatePassword":[SUPDataType forName:@"void"]:true];
+		[o_updatePassword_0 setIsStatic:NO];
+		[o_updatePassword_0 setIsCreate:NO];
+		[o_updatePassword_0 setIsUpdate:YES];
+		[o_updatePassword_0 setIsDelete:NO]; 		
+ 		SUPOperationMetaData* o_findAll_0 = [SUPOperationMetaData createOperationMetaData:6:(SUPString)@"findAll":[SUPDataType forName:@"Users*"]:true];
 		[o_findAll_0 setIsStatic:YES];
 		[o_findAll_0 setIsCreate:NO];
 		[o_findAll_0 setIsUpdate:NO];
 		[o_findAll_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_findByPrimaryKey_1 = [SUPOperationMetaData createOperationMetaData:5:(SUPString)@"findByPrimaryKey":[SUPDataType forName:@"Users"]:true];
+ 		SUPOperationMetaData* o_findByPrimaryKey_1 = [SUPOperationMetaData createOperationMetaData:7:(SUPString)@"findByPrimaryKey":[SUPDataType forName:@"Users"]:true];
 	  	{
 			SUPObjectList *parameters_list = nil;
 	 		SUPParameterMetaData* p_findByPrimaryKey_id = [SUPParameterMetaData createParameterMetaData:1:(SUPString)@"id":[SUPDataType forName:@"int"]];
@@ -289,7 +309,7 @@
 		[o_findByPrimaryKey_1 setIsCreate:NO];
 		[o_findByPrimaryKey_1 setIsUpdate:NO];
 		[o_findByPrimaryKey_1 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_findByEmployeeIDAndPassword_2 = [SUPOperationMetaData createOperationMetaData:6:(SUPString)@"findByEmployeeIDAndPassword":[SUPDataType forName:@"Users*"]:true];
+ 		SUPOperationMetaData* o_findByEmployeeIDAndPassword_2 = [SUPOperationMetaData createOperationMetaData:8:(SUPString)@"findByEmployeeIDAndPassword":[SUPDataType forName:@"Users*"]:true];
 	  	{
 			SUPObjectList *parameters_list = nil;
 	 		SUPParameterMetaData* p_findByEmployeeIDAndPassword_employeeID = [SUPParameterMetaData createParameterMetaData:1:(SUPString)@"employeeID":[SUPDataType forName:@"string?"]];
@@ -303,7 +323,7 @@
 		[o_findByEmployeeIDAndPassword_2 setIsCreate:NO];
 		[o_findByEmployeeIDAndPassword_2 setIsUpdate:NO];
 		[o_findByEmployeeIDAndPassword_2 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_findByEmployeeID_1 = [SUPOperationMetaData createOperationMetaData:7:(SUPString)@"findByEmployeeID":[SUPDataType forName:@"Users*"]:true];
+ 		SUPOperationMetaData* o_findByEmployeeID_1 = [SUPOperationMetaData createOperationMetaData:9:(SUPString)@"findByEmployeeID":[SUPDataType forName:@"Users*"]:true];
 	  	{
 			SUPObjectList *parameters_list = nil;
 	 		SUPParameterMetaData* p_findByEmployeeID_employeeID = [SUPParameterMetaData createParameterMetaData:1:(SUPString)@"employeeID":[SUPDataType forName:@"string?"]];
@@ -315,42 +335,42 @@
 		[o_findByEmployeeID_1 setIsCreate:NO];
 		[o_findByEmployeeID_1 setIsUpdate:NO];
 		[o_findByEmployeeID_1 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_refresh_0 = [SUPOperationMetaData createOperationMetaData:8:(SUPString)@"refresh":[SUPDataType forName:@"void"]:true];
+ 		SUPOperationMetaData* o_refresh_0 = [SUPOperationMetaData createOperationMetaData:10:(SUPString)@"refresh":[SUPDataType forName:@"void"]:true];
 		[o_refresh_0 setIsStatic:NO];
 		[o_refresh_0 setIsCreate:NO];
 		[o_refresh_0 setIsUpdate:NO];
 		[o_refresh_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o__pk_0 = [SUPOperationMetaData createOperationMetaData:9:(SUPString)@"_pk":[SUPDataType forName:@"long?"]:true];
+ 		SUPOperationMetaData* o__pk_0 = [SUPOperationMetaData createOperationMetaData:11:(SUPString)@"_pk":[SUPDataType forName:@"long?"]:true];
 		[o__pk_0 setIsStatic:NO];
 		[o__pk_0 setIsCreate:NO];
 		[o__pk_0 setIsUpdate:NO];
 		[o__pk_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_submitPending_0 = [SUPOperationMetaData createOperationMetaData:10:(SUPString)@"submitPending":[SUPDataType forName:@"void"]:true];
+ 		SUPOperationMetaData* o_submitPending_0 = [SUPOperationMetaData createOperationMetaData:12:(SUPString)@"submitPending":[SUPDataType forName:@"void"]:true];
 		[o_submitPending_0 setIsStatic:NO];
 		[o_submitPending_0 setIsCreate:NO];
 		[o_submitPending_0 setIsUpdate:NO];
 		[o_submitPending_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_cancelPending_0 = [SUPOperationMetaData createOperationMetaData:11:(SUPString)@"cancelPending":[SUPDataType forName:@"void"]:true];
+ 		SUPOperationMetaData* o_cancelPending_0 = [SUPOperationMetaData createOperationMetaData:13:(SUPString)@"cancelPending":[SUPDataType forName:@"void"]:true];
 		[o_cancelPending_0 setIsStatic:NO];
 		[o_cancelPending_0 setIsCreate:NO];
 		[o_cancelPending_0 setIsUpdate:NO];
 		[o_cancelPending_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_submitPendingOperations_0 = [SUPOperationMetaData createOperationMetaData:12:(SUPString)@"submitPendingOperations":[SUPDataType forName:@"void"]:true];
+ 		SUPOperationMetaData* o_submitPendingOperations_0 = [SUPOperationMetaData createOperationMetaData:14:(SUPString)@"submitPendingOperations":[SUPDataType forName:@"void"]:true];
 		[o_submitPendingOperations_0 setIsStatic:YES];
 		[o_submitPendingOperations_0 setIsCreate:NO];
 		[o_submitPendingOperations_0 setIsUpdate:NO];
 		[o_submitPendingOperations_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_cancelPendingOperations_0 = [SUPOperationMetaData createOperationMetaData:13:(SUPString)@"cancelPendingOperations":[SUPDataType forName:@"void"]:true];
+ 		SUPOperationMetaData* o_cancelPendingOperations_0 = [SUPOperationMetaData createOperationMetaData:15:(SUPString)@"cancelPendingOperations":[SUPDataType forName:@"void"]:true];
 		[o_cancelPendingOperations_0 setIsStatic:YES];
 		[o_cancelPendingOperations_0 setIsCreate:NO];
 		[o_cancelPendingOperations_0 setIsUpdate:NO];
 		[o_cancelPendingOperations_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_save_0 = [SUPOperationMetaData createOperationMetaData:14:(SUPString)@"save":[SUPDataType forName:@"void"]:true];
+ 		SUPOperationMetaData* o_save_0 = [SUPOperationMetaData createOperationMetaData:16:(SUPString)@"save":[SUPDataType forName:@"void"]:true];
 		[o_save_0 setIsStatic:NO];
 		[o_save_0 setIsCreate:NO];
 		[o_save_0 setIsUpdate:NO];
 		[o_save_0 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_findWithQuery_1 = [SUPOperationMetaData createOperationMetaData:15:(SUPString)@"findWithQuery":[SUPDataType forName:@"Users*"]:true];
+ 		SUPOperationMetaData* o_findWithQuery_1 = [SUPOperationMetaData createOperationMetaData:17:(SUPString)@"findWithQuery":[SUPDataType forName:@"Users*"]:true];
 	  	{
 			SUPObjectList *parameters_list = nil;
 	 		SUPParameterMetaData* p_findWithQuery_query = [SUPParameterMetaData createParameterMetaData:1:(SUPString)@"query":[SUPDataType forName:@"com.sybase.persistence.Query"]];
@@ -362,7 +382,7 @@
 		[o_findWithQuery_1 setIsCreate:NO];
 		[o_findWithQuery_1 setIsUpdate:NO];
 		[o_findWithQuery_1 setIsDelete:NO]; 		
- 		SUPOperationMetaData* o_getSize_1 = [SUPOperationMetaData createOperationMetaData:16:(SUPString)@"getSize":[SUPDataType forName:@"int"]:true];
+ 		SUPOperationMetaData* o_getSize_1 = [SUPOperationMetaData createOperationMetaData:18:(SUPString)@"getSize":[SUPDataType forName:@"int"]:true];
 	  	{
 			SUPObjectList *parameters_list = nil;
 	 		SUPParameterMetaData* p_getSize_query = [SUPParameterMetaData createParameterMetaData:1:(SUPString)@"query":[SUPDataType forName:@"com.sybase.persistence.Query"]];
@@ -375,10 +395,12 @@
 		[o_getSize_1 setIsUpdate:NO];
 		[o_getSize_1 setIsDelete:NO]; 		
  
-  		SUPObjectList *operations = [SUPObjectList listWithCapacity:16];
+  		SUPObjectList *operations = [SUPObjectList listWithCapacity:18];
  		[operations addThis:o_updateManager_0];
  		[operations addThis:o_update_0];
  		[operations addThis:o_addEmployee_0];
+ 		[operations addThis:o_delete_0];
+ 		[operations addThis:o_updatePassword_0];
  		[operations addThis:o_findAll_0];
  		[operations addThis:o_findByPrimaryKey_1];
  		[operations addThis:o_findByEmployeeIDAndPassword_2];

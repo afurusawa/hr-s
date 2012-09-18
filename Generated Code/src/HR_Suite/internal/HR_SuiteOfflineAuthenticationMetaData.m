@@ -22,7 +22,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		self.id = _ENTITY_NUMBER_FOR_HR_SuiteOfflineAuthentication_;
+		self.id = 12;
 		self.name = @"OfflineAuthentication";
 		self.klass = [HR_SuiteOfflineAuthentication class];
  		self.allowPending = NO;;
@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_passwordHash = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			113:
+			114:
 			[SUPDataType forName:@"int"]:@"integer":@"passwordHash":@"":@"b":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_passwordHash setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_user = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			112:
+			113:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"user":@"":@"a":
 			@"":300:0:0:
 			@"null":NO:@"":

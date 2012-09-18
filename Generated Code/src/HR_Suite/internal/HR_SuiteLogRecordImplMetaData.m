@@ -22,7 +22,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		self.id = _ENTITY_NUMBER_FOR_HR_SuiteLogRecordImpl_;
+		self.id = 5;
 		self.name = @"LogRecordImpl";
 		self.klass = [HR_SuiteLogRecordImpl class];
  		self.allowPending = YES;;
@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_level = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			59:
+			60:
 			[SUPDataType forName:@"int"]:@"integer":@"level":@"":@"e":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_level setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_code = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			60:
+			61:
 			[SUPDataType forName:@"int"]:@"integer":@"code":@"":@"f":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_code setColumn:@"f"];
 		SUPAttributeMetaDataRBS* a_eisCode = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			61:
+			62:
 			[SUPDataType forName:@"string?"]:@"varchar(10)":@"eisCode":@"":@"g":
 			@"":10:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_eisCode setColumn:@"g"];
 		SUPAttributeMetaDataRBS* a_message = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			62:
+			63:
 			[SUPDataType forName:@"string?"]:@"varchar(2000)":@"message":@"":@"h":
 			@"":2000:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_message setColumn:@"h"];
 		SUPAttributeMetaDataRBS* a_component = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			63:
+			64:
 			[SUPDataType forName:@"string?"]:@"varchar(200)":@"component":@"":@"i":
 			@"":200:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_component setColumn:@"i"];
 		SUPAttributeMetaDataRBS* a_entityKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			64:
+			65:
 			[SUPDataType forName:@"string?"]:@"varchar(256)":@"entityKey":@"":@"j":
 			@"":256:0:0:
 			@"null":NO:@"":
@@ -85,7 +85,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_entityKey setColumn:@"j"];
 		SUPAttributeMetaDataRBS* a_operation = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			65:
+			66:
 			[SUPDataType forName:@"string?"]:@"varchar(100)":@"operation":@"":@"l":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -94,7 +94,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_operation setColumn:@"l"];
 		SUPAttributeMetaDataRBS* a_requestId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			66:
+			67:
 			[SUPDataType forName:@"string?"]:@"varchar(100)":@"requestId":@"":@"m":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -103,7 +103,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_requestId setColumn:@"m"];
 		SUPAttributeMetaDataRBS* a_timestamp = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			67:
+			68:
 			[SUPDataType forName:@"dateTime?"]:@"datetime":@"timestamp":@"":@"n":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -148,7 +148,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_messageId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			58:
+			59:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"messageId":@"":@"d":
 			@"":-1:0:0:
 			@"null":NO:@"":

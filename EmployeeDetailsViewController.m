@@ -261,9 +261,14 @@
     managerTable.hidden = YES;
     
     if(!editing)
+    {
         [self enableEditing];
+    }
     else if(editing)
+    {
+        [self updateViewWithData];
         [self disableEditing];
+    }
 }
 
 /* First function called when the "delete" button is pressed
@@ -516,8 +521,8 @@
     self.tfManager.text = [managersList objectAtIndex:indexPath.row];
     
     //Changing the subsequent textfields to fit the currently selected manager man
-    HR_SuiteUsers *manager = [self getManager:[managersUsernameList objectAtIndex:indexPath.row]];
-    self.tfMngPhone.text = manager.phone;
+    //HR_SuiteUsers *manager = [self getManager:[managersUsernameList objectAtIndex:indexPath.row]];
+    //self.tfMngPhone.text = manager.phone;
     
     //Change the selected manager login (their unique identifier) to the manager selected
     managerUsername = [managersUsernameList objectAtIndex:indexPath.row];

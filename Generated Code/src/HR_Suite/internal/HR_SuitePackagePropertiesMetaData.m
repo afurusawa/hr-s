@@ -22,7 +22,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		self.id = _ENTITY_NUMBER_FOR_HR_SuitePackageProperties_;
+		self.id = 7;
 		self.name = @"PackageProperties";
 		self.klass = [HR_SuitePackageProperties class];
  		self.allowPending = YES;;
@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_value = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			104:
+			105:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"value":@"":@"b":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_key = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			103:
+			104:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"key":@"":@"a":
 			@"":300:0:0:
 			@"null":NO:@"":

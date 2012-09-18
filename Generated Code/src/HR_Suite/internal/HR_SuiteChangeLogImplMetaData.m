@@ -22,7 +22,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		self.id = _ENTITY_NUMBER_FOR_HR_SuiteChangeLogImpl_;
+		self.id = 0;
 		self.name = @"ChangeLogImpl";
 		self.klass = [HR_SuiteChangeLogImpl class];
  		self.allowPending = NO;;
@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_operationType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			109:
+			110:
 			[SUPDataType forName:@"char"]:@"char(1)":@"operationType":@"":@"c":
 			@"":1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_operationType setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_rootEntityType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			110:
+			111:
 			[SUPDataType forName:@"int"]:@"integer":@"rootEntityType":@"":@"d":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_rootEntityType setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_rootSurrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			111:
+			112:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"rootSurrogateKey":@"":@"e":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_rootSurrogateKey setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_entityType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			107:
+			108:
 			[SUPDataType forName:@"int"]:@"integer":@"entityType":@"":@"a":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_entityType setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			108:
+			109:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"b":
 			@"":-1:0:0:
 			@"null":NO:@"":
