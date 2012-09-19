@@ -780,8 +780,15 @@
         // To find if entry exists, get list of submissions for current employee
         HR_SuiteUsersList *ulist = [HR_SuiteUsers findByEmployeeIDAndPassword:d.user withEmployeePassword:password];
         
-        // If empty, password is wrong
+        // If result is empty, password is wrong
         if ([ulist length] == 0) {
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Enter Password:" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Verify", nil];
+            [message setAlertViewStyle:UIAlertViewStyleSecureTextInput];
+            [message show];
+            
+            message = [[UIAlertView alloc] initWithTitle:@"Authentication Error:" message:@"Your password is incorrect!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [message setAlertViewStyle:UIAlertViewStyleDefault];
+            [message show];
             return;
         }
         
@@ -831,6 +838,7 @@
         } //end for
         
         status.text = @"Waiting for approval";
+        [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
     } //end sup
     
     /************/
@@ -852,7 +860,7 @@
             
             managerNotesButton.hidden = YES;
             status.text = @"Waiting for approval";
-            
+            [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
             //NSLog(@"submitted timesheet: \n %@", d.hr_approvals);
         }
     }

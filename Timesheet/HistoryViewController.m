@@ -22,7 +22,7 @@
     AppDelegate *d;
     TimesheetDate *tsDate;
 
-    NSMutableArray *historyList;    //list to display.
+    //NSMutableArray *historyList;    //list to display.
     NSMutableArray *weeksList;    //list containing all weeks.
     NSMutableArray *lrList;
     
@@ -54,7 +54,8 @@
     
     // Initialize arrays
     weeksList = [[NSMutableArray alloc] init];
-    historyList = [[NSMutableArray alloc] init];
+    [weeksList removeAllObjects];
+    //historyList = [[NSMutableArray alloc] init];
     lrList = [[NSMutableArray alloc] init];
 
     //get today's day
@@ -122,6 +123,7 @@
     if (d.isSUPConnection) {
         // Populate leave request array
         lrList = [[NSMutableArray alloc] init];
+        [lrList removeAllObjects];
         HR_SuiteLeaveRequestsList *list = [HR_SuiteLeaveRequests findAll];
         for (HR_SuiteLeaveRequests *item in list) {
             if ([item.employeeID isEqualToString:d.user]) {
@@ -136,7 +138,7 @@
     /**********************/
     else {
         lrList = [[NSMutableArray alloc] init];
-        
+        [lrList removeAllObjects];
         for (NSDictionary *item in d.hr_leaverequests) {
             if ([[item objectForKey:@"employeeID"] isEqualToString:d.user]) {
                 [lrList addObject:item];
@@ -207,12 +209,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {   
+    
+    
     UITableViewCell *resultcell;
     
     // Timesheets Tab
     if (tableView.tag == 1) {
         static NSString *CellIdentifier = @"HistoryCell";
         HistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        //set cell default values
+        cell.status.text = [NSString stringWithFormat:@"Status: Not yet submitted"];
+        cell.managersNote.text = nil;
+        cell.hours.text = nil;
+        cell.status.textColor = [UIColor darkGrayColor];
+        
+        if (cell == nil) {
+            cell = [[HistoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
         
         /**********************/
         /*   SUP Connection   */
@@ -335,10 +349,10 @@
                     NSInteger signCode = [[[d.hr_approvals objectAtIndex:b] objectForKey:@"signCode"] intValue];
                     //NSLog(@" sign code for passed: %i for row == %i ", signCode, indexPath.row);
                     //Set the sign code
-                    if(signCode == 0) {
-                        cell.status.text = [NSString stringWithFormat:@"Status: Not yet submitted"];
-                    }
-                    else if(signCode == 1) {
+//                    if(signCode == 0) {
+//                        cell.status.text = [NSString stringWithFormat:@"Status: Not yet submitted"];
+//                    }
+                    if(signCode == 1) {
                         cell.status.text = @"Status: Waiting for approval";
                         cell.status.textColor = [UIColor orangeColor];
                         cell.managersNote.text = @"";
@@ -352,6 +366,9 @@
                         cell.status.text = @"Status: Denied";
                         cell.status.textColor = [UIColor redColor];
                         cell.managersNote.text = [[d.hr_approvals objectAtIndex:b] objectForKey:@"managerNotes"];
+                    }
+                    else {
+                        cell.status.text = [NSString stringWithFormat:@"Status: Not yet submitted"];
                     }
                 }
                 
@@ -370,6 +387,10 @@
     else if (tableView.tag == 2) {
         static NSString *CellIdentifier = @"LRHistoryCell";
         LRHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; 
+        
+        if (CellIdentifier == nil) {
+            cell = [[LRHistoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
         
         /**********************/
         /*   SUP Connection   */

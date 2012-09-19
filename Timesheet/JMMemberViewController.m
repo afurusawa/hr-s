@@ -208,11 +208,11 @@
                          [[d.hr_users objectAtIndex:i] objectForKey:@"employeeID"], @"employeeID",
                          [[d.hr_users objectAtIndex:i] objectForKey:@"password"], @"password",
                          [[d.hr_users objectAtIndex:i] objectForKey:@"department"], @"department",
-                         @"gandalf", @"manager",
+                         @"manager", @"manager",
                          [[d.hr_users objectAtIndex:i] objectForKey:@"position"], @"position",
-                         @"", @"location",
-                         @"", @"email",
-                         @"", @"phone", 
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"address"], @"address",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"email"], @"email",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"phone"], @"phone", 
                          nil];
                 [d.hr_users replaceObjectAtIndex:i withObject:entry];
             }

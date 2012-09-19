@@ -60,11 +60,7 @@
     // iPad version
     else {
         // Pre-animation settings
-        
-        // Set full width at bottom
-        //addTeamMemberButton.frame = CGRectMake(0, self.view.frame.size.height - 40, self.view.frame.size.width, 40);
-        // Half the screen too
-        
+
         // Set fullscreen with 40px padding top and bottom
         workerTable.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 100);
         
@@ -100,18 +96,17 @@
         }
     } //end sup
     
-    
     /************/
     /*   DEMO   */
     /************/
     else {
+        //[d createHRUsers];
         for (NSDictionary *item in d.hr_users) {
-            if ([[item objectForKey:@"manager"] isEqualToString:@"gandalf"]) {
+            if ([[item objectForKey:@"manager"] isEqualToString:@"manager"]) {
                 [workerList addObject:[item objectForKey:@"employeeID"]];
                 [nameList addObject:[item objectForKey:@"employeeName"]];
             }
         }
-        
     } //end demo
 
     [self.workerTable reloadData];
@@ -608,6 +603,9 @@
     
     // Remove from the table view
     [jobList removeObjectAtIndex:sender.tag];
+    [jobTable beginUpdates];
+    [jobTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:sender.tag inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+    [jobTable endUpdates];
     [jobTable reloadData];
 }
 
@@ -644,26 +642,33 @@
     /*   DEMO   */
     /************/
     else {
-        for (int i = 0; i < [d.hr_taskmanagement count]; i++) {
-            if ([[[d.hr_taskmanagement objectAtIndex:i] objectForKey:@"manager"] isEqualToString:d.user] && [[[d.hr_taskmanagement objectAtIndex:i] objectForKey:@"employeeName"] isEqualToString:selectedEmployeeName]) {
+        
+        for (int i = 0; i < [d.hr_users count]; i++) {
+            if ([[[d.hr_users objectAtIndex:i] objectForKey:@"manager"] isEqualToString:d.user] && [[[d.hr_users objectAtIndex:i] objectForKey:@"employeeName"] isEqualToString:selectedEmployeeName]) {
+               
                 entry = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[d.hr_taskmanagement objectAtIndex:i] objectForKey:@"employeeName"], @"employeeName",
-                         [[d.hr_taskmanagement objectAtIndex:i] objectForKey:@"employeeID"], @"employeeID",
-                         [[d.hr_taskmanagement objectAtIndex:i] objectForKey:@"password"], @"password",
-                         [[d.hr_taskmanagement objectAtIndex:i] objectForKey:@"department"], @"department",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"employeeName"], @"employeeName",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"employeeID"], @"employeeID",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"password"], @"password",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"department"], @"department",
                          @"", @"manager",
-                         [[d.hr_taskmanagement objectAtIndex:i] objectForKey:@"position"], @"position",
-                         @"", @"location",
-                         @"", @"email",
-                         @"", @"phone", 
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"position"], @"position",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"address"], @"address",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"email"], @"email",
+                         [[d.hr_users objectAtIndex:i] objectForKey:@"phone"], @"phone", 
                          nil];
-                [d.hr_taskmanagement replaceObjectAtIndex:i withObject:entry];
+                 //NSLog(@"replace with %@", entry);
+                [d.hr_users replaceObjectAtIndex:i withObject:entry];
             }
         }
     }
-    
+    //NSLog(@"removed22");
     [workerList removeObjectAtIndex:sender.tag];
     [nameList removeObjectAtIndex:sender.tag];
+    [workerTable beginUpdates];
+    [workerTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:sender.tag inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+    [workerTable endUpdates];
+    
     [self.workerTable reloadData];
 }
 

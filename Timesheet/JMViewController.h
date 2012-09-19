@@ -33,6 +33,6 @@
 
 - (IBAction)removeTask:(id)sender;
 - (IBAction)removeTeamMember:(id)sender;
-
+- (void)animateDeleteWithIndex:(NSInteger)i;
 
 @end

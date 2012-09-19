@@ -40,8 +40,26 @@
 
         HR_SuiteJobsList *list = [HR_SuiteJobs findAll];
         for (HR_SuiteJobs *item in list) {
-            [jobNameList addObject:item.jobName];
-            [jobNumberList addObject:item.jobNumber];
+            
+            BOOL found = NO;
+            NSString *foundnumber = [item.jobNumber stringValue];
+            NSString *foundname = item.jobName;
+            
+            HR_SuiteJobManagementList *jmlist = [HR_SuiteJobManagement findAll];
+            for (HR_SuiteJobManagement *current in jmlist) {
+                
+                
+                // If user and jobs do match set it as found
+                if ([current.employeeID isEqualToString:d.selectedUser] && [current.jobNumber isEqualToNumber:item.jobNumber]) {
+                    found = YES;
+                    break;
+                }
+            }
+            
+            if (!found) {
+                [jobNameList addObject:foundname];
+                [jobNumberList addObject:foundnumber];
+            }
         }
     } //end sup
     
@@ -50,8 +68,19 @@
     /************/
     else {
         for (NSDictionary *task in d.hr_tasks) {
-            [jobNameList addObject:[task objectForKey:@"jobName"]];
-            [jobNumberList addObject:[NSNumber numberWithInt:[[task objectForKey:@"jobNumber"] intValue]]];
+            
+            BOOL found = NO;
+            for (NSDictionary *item in d.hr_taskmanagement) {
+                if ([[item objectForKey:@"jobName"] isEqualToString:[task objectForKey:@"jobName"]] && [[item objectForKey:@"employeeID"] isEqualToString:d.selectedUser]) {
+                    found = YES;
+                    break;
+                }
+            }
+            
+            if (!found) {
+                [jobNameList addObject:[task objectForKey:@"jobName"]];
+                [jobNumberList addObject:[task objectForKey:@"jobNumber"]];
+            }
         }
 
     } //end demo
@@ -90,7 +119,7 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [[jobNumberList objectAtIndex:indexPath.row] stringValue];
+    cell.textLabel.text = [jobNumberList objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [jobNameList objectAtIndex:indexPath.row];
     
     return cell;
