@@ -30,7 +30,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize user, manager, weekView ;
+@synthesize user, manager, isManager, weekView ;
 @synthesize selectedDay, selectedDate, selectedUser, currentDate, employeeName;
 
 @synthesize HISTORY_SIZE, historyState;

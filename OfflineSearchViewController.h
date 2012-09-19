@@ -25,6 +25,7 @@
 - (IBAction)goBack:(id)sender;
 - (IBAction)changeToggleSettings:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnAdd;
+
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
