@@ -26,6 +26,7 @@
     NSInteger selectedIndex;
     
     UITapGestureRecognizer *tap;
+    BOOL taskListIsEmpty;
 }
 @synthesize dayLabel;
 @synthesize dateLabel;
@@ -42,6 +43,16 @@
 /****************************************************************************************************
  Protocol Methods
  ****************************************************************************************************/
+- (void)setTaskListEmpty:(BOOL)i
+{
+    taskListIsEmpty = i;
+}
+
+- (NSMutableArray *)getCurrentTaskList
+{
+    return taskList;
+}
+
 - (void)setJobName:(NSString *)name
 {
     NSLog(@"name ===== %@", name);
@@ -89,6 +100,20 @@
         cell.hoursField.enabled = YES;
         cell.hoursField.textColor = [UIColor blackColor];
     }
+    
+    
+    if (taskListIsEmpty) {
+        //addTaskButton.hidden = YES;
+        [addTaskButton setEnabled:NO];
+        addTaskButton.titleLabel.textColor = [UIColor lightGrayColor];
+        NSLog(@"task list button is empty");
+    }
+    else {
+        //addTaskButton.hidden = NO;
+        [addTaskButton setEnabled:YES];
+        addTaskButton.titleLabel.textColor = [UIColor blackColor];
+        NSLog(@"task list button has stuff");
+    }
 }
 
 - (UIPopoverController *)getPopover
@@ -128,7 +153,8 @@
     d = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     tsDate = [[TimesheetDate alloc] init];
     taskList = [[NSMutableArray alloc] init];
- 
+    taskListIsEmpty = NO;
+
     
     // Set day and date labels
     dayLabel.text = d.selectedDay;
@@ -453,6 +479,19 @@
     NSLog(@"with count %i", [taskList count]);
     [self.dayTable reloadData];
     
+    // Update hours
+    NSInteger total = 0;
+    int i = 0;
+    for (NSDictionary *item in taskList) {
+        DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        total += [cell.hoursField.text intValue];
+        i++;
+    }
+    
+    totalHours.text = [NSString stringWithFormat:@"Total: %i hours", total];
+    //addTaskButton.hidden = NO;
+    [addTaskButton setEnabled:YES];
+    addTaskButton.titleLabel.textColor = [UIColor blackColor];
 }
 
 /****************************************************************************************************

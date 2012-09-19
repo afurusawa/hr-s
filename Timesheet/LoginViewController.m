@@ -10,14 +10,14 @@
 #import "AppDelegate.h"
 #import "HR_SuiteUsers.h"
 #import "SUPQuery.h"
+#import "HR_SuiteHR_SuiteDB.h"
+#import "SUPApplication.h"
 
 @implementation LoginViewController
 {
     AppDelegate *d;
-    //NSString *response;
     HR_SuiteUsersList *SUPUsers;
-    BOOL usernameAndPasswordIsCorrect;
-    
+    BOOL usernameAndPasswordIsCorrect;    
     BOOL revisit;
 }
 
@@ -45,8 +45,9 @@
 - (void)viewDidLoad
 {
     d = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    d.isSUPConnection = NO;
     revisit = NO;
-    
+
     d.hr_users = [[NSMutableArray alloc] init];
     d.HR_Suite = [[NSMutableArray alloc] init];
     d.hr_tasks = [[NSMutableArray alloc] init];
@@ -66,8 +67,7 @@
     
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Select a version:" message:nil delegate:self cancelButtonTitle:@"Demo Version" otherButtonTitles:@"Connect to SUP", nil];
     [message setAlertViewStyle:UIAlertViewStyleDefault];
-    [message show];
-    
+    [message show];    
 }
 
 - (void)viewDidUnload
@@ -107,7 +107,9 @@
     
     // right button is sup
     else if (buttonIndex == 1) {
-        [d connectToSUP];
+        if (!d.isSUPConnection) {
+            [d connectToSUP];
+        }
         d.isSUPConnection = YES;
     }
 }

@@ -13,8 +13,9 @@
 
 @protocol JobViewControllerDelegate <NSObject>
 //- (NSInteger)getJobIndex;
+- (NSMutableArray *)getCurrentTaskList;
 - (void)setJobName:(NSString *)name;
-
+- (void)setTaskListEmpty:(BOOL)i;
 - (UIPopoverController *)getPopover;
 //- (void)refreshView;
 

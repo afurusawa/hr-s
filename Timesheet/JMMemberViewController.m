@@ -45,12 +45,15 @@
         // Populate array
         HR_SuiteUsersList *list = [HR_SuiteUsers findAll];
         for (HR_SuiteUsers *item in list) {
+            
+            if (![item.manager isEqualToString:d.user]) {
             entry = [NSDictionary dictionaryWithObjectsAndKeys:
                      item.department, @"department",
                      item.employeeName, @"name",
                      item.position, @"position",
                      nil];
             [allData addObject:entry];
+            }
         }
     } //end sup
     
@@ -60,12 +63,17 @@
     /************/
     else {
         for (NSDictionary *item in d.hr_users) {
-            entry = [NSDictionary dictionaryWithObjectsAndKeys:
-                     [item objectForKey:@"department"], @"department",
-                     [item objectForKey:@"employeeName"], @"name",
-                     [item objectForKey:@"position"], @"position",
-                     nil];
-            [allData addObject:entry];
+            
+            if(![[item objectForKey:@"manager"] isEqualToString:d.user]) {
+                entry = [NSDictionary dictionaryWithObjectsAndKeys:
+                         [item objectForKey:@"department"], @"department",
+                         [item objectForKey:@"employeeName"], @"name",
+                         [item objectForKey:@"position"], @"position",
+                         nil];
+                [allData addObject:entry];
+            }
+            
+            
         }
     } //end demo
     

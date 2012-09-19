@@ -182,6 +182,26 @@
 }
 - (void)createHRTaskManagement {
     entry = [NSDictionary dictionaryWithObjectsAndKeys:
+             @"user", @"employeeID",
+             @"Overhead", @"jobName", 
+             @"100", @"jobNumber", 
+             nil];
+    [self.hr_taskmanagement addObject:entry];
+    entry = [NSDictionary dictionaryWithObjectsAndKeys:
+             @"user", @"employeeID",
+             @"iOS Development", @"jobName", 
+             @"103", @"jobNumber", 
+             nil];
+    [self.hr_taskmanagement addObject:entry];
+    entry = [NSDictionary dictionaryWithObjectsAndKeys:
+             @"user", @"employeeID",
+             @"Meeting", @"jobName", 
+             @"102", @"jobNumber", 
+             nil];
+    [self.hr_taskmanagement addObject:entry];
+    
+    
+    entry = [NSDictionary dictionaryWithObjectsAndKeys:
              @"bbaggins", @"employeeID",
              @"Overhead", @"jobName", 
              @"100", @"jobNumber", 

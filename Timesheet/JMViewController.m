@@ -177,6 +177,9 @@
     d = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     workerList = [[NSMutableArray alloc] init];
     nameList = [[NSMutableArray alloc] init];
+    jobList  = [[NSMutableArray alloc] init];
+
+    
     d.selectedUser = nil;
     
     // iPhone version
@@ -227,7 +230,7 @@
     else {
         //[d createHRUsers];
         for (NSDictionary *item in d.hr_users) {
-            if ([[item objectForKey:@"manager"] isEqualToString:@"gandalf"]) {
+            if ([[item objectForKey:@"manager"] isEqualToString:@"manager"]) {
                 [workerList addObject:[item objectForKey:@"employeeID"]];
                 [nameList addObject:[item objectForKey:@"employeeName"]];
             }
@@ -322,16 +325,15 @@
         // iPad version
         else {
             
+            // Slide out job table when selecting the same user.
             if ([d.selectedUser isEqualToString:[workerList objectAtIndex:indexPath.row]]) {
-                [UIView beginAnimations:nil context:nil];
-                [UIView setAnimationDuration:0.5f];
                 NSLog(@"DESELECTING");
-                // Pre-animation settings
                 
-                // Set full width at bottom
-                //addTeamMemberButton.frame = CGRectMake(0, self.view.frame.size.height - 40, self.view.frame.size.width, 40);
-                // Half the screen too
-                
+                [UIView beginAnimations:nil context:nil];   
+                [UIView setAnimationBeginsFromCurrentState:YES];
+                [UIView setAnimationDuration:0.5f];
+                [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.jobTable cache:YES];
+
                 // Set fullscreen with 40px padding top and bottom
                 workerTable.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 100);
                 
@@ -346,18 +348,37 @@
                 
                 addTeamMemberButton.frame = CGRectMake(addTeamMemberButton.frame.origin.x, addTeamMemberButton.frame.origin.y, self.view.frame.size.width, addTeamMemberButton.frame.size.height);
                 
-                [UIView commitAnimations];
+                [UIView commitAnimations]; // Begin slide-out animation
                 
-                d.selectedUser = @"";
+                d.selectedUser = @""; // Clear currently selected user
             }
+            
             else {
-                // Pre-animation settings
                 
-                // Set full width at bottom
-                //addTeamMemberButton.frame = CGRectMake(0, self.view.frame.size.height - 40, self.view.frame.size.width, 40);
+                // Half the screen
+                workerTable.frame = CGRectMake(workerTable.frame.origin.x, workerTable.frame.origin.y, self.view.frame.size.width/2, self.view.frame.size.height);
+                
                 // Half the screen too
+                addTeamMemberButton.frame = CGRectMake(addTeamMemberButton.frame.origin.x, addTeamMemberButton.frame.origin.y, self.view.frame.size.width/2, addTeamMemberButton.frame.size.height);
                 
-                // Set fullscreen with 40px padding top and bottom
+                // Slide in task list
+                //[jobTable setCenter:CGPointMake(self.view.frame.size.width - self.view.frame.size.width/4, self.view.frame.size.height/2)];
+                jobTable.frame = CGRectMake(192, 50, self.view.frame.size.width/2, self.view.frame.size.height - 100);
+                
+                // Roll up button
+                [addTaskButton setCenter:CGPointMake(self.view.frame.size.width - self.view.frame.size.width/4, self.view.frame.size.height -19)];
+                
+                // Roll down label
+                assignTaskLabel.frame = CGRectMake(assignTaskLabel.frame.origin.x, 20, assignTaskLabel.frame.size.width, assignTaskLabel.frame.size.height);
+
+                //NSLog(@"%f , %f", jobTable.frame.origin.x, jobTable.frame.origin.y);
+                
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationBeginsFromCurrentState:YES];
+                [UIView setAnimationTransition:UIViewAnimationCurveEaseIn forView:self.jobTable cache:YES];
+                [UIView setAnimationDuration:0.5f];
+                
+                // Set fullscreen with 50px padding top and bottom
                 workerTable.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 100);
                 
                 // Set half-width off-screen
@@ -369,12 +390,39 @@
                 // Set assign task label off-screen
                 assignTaskLabel.frame = CGRectMake(assignTaskLabel.frame.origin.x, -40, assignTaskLabel.frame.size.width, assignTaskLabel.frame.size.height);
                 
+                addTeamMemberButton.frame = CGRectMake(addTeamMemberButton.frame.origin.x, addTeamMemberButton.frame.origin.y, self.view.frame.size.width, addTeamMemberButton.frame.size.height);
                 
+                [UIView commitAnimations];
+
+                
+                
+                
+//                // Pre-animation settings
+//                
+//                // Set full width at bottom
+//                //addTeamMemberButton.frame = CGRectMake(0, self.view.frame.size.height - 40, self.view.frame.size.width, 40);
+//                // Half the screen too
+//                
+//                // Set fullscreen with 40px padding top and bottom
+//                workerTable.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 100);
+//                
+//                // Set half-width off-screen
+//                jobTable.frame = CGRectMake(self.view.frame.size.width, 50, self.view.frame.size.width/2, self.view.frame.size.height - 100);
+//                
+//                // Set half-width
+//                [addTaskButton setCenter:CGPointMake(self.view.frame.size.width - self.view.frame.size.width/4, self.view.frame.size.height + 20)];
+//                
+//                // Set assign task label off-screen
+//                assignTaskLabel.frame = CGRectMake(assignTaskLabel.frame.origin.x, -40, assignTaskLabel.frame.size.width, assignTaskLabel.frame.size.height);
+//                
+
                 /****************************************************************************************************
                  Animation
                  ****************************************************************************************************/
                 // Ending point animation settings
                 [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationBeginsFromCurrentState:YES];
+                [UIView setAnimationTransition:UIViewAnimationCurveEaseIn forView:self.jobTable cache:YES];
                 [UIView setAnimationDuration:0.5f];
                 
                 // Half the screen
@@ -389,6 +437,7 @@
                 // Roll up button
                 [addTaskButton setCenter:CGPointMake(self.view.frame.size.width - self.view.frame.size.width/4, self.view.frame.size.height -19)];
                 
+                
                 // Roll down label
                 assignTaskLabel.frame = CGRectMake(assignTaskLabel.frame.origin.x, 20, assignTaskLabel.frame.size.width, assignTaskLabel.frame.size.height);
                 
@@ -397,20 +446,13 @@
                 /****************************************************************************************************
                  ****************************************************************************************************/
                 
-                //store the team member
+                // Save selected team member
                 d.selectedUser = [workerList objectAtIndex:indexPath.row];
                 
-            }
+            } //end else
+
             
-            //selectTeamMemberLabel.hidden = YES;
-            //jobTable.hidden = NO;
-            //addTaskButton.hidden = NO;
-            
-            
-            
-            //initialize
-            jobList = [[NSMutableArray alloc] init];
-            
+            [jobList removeAllObjects]; // Clear task list so it can be repopulated for the currently selected user
             
             /**********************/
             /*   SUP Connection   */
@@ -435,7 +477,8 @@
                             }
                         }
                     } //end if-statement
-                } //end for-loop            
+                } //end for-loop  
+                
             } //end sup
             
             /************/
@@ -443,18 +486,19 @@
             /************/
             else {
                 for (NSDictionary *item in d.hr_taskmanagement) {
+                    NSLog(@"%@ %@", [item objectForKey:@"employeeID"], d.selectedUser);
                     if ([[item objectForKey:@"employeeID"] isEqualToString:d.selectedUser]) {
                         [jobList addObject:[item objectForKey:@"jobName"]];
+                        NSLog(@"reaching %@", [item objectForKey:@"jobName"]);
                     }
                 }
-            }
+                
+            } //end demo
             
-            [self.jobTable reloadData];
-            
+            [self.jobTable reloadData]; // Load currently assigned tasks for selected user
             
         } //end iPad version
-        
-    
+            
     }
     
     
@@ -469,44 +513,6 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
-
-
-/*
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        // Remove item in database as well. Changes will be displayed when the view is reloaded
-        HR_SuiteJobManagementList *list = [HR_SuiteJobManagement findAll];
-        for (HR_SuiteJobManagement *item in list) {
-            
-            // Filter: current employee
-            if ([item.employeeID isEqualToString:d.selectedUser]) {
-                
-                HR_SuiteJobsList *jl = [HR_SuiteJobs findAll];
-                for (HR_SuiteJobs *ji in jl) {
-                    
-                    // Find job name for the task to remove 
-                    if ([item.jobNumber isEqualToNumber:ji.jobNumber]) {
-                        
-                        if ([ji.jobName isEqualToString:[jobList objectAtIndex:jobListItemIndex]]) {
-                            NSLog(@"deleting task: %i", [item.jobNumber intValue]);
-                            [item delete];
-                            [item submitPending];
-                            [HR_SuiteHR_SuiteDB synchronize];
-                        }
-                        
-                    }
-                }
-                
-            } //if
-        } //for
-        
-        // Remove from the table view
-        [jobList removeObjectAtIndex:jobListItemIndex];
-        [jobTable reloadData];
-    }
-}
-*/
 
 
 
@@ -526,8 +532,7 @@
     
     // iPad version
     else {
-        if ([segue.identifier isEqualToString:@"toJMJobView"]) {
-            
+        if ([segue.identifier isEqualToString:@"toJMJobView"]) {            
             JMJobViewController *jobView = [segue destinationViewController];
             jobView.delegate = self;
         }
@@ -584,15 +589,20 @@
     else {
         NSMutableArray *temp = d.hr_taskmanagement;
         BOOL found = NO;
+        int i = 0;
+        int currindex = 0;
         for (NSDictionary *item in temp) {
-            NSLog(@" %@ %@ ====== %@ %@", [item objectForKey:@"employeeID"] , d.selectedUser, [item objectForKey:@"jobName"], [jobList objectAtIndex:sender.tag]);
+            //NSLog(@" %@ %@ ====== %@ %@", [item objectForKey:@"employeeID"] , d.selectedUser, [item objectForKey:@"jobName"], [jobList objectAtIndex:sender.tag]);
             if ([[item objectForKey:@"employeeID"] isEqualToString:d.selectedUser] && [[item objectForKey:@"jobName"] isEqualToString:[jobList objectAtIndex:sender.tag]]) {
                 found = YES;
+                currindex = i;
             }
+            i++;
         }
         
         if (found) {
-            [d.hr_taskmanagement removeObjectAtIndex:sender.tag];
+            //NSLog(@"removed object = %@", [d.hr_taskmanagement objectAtIndex:currindex]);
+            [d.hr_taskmanagement removeObjectAtIndex:currindex];
         }
     }
     
