@@ -10,5 +10,7 @@
 
 @interface HomeViewController : UIViewController
 - (IBAction)logout:(id)sender;
+- (IBAction)openHRDirectory:(id)sender;
+
 
 @end

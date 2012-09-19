@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "HR_SuiteUsers.h"
 #import "SUPQuery.h"
+#import "AppDelegate.h"
 
 @implementation HomeViewController
 
@@ -37,5 +38,16 @@
 - (IBAction)logout:(id)sender {
     [self.navigationController setNavigationBarHidden:YES];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)openHRDirectory:(id)sender
+{
+    AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    NSString *segueIdentifier;
+    
+    segueIdentifier = (appDel.isSUPConnection) ? @"OnlineHomeView" : @"OfflineHomeView";
+    
+    [self performSegueWithIdentifier:segueIdentifier sender:self];
 }
 @end

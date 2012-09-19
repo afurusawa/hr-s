@@ -1,36 +1,34 @@
 //
-//  DHomeViewController.m
+//  OfflineDHomeViewController.m
 //  Timesheet
 //
-//  Created by Rapid Consulting on 9/13/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Alex Chiu on 9/19/12.
+//
 //
 
-#import <QuartzCore/QuartzCore.h>
-#import "DHomeViewController.h"
-#import "HR_SuiteUsers.h"
+#import "OfflineDHomeViewController.h"
 #import "AppDelegate.h"
 
-@interface DHomeViewController ()
+@interface OfflineDHomeViewController ()
 
 @end
 
-@implementation DHomeViewController
+@implementation OfflineDHomeViewController
+
 @synthesize browseButton;
 @synthesize btnAddEmployee;
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    appDel.isManager = [self isAManager];
-    isManager = [self isAManager];
+    appDel.isManager = YES; //[self isAManager];
+    isManager = appDel.isManager;
     //self.btnAddEmployee.enabled = NO;
     
     if(!isManager)
     {
-        //[self.btnAddFinishing up a navigation transition in an unexpected stateEmployee titleLabel].textColor = [UIColor blackColor];
+        //[self.btnAddEmployee titleLabel].textColor = [UIColor blackColor];
         NSLog(@"Here");
         self.btnAddEmployee.enabled = NO;
         [self.btnAddEmployee setAlpha:.50];
@@ -53,12 +51,12 @@
 
 -(BOOL)isAManager
 {
-    HR_SuiteUsersList *users = [HR_SuiteUsers findAll];
+    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSString *employee = data.user;
     
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    for(HR_SuiteUsers *person in users)
+    for(NSDictionary *user in data.hr_users)
     {
-        if([person.manager isEqualToString:appDelegate.user])
+        if([[user objectForKey:@"manager"] isEqualToString:employee])
         {
             return YES;
         }

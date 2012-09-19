@@ -12,6 +12,8 @@
 {
     UIActivityIndicatorView *indicator;
     UIView *loadingView;
+    
+    BOOL keyboardShown;
 }
 
 -(void)startLoadingAnimations;

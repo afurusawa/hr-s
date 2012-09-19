@@ -58,19 +58,31 @@
     return YES;
 }
 
+-(NSDictionary *)findByUsername:(NSString *)username
+{
+    for(NSDictionary *thisUser in self.hr_users)
+    {
+        NSString *tempUsername = [thisUser objectForKey:@"employeeID"];
+        if([tempUsername isEqualToString:username])
+            return thisUser;
+    }
+    return nil;
+}
+
 - (void)createHRUsers {
     entry = [NSDictionary dictionaryWithObjectsAndKeys:
              @"Bilbo Baggins", @"employeeName",
              @"bbaggins", @"employeeID",
              @"test", @"password",
              @"HTML5", @"department",
-             @"manager", @"manager",
+             @"gandalf", @"manager",
              @"Web Developer", @"position",
              @"3 Corporate Park \n Irvine, CA 92606", @"address",
              @"bbaggins@lotr.com", @"email",
              @"0938495857", @"phone",
              @"Bilbo", @"firstName",
              @"Baggins", @"lastName",
+             @"http://4.bp.blogspot.com/-sZb0qXbNrtE/ToH3uMSIqrI/AAAAAAAACYA/7WrSzaTBKy0/s1600/animals_cats_small1.jpg", @"picture",
              nil];
     [self.hr_users addObject:entry];
     
@@ -79,13 +91,14 @@
              @"fbaggins", @"employeeID",
              @"test", @"password",
              @"HR", @"department",
-             @"manager", @"manager",
+             @"gandalf", @"manager",
              @"Ringbearer", @"position",
              @"3 Corporate Park \n Irvine, CA 92606", @"address",
              @"fbaggins@lotr.com", @"email",
              @"3849102333", @"phone",
              @"Frodo", @"firstName",
              @"Baggins", @"lastName",
+             @"http://4.bp.blogspot.com/-sZb0qXbNrtE/ToH3uMSIqrI/AAAAAAAACYA/7WrSzaTBKy0/s1600/animals_cats_small1.jpg", @"picture",
              nil];
     [self.hr_users addObject:entry];
     
@@ -98,9 +111,10 @@
              @"", @"manager",
              @"3 Corporate Park \n Irvine, CA 92606", @"address",
              @"gandalf@lotr.com", @"email",
-             @"7378485929", @"phone", 
+             @"7378485929", @"phone",
              @"Gandalf", @"firstName",
              @"White", @"lastName",
+             @"http://4.bp.blogspot.com/-sZb0qXbNrtE/ToH3uMSIqrI/AAAAAAAACYA/7WrSzaTBKy0/s1600/animals_cats_small1.jpg", @"picture",
              nil];
     [self.hr_users addObject:entry];
     
@@ -110,12 +124,13 @@
              @"test", @"password",
              @"Android", @"department",
              @"Mobile Developer", @"position",
-             @"", @"manager",
+             @"gandalf", @"manager",
              @"3 Corporate Park \n Irvine, CA 92606", @"address",
              @"mbrandybuck@lotr.com", @"email",
-             @"9038498485", @"phone", 
+             @"9038498485", @"phone",
              @"Meriadoc", @"firstName",
              @"Brandybuck", @"lastName",
+             @"http://4.bp.blogspot.com/-sZb0qXbNrtE/ToH3uMSIqrI/AAAAAAAACYA/7WrSzaTBKy0/s1600/animals_cats_small1.jpg", @"picture",
              nil];
     [self.hr_users addObject:entry];
     
@@ -125,12 +140,13 @@
              @"test", @"password",
              @"IT", @"department",
              @"Network Administrator", @"position",
-             @"", @"manager",
+             @"gandalf", @"manager",
              @"3 Corporate Park \n Irvine, CA 92606", @"address",
              @"ptook@lotr.com", @"email",
              @"6572837485", @"phone",
              @"Peregrin", @"firstName",
              @"Took", @"lastName",
+             @"http://4.bp.blogspot.com/-sZb0qXbNrtE/ToH3uMSIqrI/AAAAAAAACYA/7WrSzaTBKy0/s1600/animals_cats_small1.jpg", @"picture",
              nil];
     [self.hr_users addObject:entry];
     
@@ -140,15 +156,17 @@
              @"test", @"password",
              @"HR", @"department",
              @"Recruiter", @"position",
-             @"", @"manager",
+             @"gandalf", @"manager",
              @"3 Corporate Park \n Irvine, CA 92606", @"address",
              @"sgamgee@lotr.com", @"email",
              @"8762345647", @"phone",
              @"Samwise", @"firstName",
              @"Gamgee", @"lastName",
+             @"http://4.bp.blogspot.com/-sZb0qXbNrtE/ToH3uMSIqrI/AAAAAAAACYA/7WrSzaTBKy0/s1600/animals_cats_small1.jpg", @"picture",
              nil];
     [self.hr_users addObject:entry];
 }
+
 - (void)createHRTasks {
     entry = [NSDictionary dictionaryWithObjectsAndKeys:
              @"Overhead", @"jobName", 

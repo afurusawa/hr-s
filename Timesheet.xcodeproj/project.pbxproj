@@ -47,6 +47,10 @@
 		6AFCE4101602A2EE00892E71 /* UnderlyingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFCE40F1602A2EE00892E71 /* UnderlyingView.m */; };
 		6AFCE4131602A31600892E71 /* ResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFCE4121602A31600892E71 /* ResumeViewController.m */; };
 		76012B4F1607DA9E0059A6A8 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */; };
+		76E44E9A160A3FA10072FB34 /* OfflineAddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E44E8B160A3F9D0072FB34 /* OfflineAddEntryViewController.m */; };
+		76E44E9D160A3FA10072FB34 /* OfflineEmployeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E44E91160A3F9F0072FB34 /* OfflineEmployeeDetailsViewController.m */; };
+		76E44EA1160A3FA10072FB34 /* OfflineSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E44E99160A3FA10072FB34 /* OfflineSearchViewController.m */; };
+		76E44EA6160A45210072FB34 /* OfflineDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E44EA5160A45210072FB34 /* OfflineDHomeViewController.m */; };
 		76E9B9B51608F75800E78E4D /* HR_SuiteChangeLogImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9B9891608F75800E78E4D /* HR_SuiteChangeLogImpl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		76E9B9B61608F75800E78E4D /* HR_SuiteChangeLogKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9B98A1608F75800E78E4D /* HR_SuiteChangeLogKey.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		76E9B9B71608F75800E78E4D /* HR_SuiteHR_SuiteDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E9B98B1608F75800E78E4D /* HR_SuiteHR_SuiteDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -258,6 +262,14 @@
 		6AFCE4121602A31600892E71 /* ResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeViewController.m; sourceTree = "<group>"; };
 		76012B4D1607DA9E0059A6A8 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEntryViewController.h; sourceTree = "<group>"; };
 		76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
+		76E44E8A160A3F9D0072FB34 /* OfflineAddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineAddEntryViewController.h; sourceTree = "<group>"; };
+		76E44E8B160A3F9D0072FB34 /* OfflineAddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineAddEntryViewController.m; sourceTree = "<group>"; };
+		76E44E90160A3F9F0072FB34 /* OfflineEmployeeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineEmployeeDetailsViewController.h; sourceTree = "<group>"; };
+		76E44E91160A3F9F0072FB34 /* OfflineEmployeeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineEmployeeDetailsViewController.m; sourceTree = "<group>"; };
+		76E44E99160A3FA10072FB34 /* OfflineSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineSearchViewController.m; sourceTree = "<group>"; };
+		76E44EA4160A45210072FB34 /* OfflineDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineDHomeViewController.h; sourceTree = "<group>"; };
+		76E44EA5160A45210072FB34 /* OfflineDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineDHomeViewController.m; sourceTree = "<group>"; };
+		76E44EA7160A54D00072FB34 /* OfflineSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineSearchViewController.h; sourceTree = "<group>"; };
 		76E9B95B1608F75800E78E4D /* HR_SuiteChangeLogImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HR_SuiteChangeLogImpl.h; sourceTree = "<group>"; };
 		76E9B95C1608F75800E78E4D /* HR_SuiteChangeLogKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HR_SuiteChangeLogKey.h; sourceTree = "<group>"; };
 		76E9B95D1608F75800E78E4D /* HR_SuiteHR_SuiteDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HR_SuiteHR_SuiteDB.h; sourceTree = "<group>"; };
@@ -593,6 +605,7 @@
 		6AFCE377160254A300892E71 /* Directory */ = {
 			isa = PBXGroup;
 			children = (
+				76E44EA3160A3FAB0072FB34 /* Offline */,
 				6AFCE40216025E7A00892E71 /* DHomeViewController.h */,
 				6AFCE40316025E7A00892E71 /* DHomeViewController.m */,
 				6AFCE4151602BFC600892E71 /* Search */,
@@ -623,6 +636,21 @@
 				76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		76E44EA3160A3FAB0072FB34 /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+				76E44E8A160A3F9D0072FB34 /* OfflineAddEntryViewController.h */,
+				76E44E8B160A3F9D0072FB34 /* OfflineAddEntryViewController.m */,
+				76E44E90160A3F9F0072FB34 /* OfflineEmployeeDetailsViewController.h */,
+				76E44E91160A3F9F0072FB34 /* OfflineEmployeeDetailsViewController.m */,
+				76E44EA7160A54D00072FB34 /* OfflineSearchViewController.h */,
+				76E44E99160A3FA10072FB34 /* OfflineSearchViewController.m */,
+				76E44EA4160A45210072FB34 /* OfflineDHomeViewController.h */,
+				76E44EA5160A45210072FB34 /* OfflineDHomeViewController.m */,
+			);
+			name = Offline;
 			sourceTree = "<group>";
 		};
 		76E9B9581608F75800E78E4D /* Generated Code */ = {
@@ -1300,6 +1328,10 @@
 				76E9B9DD1608F75800E78E4D /* HR_SuiteTimesheetApprovalsMetaData.m in Sources */,
 				76E9B9DE1608F75800E78E4D /* HR_SuiteTimesheetMetaData.m in Sources */,
 				76E9B9DF1608F75800E78E4D /* HR_SuiteUsersMetaData.m in Sources */,
+				76E44E9A160A3FA10072FB34 /* OfflineAddEntryViewController.m in Sources */,
+				76E44E9D160A3FA10072FB34 /* OfflineEmployeeDetailsViewController.m in Sources */,
+				76E44EA1160A3FA10072FB34 /* OfflineSearchViewController.m in Sources */,
+				76E44EA6160A45210072FB34 /* OfflineDHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -74,5 +74,6 @@
 - (void)createHRLeaveRequests;
 - (void)createHRTimesheetApprovals;
 - (void)createHRTimesheet;
+-(NSDictionary *)findByUsername:(NSString *)username;
 
 @end
