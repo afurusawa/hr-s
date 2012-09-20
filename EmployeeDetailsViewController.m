@@ -79,8 +79,8 @@
     self.scrollView.contentSize = CGSizeMake(768, 960);
     
     //Keyboard notification listeners *Note has to be in viewDidLoad
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -304,15 +304,20 @@
     /***********************
      * Manager Information *
      ***********************/
-    
-    NSString *mgrFirstName = manager.firstName;
-    NSString *mgrLastName = manager.lastName;
-    NSString *mgrName = [NSString stringWithFormat:@"%@ %@", mgrFirstName, mgrLastName];
-    self.tfManager.text = mgrName;
-    
-    self.tfMngPhone.text = [NSString stringWithFormat:@"%@",manager.phone];
-    
-    self.tfMngFax.text = [NSString stringWithFormat:@"%@", (manager.fax != nil) ? manager.fax : @"Not available"]; //self.thisEntry.managers.fax;
+    if(manager == nil)
+    {
+        self.tfManager.text = @"None";
+        self.tfMngPhone.text = @" ";
+    }
+    else
+    {
+        NSString *mgrFirstName = manager.firstName;
+        NSString *mgrLastName = manager.lastName;
+        NSString *mgrName = [NSString stringWithFormat:@"%@ %@", mgrFirstName, mgrLastName];
+        self.tfManager.text = mgrName;
+        
+        self.tfMngPhone.text = [NSString stringWithFormat:@"%@",manager.phone];
+    }
     
     NSLog(@"Finish updating view");
 }
@@ -380,7 +385,8 @@
         }
     }
     
-    NSLog(@"Manager List length: %d", [managersList count]);
+    [managersList addObject:@"None"];
+    [managersUsernameList addObject:@""];
     
     //Simple soft error checking to see if the 2 manager lists are the same size
     if([managersList count] != [managersUsernameList count])

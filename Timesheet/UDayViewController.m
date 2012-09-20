@@ -58,6 +58,7 @@
     NSLog(@"name ===== %@", name);
     // First, if clear button was pressed, disable hours field, gray out, and set to 0
     if ([name isEqualToString:@"Touch to select task"]) {
+        
         DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
         cell.taskLabel.text = @"Touch to select task";
         cell.hoursField.text = @"0";
@@ -67,7 +68,7 @@
         cell.selected = NO;
         return;
     }
-    
+
     // Next, check if job selected was a duplicate. If so, set flag.  don't add it
     BOOL isDuplicate = NO;
     int i = 0;
@@ -114,6 +115,8 @@
         addTaskButton.titleLabel.textColor = [UIColor blackColor];
         NSLog(@"task list button has stuff");
     }
+    
+    [self checkForUnassignedTasksAndUpdate];
 }
 
 - (UIPopoverController *)getPopover
@@ -121,7 +124,31 @@
     return popover;
 }
 
-
+//this will check if there is an unallocated space for tasks that are added so we can prevent a user from adding empty tasks into the list.
+- (void)checkForUnassignedTasksAndUpdate
+{
+    BOOL hasNew = NO;
+    NSArray *temp = taskList;
+    //int i = 0;
+    for (NSDictionary *item in temp) {
+        // Remove all unallocated entries
+        if ([[item objectForKey:@"taskName"] isEqualToString:@"new"]) {
+            //[taskList removeObjectAtIndex:i];
+            hasNew = YES;
+        }
+        //i++;
+    }
+    
+    if (hasNew) {
+        //[taskList addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"new", @"taskName", @"0", @"hours", nil]];
+        addTaskButton.enabled = NO;
+        [addTaskButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    }
+    else {
+        addTaskButton.enabled = YES;
+        [addTaskButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+}
 
 -(void)dismissKeyboard {
     [self.view removeGestureRecognizer:tap];
@@ -319,12 +346,14 @@
 
 
 /****************************************************************************************************
- Add a task - For iPad
+ Add Task - For iPad
  ****************************************************************************************************/
 - (IBAction)addTask:(UIButton *)sender {
     
     [self.view removeGestureRecognizer:tap];
     [taskList addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"new", @"taskName", @"0", @"hours", nil]];
+    [self checkForUnassignedTasksAndUpdate];
+    
     NSLog(@"added new item \n %@", taskList);
     NSLog(@"with count %i", [taskList count]);
     

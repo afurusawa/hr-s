@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    appDel.isManager = YES; //[self isAManager];
+    appDel.isManager = [self isAManager];
     isManager = appDel.isManager;
     //self.btnAddEmployee.enabled = NO;
     

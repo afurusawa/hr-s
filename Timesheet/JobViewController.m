@@ -205,10 +205,10 @@
 
 
 
-//For iPad
+//For iPad -> changed to Cancel button
 - (IBAction)clearJob:(id)sender {
 
-    [self.delegate setJobName:@"Touch to select task"];
+    //[self.delegate setJobName:@"Touch to select task"];
     [[self.delegate getPopover] dismissPopoverAnimated:YES]; //Dismiss pop-over
 }
 

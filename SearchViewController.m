@@ -157,6 +157,10 @@
         NSIndexPath *indexPath = indexRow;
         
         edView.thisEntry = [displayEmployeeArray objectAtIndex:[indexPath row]];
+        
+        [self.searchBar resignFirstResponder];
+        self.searchBar.text = @"";
+        self.searchBar.showsCancelButton = NO;
     }
 }
 

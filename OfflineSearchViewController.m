@@ -58,6 +58,9 @@
     
     displayEmployeeArray = [[NSMutableArray alloc] initWithArray:employeeArray];
     
+//    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+//    displayEmployeeArray = [NSMutableArray arrayWithArray:[displayEmployeeArray sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]]];
+    
     [table reloadData];
     
     [self stopLoadingAnimations];
@@ -81,6 +84,9 @@
     AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     employeeArray = data.hr_users; //pointer, not copy
+    
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+    employeeArray = [NSMutableArray arrayWithArray:[employeeArray sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -93,6 +99,10 @@
         NSIndexPath *indexPath = selectedIndex;
         
         edView.thisEntry = [displayEmployeeArray objectAtIndex:[indexPath row]];
+        
+        [self.searchBar resignFirstResponder];
+        self.searchBar.text = @"";
+        self.searchBar.showsCancelButton = NO;
     }
 }
 

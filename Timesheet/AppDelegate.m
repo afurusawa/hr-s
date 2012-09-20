@@ -156,7 +156,7 @@
              @"test", @"password",
              @"HR", @"department",
              @"Recruiter", @"position",
-             @"", @"manager",
+             @"gandalf", @"manager",
              @"3 Corporate Park \n Irvine, CA 92606", @"address",
              @"sgamgee@lotr.com", @"email",
              @"8762345647", @"phone",

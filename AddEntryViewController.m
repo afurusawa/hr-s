@@ -61,8 +61,8 @@
     
     [self setTFDelegates];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
 }
 
 - (void)viewDidUnload
@@ -246,6 +246,11 @@
         [self stopLoadingAnimations];
         
         [self.navigationController popViewControllerAnimated:YES];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Not all textfields are filled in." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
     }
 }
 

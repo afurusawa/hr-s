@@ -78,8 +78,8 @@
     self.scrollView.contentSize = CGSizeMake(768, 960);
     
     //Keyboard notification listeners *Note has to be in viewDidLoad
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
     
     [self disableEditing];
 }
@@ -245,7 +245,7 @@
     NSLog(@"Updating view with data...");
     
     NSDictionary *manager = [self getManager:[self.thisEntry objectForKey:@"manager"]];
-    NSLog(@"Manager name: %@", [manager objectForKey:@"employeeName"]);
+    
     
     /************************
      * Employee information *
@@ -285,15 +285,15 @@
     if(manager == nil)
     {
         self.tfManager.text = @"None";
-        self.tfMngPhone.text = @"";
+        self.tfMngPhone.text = @" ";
     }
     else
     {
         NSString *mgrFirstName = [manager objectForKey:@"firstName"];
         NSString *mgrLastName = [manager objectForKey:@"lastName"];
         NSString *mgrName = [NSString stringWithFormat:@"%@ %@", mgrFirstName, mgrLastName];
-        self.tfManager.text = mgrName;
         
+        self.tfManager.text = mgrName;
         self.tfMngPhone.text = [NSString stringWithFormat:@"%@",[manager objectForKey:@"phone"]];
     }
     
@@ -309,14 +309,15 @@
     NSString *firstName = [self.thisEntry objectForKey:@"firstName"];
     NSString *lastName = [self.thisEntry objectForKey:@"lastName"];
     NSString *employeeName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-    NSString *employeeID = [self.thisEntry objectForKey:@"manager"];
+    NSString *employeeID = [self.thisEntry objectForKey:@"employeeID"];
     NSString *password = [self.thisEntry objectForKey:@"password"];
     NSString *picture = [self.thisEntry objectForKey:@"picture"];
     NSString *phone =  self.tfPhoneNumber.text;
     NSString *email = self.tfEmail.text;
     NSString *department = self.tfDepartment.text;
     NSString *position = self.tfPosition.text;
-    NSString *manager = managerUsername;
+    NSString *manager = [NSString stringWithString:managerUsername];
+    
     NSString *address = self.tvAddress.text;
     
     //Deleting entry in offline MSMutable Array
@@ -338,6 +339,7 @@
                       firstName, @"lastName",
                       picture, @"picture",
                       nil];
+    
     [data.hr_users addObject:self.thisEntry];
 
     //Updating View
@@ -365,9 +367,9 @@
     
     for(NSDictionary *person1 in employeeList)
     {
+        NSString *person1ID = [person1 objectForKey:@"employeeID"];
         for(NSDictionary *person2 in employeeList)
         {
-            NSString *person1ID = [person1 objectForKey:@"employeeID"];
             NSString *person2ID = [person2 objectForKey:@"manager"];
             
             if([person1ID isEqualToString:person2ID]) //If a username is within the managers column
@@ -378,6 +380,9 @@
             }
         }
     }
+    
+    [managersList addObject:@"None"];
+    [managersUsernameList addObject:@""];
     
     //Simple soft error checking to see if the 2 manager lists are the same size
     if([managersList count] != [managersUsernameList count])
