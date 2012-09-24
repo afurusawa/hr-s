@@ -259,7 +259,7 @@
                         cell.status.textColor = [UIColor colorWithRed:8.0f/255.0f green:190.0f/255.0f blue:45.0f/255.0f alpha:1.0f];
                     }
                     else if(signCode == 99) {
-                        cell.status.text = @"Status: Denied";
+                        cell.status.text = @"Status: Rejected";
                         cell.status.textColor = [UIColor redColor];
                     }
                     
@@ -363,7 +363,7 @@
                         cell.managersNote.text = [[d.hr_approvals objectAtIndex:b] objectForKey:@"managerNotes"];
                     }
                     else if(signCode == 99) {
-                        cell.status.text = @"Status: Denied";
+                        cell.status.text = @"Status: Rejected";
                         cell.status.textColor = [UIColor redColor];
                         cell.managersNote.text = [[d.hr_approvals objectAtIndex:b] objectForKey:@"managerNotes"];
                     }
@@ -411,7 +411,7 @@
             //Set the sign code
             NSInteger signCode = [item.signCode intValue];
             if(signCode == 99) {
-                cell.status.text = [NSString stringWithFormat:@"Status: Denied"];
+                cell.status.text = [NSString stringWithFormat:@"Status: Rejected"];
             }
             else if(signCode == 0) {
                 cell.status.text = @"Status: Waiting for approval";
@@ -440,7 +440,7 @@
             //Set the sign code
             NSInteger signCode = [[[lrList objectAtIndex:indexPath.row] objectForKey:@"signCode"] intValue];
             if(signCode == 99) {
-                cell.status.text = [NSString stringWithFormat:@"Status: Denied"];
+                cell.status.text = [NSString stringWithFormat:@"Status: Rejected"];
                 cell.managersNote.text = [[lrList objectAtIndex:indexPath.row] objectForKey:@"managerNotes"];
             }
             else if(signCode == 0) {

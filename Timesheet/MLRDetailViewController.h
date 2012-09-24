@@ -16,7 +16,7 @@
 
 @end
 
-@interface MLRDetailViewController : UIViewController 
+@interface MLRDetailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *employeeName;
 @property (weak, nonatomic) IBOutlet UILabel *submittedOn;
 @property (weak, nonatomic) IBOutlet UITextField *startDate;

@@ -16,6 +16,7 @@
 {
     AppDelegate *d;
     NSMutableArray *taskList;
+    int total;
 }
 @synthesize delegate;
 @synthesize jobTable;
@@ -52,9 +53,10 @@
                         
                         // when I get the job name, check to see if its in tasklist. if it isnt, find a way to add it into jobNamelist
                         for (NSDictionary *current in taskList) {
+                            total++;
                             if ([job.jobName isEqualToString:[current objectForKey:@"taskName"]]) {
                                 found = YES;
-                                break;
+                                //break;
                             }
                             
                         }
@@ -62,7 +64,7 @@
                         if (!found) {
                             [jobNameList addObject:job.jobName];
                         }
-                        
+                        [self.delegate getTotalAssigned:total];
                         
                     }//inner if
                 } //for           
@@ -100,7 +102,7 @@
 //            }
 //        }
 
-        
+        [self.delegate getTotalAssigned:6];
         [jobNameList addObject:@"Meeting"];
         [jobNameList addObject:@"iOS Development"];
         [jobNameList addObject:@"Top Secret Project"];
@@ -129,15 +131,9 @@
             }
         }
         
-        //check if all tasks were assigned
-        if ([jobNameList count] == 1) {
-            [self.delegate setTaskListEmpty:YES];
-            NSLog(@"EMPTY");
-        }
-        else {
-            [self.delegate setTaskListEmpty:NO];
-            NSLog(@"NOT EMPTY");
-        }
+        NSLog(@"options left: %i", [jobNameList count]);
+        
+        
         
     }
 
@@ -185,6 +181,17 @@
 // jn_updater should first check to see if the index selected was found. If it is, update the entry with new job name. If it isn't, insert a new entry with the job name and current index.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    //check if all tasks were assigned
+    if ([jobNameList count] == 1) {
+        [self.delegate setTaskListEmpty:YES];
+        NSLog(@"EMPTY");
+    }
+    else {
+        [self.delegate setTaskListEmpty:NO];
+        NSLog(@"NOT EMPTY");
+    }
+    
     // iPhone version
     if (tableView.tag == 2) {
         [self.delegate setJobName:[jobNameList objectAtIndex:indexPath.row]];
@@ -199,6 +206,7 @@
         //NSInteger jobIndex = [self.delegate getJobIndex];
         [self.delegate setJobName:[jobNameList objectAtIndex:indexPath.row]];
     }
+    
     
 }
 

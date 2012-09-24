@@ -66,7 +66,7 @@
         nextWeekButton.hidden = YES;
         previousWeekButton.hidden = YES;
         
-        if ([d.historyState isEqualToString:@"Status: Denied"] || [d.historyState isEqualToString:@"Status: Waiting for approval"]) {
+        if ([d.historyState isEqualToString:@"Status: Rejected"] || [d.historyState isEqualToString:@"Status: Waiting for approval"]) {
             [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
             submitButton.hidden = NO;
         }
@@ -176,7 +176,7 @@
                 managerNotesButton.hidden = YES;
             }
             else if(signState == 99) {
-                status.text = @"Denied";
+                status.text = @"Rejected";
                 managerNotesButton.hidden = NO;
                 
             }
@@ -185,7 +185,7 @@
                 managerNotesButton.hidden = YES;
             }
             else {
-                status.text = @"Waiting for submission";
+                status.text = @"Not yet submitted";
                 managerNotesButton.hidden = YES;
             }
             
@@ -283,7 +283,7 @@
                     managerNotesButton.hidden = YES;
                 }
                 else if(signState == 99) {
-                    status.text = @"Denied";
+                    status.text = @"Rejected";
                     managerNotesButton.hidden = NO;
                 }
                 else if(signState == 100) {
@@ -291,7 +291,7 @@
                     managerNotesButton.hidden = YES;
                 }
                 else {
-                    status.text = @"Waiting for submission";
+                    status.text = @"Not yet submitted";
                     managerNotesButton.hidden = YES;
                 }
                 
@@ -356,7 +356,7 @@
         nextWeekButton.hidden = YES;
         previousWeekButton.hidden = YES;
         
-        if ([d.historyState isEqualToString:@"Status: Denied"] || [d.historyState isEqualToString:@"Status: Waiting for approval"]) {
+        if ([d.historyState isEqualToString:@"Status: Rejected"] || [d.historyState isEqualToString:@"Status: Waiting for approval"]) {
             [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
             submitButton.hidden = NO;
             d.historyState = @"";
@@ -365,7 +365,7 @@
             submitButton.hidden = YES;
             d.historyState = @"Status: Approved";
         }
-        else if ([status.text isEqualToString:@"Waiting for submission"]) {
+        else if ([status.text isEqualToString:@"Not yet submitted"]) {
             [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
             submitButton.hidden = NO;
             d.historyState = @"";
@@ -475,7 +475,7 @@
                 managerNotesButton.hidden = YES;
             }
             else if(signState == 99) {
-                status.text = @"Denied";
+                status.text = @"Rejected";
                 managerNotesButton.hidden = NO;
                 
             }
@@ -484,12 +484,12 @@
                 managerNotesButton.hidden = YES;
             }
             else {
-                status.text = @"Waiting for submission";
+                status.text = @"Not yet submitted";
                 managerNotesButton.hidden = YES;
             }
             
             // Change button label/availability depending on the status
-            if ([status.text isEqualToString:@"Denied"] || [status.text isEqualToString:@"Waiting for approval"]) {
+            if ([status.text isEqualToString:@"Rejected"] || [status.text isEqualToString:@"Waiting for approval"]) {
                 [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
                 submitButton.hidden = NO;
                 d.historyState = @"";
@@ -498,7 +498,7 @@
                 submitButton.hidden = YES;
                 d.historyState = @"Status: Approved";
             }
-            else if ([status.text isEqualToString:@"Waiting for submission"]) {
+            else if ([status.text isEqualToString:@"Not yet submitted"]) {
                 [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
                 submitButton.hidden = NO;
                 d.historyState = @"";
@@ -603,8 +603,8 @@
                     managerNotesButton.hidden = YES;
                 }
                 else if(signState == 99) {
-                    //NSLog(@"STATUS IS DENIED");
-                    status.text = @"Denied";
+                    //NSLog(@"STATUS IS Rejected");
+                    status.text = @"Rejected";
                     managerNotesButton.hidden = NO;
                     
                 }
@@ -613,12 +613,12 @@
                     managerNotesButton.hidden = YES;
                 }
                 else {
-                    status.text = @"Waiting for submission";
+                    status.text = @"Not yet submitted";
                     managerNotesButton.hidden = YES;
                 }
                                      
                 // Change button label/availability depending on the status
-                if ([status.text isEqualToString:@"Denied"] || [status.text isEqualToString:@"Waiting for approval"]) {
+                if ([status.text isEqualToString:@"Rejected"] || [status.text isEqualToString:@"Waiting for approval"]) {
                     [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
                     submitButton.hidden = NO;
                     d.historyState = @"";
@@ -627,7 +627,7 @@
                     submitButton.hidden = YES;
                     d.historyState = @"Status: Approved";
                 }
-                else if ([status.text isEqualToString:@"Waiting for submission"]) {
+                else if ([status.text isEqualToString:@"Not yet submitted"]) {
                     [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
                     submitButton.hidden = NO;
                     d.historyState = @"";
@@ -1025,7 +1025,7 @@
             managerNotesButton.hidden = YES;
         }
         else if(signState == 99) {
-            status.text = @"Denied";
+            status.text = @"Rejected";
             managerNotesButton.hidden = NO;
         }
         else if(signState == 100) {
@@ -1033,12 +1033,12 @@
             managerNotesButton.hidden = YES;
         }
         else {
-            status.text = @"Waiting for submission";
+            status.text = @"Not yet submitted";
             managerNotesButton.hidden = YES;
         }
         
         // Change button label/availability depending on the status
-        if ([status.text isEqualToString:@"Denied"] || [status.text isEqualToString:@"Waiting for approval"]) {
+        if ([status.text isEqualToString:@"Rejected"] || [status.text isEqualToString:@"Waiting for approval"]) {
             [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
             submitButton.hidden = NO;
             d.historyState = @"";
@@ -1047,7 +1047,7 @@
             submitButton.hidden = YES;
             d.historyState = @"Status: Approved";
         }
-        else if ([status.text isEqualToString:@"Waiting for submission"]) {
+        else if ([status.text isEqualToString:@"Not yet submitted"]) {
             [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
             submitButton.hidden = NO;
             d.historyState = @"";
@@ -1149,7 +1149,7 @@
                     managerNotesButton.hidden = YES;
                 }
                 else if(signState == 99) {
-                    status.text = @"Denied";
+                    status.text = @"Rejected";
                     managerNotesButton.hidden = NO;
                     
                 }
@@ -1158,12 +1158,12 @@
                     managerNotesButton.hidden = YES;
                 }
                 else {
-                    status.text = @"Waiting for submission";
+                    status.text = @"Not yet submitted";
                     managerNotesButton.hidden = YES;
                 }
                 
                 // Change button label/availability depending on the status
-                if ([status.text isEqualToString:@"Denied"] || [status.text isEqualToString:@"Waiting for approval"]) {
+                if ([status.text isEqualToString:@"Rejected"] || [status.text isEqualToString:@"Waiting for approval"]) {
                     [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
                     submitButton.hidden = NO;
                     d.historyState = @"";
@@ -1172,7 +1172,7 @@
                     submitButton.hidden = YES;
                     d.historyState = @"Status: Approved";
                 }
-                else if ([status.text isEqualToString:@"Waiting for submission"]) {
+                else if ([status.text isEqualToString:@"Not yet submitted"]) {
                     [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
                     submitButton.hidden = NO;
                     d.historyState = @"";
@@ -1212,7 +1212,7 @@
                     managerNotesButton.hidden = YES;
                 }
                 else if(signState == 99) {
-                    status.text = @"Denied";
+                    status.text = @"Rejected";
                     managerNotesButton.hidden = NO;
                     
                 }
@@ -1221,12 +1221,12 @@
                     managerNotesButton.hidden = YES;
                 }
                 else {
-                    status.text = @"Waiting for submission";
+                    status.text = @"Not yet submitted";
                     managerNotesButton.hidden = YES;
                 }
                 
                 // Change button label/availability depending on the status
-                if ([status.text isEqualToString:@"Denied"] || [status.text isEqualToString:@"Waiting for approval"]) {
+                if ([status.text isEqualToString:@"Rejected"] || [status.text isEqualToString:@"Waiting for approval"]) {
                     [submitButton setTitle:@"Resubmit" forState:UIControlStateNormal];
                     submitButton.hidden = NO;
                     d.historyState = @"";
@@ -1235,7 +1235,7 @@
                     submitButton.hidden = YES;
                     d.historyState = @"Status: Approved";
                 }
-                else if ([status.text isEqualToString:@"Waiting for submission"]) {
+                else if ([status.text isEqualToString:@"Not yet submitted"]) {
                     [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
                     submitButton.hidden = NO;
                     d.historyState = @"";
@@ -1273,7 +1273,7 @@
             managerNotes = item.managerNotes;
         }
         
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Manager's Note:" message:managerNotes delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Reason for Rejection:" message:managerNotes delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
         [message setAlertViewStyle:UIAlertViewStyleDefault];
         [message show];
     }
@@ -1289,7 +1289,7 @@
             }
         }
         
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Manager's Note:" message:managerNotes delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Reason for Rejection:" message:managerNotes delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
         [message setAlertViewStyle:UIAlertViewStyleDefault];
         [message show];
     }

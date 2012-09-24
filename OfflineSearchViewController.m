@@ -51,7 +51,7 @@
     
     if(!appDelegate.isManager)
     {
-        self.btnAdd.hidden = YES;
+        //self.btnAdd.hidden = YES;
     }
     
     [self gettingData];

@@ -27,6 +27,9 @@
     
     UITapGestureRecognizer *tap;
     BOOL taskListIsEmpty;
+    int selectedFieldIndex;
+    
+    NSInteger totalAssigned;
 }
 @synthesize dayLabel;
 @synthesize dateLabel;
@@ -35,6 +38,7 @@
 @synthesize addTaskButton;
 @synthesize dayTable;
 @synthesize lockSwitch;
+@synthesize lockSwitchLabel;
 @synthesize hoursField;
 @synthesize delegate;
 
@@ -43,6 +47,11 @@
 /****************************************************************************************************
  Protocol Methods
  ****************************************************************************************************/
+- (void)getTotalAssigned:(NSInteger)i
+{
+    totalAssigned = i;
+}
+
 - (void)setTaskListEmpty:(BOOL)i
 {
     taskListIsEmpty = i;
@@ -103,20 +112,28 @@
     }
     
     
-    if (taskListIsEmpty) {
-        //addTaskButton.hidden = YES;
-        [addTaskButton setEnabled:NO];
-        addTaskButton.titleLabel.textColor = [UIColor lightGrayColor];
-        NSLog(@"task list button is empty");
-    }
-    else {
-        //addTaskButton.hidden = NO;
-        [addTaskButton setEnabled:YES];
-        addTaskButton.titleLabel.textColor = [UIColor blackColor];
-        NSLog(@"task list button has stuff");
-    }
+//    if (taskListIsEmpty) {
+//        //addTaskButton.hidden = YES;
+//        [addTaskButton setEnabled:NO];
+//        addTaskButton.titleLabel.textColor = [UIColor lightGrayColor];
+//        NSLog(@"task list button is empty");
+//    }
+//    else {
+//        //addTaskButton.hidden = NO;
+//        [addTaskButton setEnabled:YES];
+//        addTaskButton.titleLabel.textColor = [UIColor blackColor];
+//        NSLog(@"task list button has stuff");
+//    }
     
     [self checkForUnassignedTasksAndUpdate];
+    if ([taskList count] == totalAssigned) {
+        addTaskButton.enabled = NO;
+        [addTaskButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    }
+    else {
+        addTaskButton.enabled = YES;
+        [addTaskButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
 }
 
 - (UIPopoverController *)getPopover
@@ -152,13 +169,12 @@
 
 -(void)dismissKeyboard {
     [self.view removeGestureRecognizer:tap];
-    int i = 0;
-    for (NSDictionary *item in taskList) {
-        DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            [cell.hoursField resignFirstResponder];
-            
-        i++;
-    }
+    //int i = 0;
+    //for (NSDictionary *item in taskList) {
+        DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedFieldIndex inSection:0]];
+        [cell.hoursField resignFirstResponder];
+        //i++;
+    //}
 }
 
 /****************************************************************************************************
@@ -190,10 +206,14 @@
     if ([d.historyState isEqualToString:@"Status: Approved"]) {
         doneButton.hidden = YES;
         addTaskButton.hidden = YES;
+        lockSwitch.hidden = YES;
+        lockSwitchLabel.hidden = YES;
     }
     else {
         doneButton.hidden = NO;
         addTaskButton.hidden = NO;
+        lockSwitch.hidden = NO;
+        lockSwitchLabel.hidden = NO;
     }
     
     
@@ -257,6 +277,7 @@
     [self setTotalHours:nil];
     [self setDoneButton:nil];
     [self setAddTaskButton:nil];
+    [self setLockSwitchLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -326,18 +347,38 @@
         [self performSegueWithIdentifier:@"toTaskView" sender:self];
     }
     else {
-        // Show pop-over
-        JobViewController *jobView = [self.storyboard instantiateViewControllerWithIdentifier:@"jobView"];
-        jobView.delegate = self;
-        popover = [[UIPopoverController alloc] initWithContentViewController:jobView];
-        DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
-        if (selectedIndex > 4) {
-            CGRect position = CGRectMake(165, cell.frame.origin.y + 40 , 1, 1);
-            [popover presentPopoverFromRect:position inView:dayTable permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+        
+        
+        if ([taskList count] < totalAssigned) {      
+            // Show pop-over
+            JobViewController *jobView = [self.storyboard instantiateViewControllerWithIdentifier:@"jobView"];
+            jobView.delegate = self;
+            popover = [[UIPopoverController alloc] initWithContentViewController:jobView];
+            
+            DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
+            //cell.selected = YES;
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            
+            if (selectedIndex > 4) {
+                CGRect position = CGRectMake(165, cell.frame.origin.y + 40 , 1, 1);
+                [popover presentPopoverFromRect:position inView:dayTable permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+            }
+            else {
+                CGRect position = CGRectMake(165, cell.frame.origin.y + 40, 1, 1);
+                [popover presentPopoverFromRect:position inView:dayTable permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+            }
+        
+            cell.tag = indexPath.row;
+            
+            addTaskButton.enabled = YES;
+            [addTaskButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            
         }
         else {
-            CGRect position = CGRectMake(165, cell.frame.origin.y + 40, 1, 1);
-            [popover presentPopoverFromRect:position inView:dayTable permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+            DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
+            
+            cell.selected = NO;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
     }
 
@@ -349,7 +390,7 @@
  Add Task - For iPad
  ****************************************************************************************************/
 - (IBAction)addTask:(UIButton *)sender {
-    
+    //taskListIsEmpty = NO;
     [self.view removeGestureRecognizer:tap];
     [taskList addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"new", @"taskName", @"0", @"hours", nil]];
     [self checkForUnassignedTasksAndUpdate];
@@ -451,6 +492,7 @@
 - (IBAction)removeTask:(UIButton *)sender {
     NSLog(@" x = tag %i", sender.tag);
     selectedIndex = sender.tag;
+    
     //DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:sender.tag inSection:0]];
 
     /**********************/
@@ -519,8 +561,10 @@
     
     totalHours.text = [NSString stringWithFormat:@"Total: %i hours", total];
     //addTaskButton.hidden = NO;
-    [addTaskButton setEnabled:YES];
-    addTaskButton.titleLabel.textColor = [UIColor blackColor];
+    [self checkForUnassignedTasksAndUpdate];
+    //[addTaskButton setEnabled:YES];
+    //addTaskButton.titleLabel.textColor = [UIColor blackColor];
+    taskListIsEmpty = NO;
 }
 
 /****************************************************************************************************
@@ -743,7 +787,7 @@
     [self.view removeGestureRecognizer:tap];
     DayCell *cell = (DayCell *)[self.dayTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:sender.tag inSection:0]];
     
-    //NSLog(@"sender int val = %i", [sender.text intValue]);
+    NSLog(@"sender int val = %i", [sender.text intValue]);
     
     // Limit hours entered to 24
     if ([sender.text intValue] > 24) {
@@ -771,12 +815,13 @@
 
 
 
-- (IBAction)hoursBeginEditing:(id)sender {
+- (IBAction)hoursBeginEditing:(UITextField *)sender {
     // Dismiss keyboard on tap
     tap = [[UITapGestureRecognizer alloc] 
            initWithTarget:self
            action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    selectedFieldIndex = sender.tag;
 }
 
 

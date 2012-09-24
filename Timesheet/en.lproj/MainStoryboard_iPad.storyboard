@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--Timesheet View Controller - Timesheet Home-->
@@ -541,7 +541,7 @@
                                         <rect key="frame" x="311" y="732" width="90" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Deny">
+                                        <state key="normal" title="Reject">
                                             <color key="titleColor" red="0.1848879423945361" green="0.48648962077503383" blue="0.63043478260869568" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -917,7 +917,7 @@
                                         <rect key="frame" x="250" y="889" width="120" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Deny">
+                                        <state key="normal" title="Reject">
                                             <color key="titleColor" red="0.81547214670000001" green="0.52790227219999997" blue="0.07449718877" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1966,6 +1966,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="dayTable" destination="V6W-6G-aJK" id="UrQ-Sb-BHs"/>
                         <outlet property="doneButton" destination="c6l-VS-d9Y" id="Akc-fq-McK"/>
                         <outlet property="lockSwitch" destination="WOl-aO-izs" id="JC7-MC-68R"/>
+                        <outlet property="lockSwitchLabel" destination="ruJ-pQ-Bs3" id="7Jr-vu-vl0"/>
                         <outlet property="totalHours" destination="VXg-Ya-5iI" id="53m-PU-RoQ"/>
                     </connections>
                 </viewController>
@@ -2015,7 +2016,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="0.0" y="360" width="300" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Clear">
+                                <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.90196078430000004" green="0.52941176469999995" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -4375,6 +4376,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="hoursField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="lockSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="lockSwitchLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="totalHours" candidateClass="UILabel"/>
             </relationships>
         </class>

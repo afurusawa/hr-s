@@ -27,6 +27,7 @@
 - (IBAction)addTask_iPhone:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISwitch *lockSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *lockSwitchLabel;
 @property (weak, nonatomic) IBOutlet UITextField *hoursField;
 @property (weak, nonatomic) id <UDayViewControllerDelegate> delegate;
 - (IBAction)hoursEntered:(id)sender;

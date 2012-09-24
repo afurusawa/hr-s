@@ -18,7 +18,7 @@
 - (void)setTaskListEmpty:(BOOL)i;
 - (UIPopoverController *)getPopover;
 //- (void)refreshView;
-
+- (NSInteger)getTotalAssigned:(NSInteger)i;
 @end
 
 

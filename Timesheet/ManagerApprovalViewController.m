@@ -149,12 +149,6 @@
 
 
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    
-    [self.managerNotes resignFirstResponder];
-}
-
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range 
  replacementText:(NSString *)text
 {
@@ -176,6 +170,19 @@
     return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    NSLog(@"textview got called");
+    [UIView beginAnimations:@"TEMP" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [UIView commitAnimations];
+    [self.managerNotes resignFirstResponder];
+}
+
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     NSLog(@"textview got called");
@@ -188,6 +195,16 @@
     [UIView commitAnimations];
 }
 
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    NSLog(@"textview got called");
+    [UIView beginAnimations:@"TEMP" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [UIView commitAnimations];
+}
 
 
 
