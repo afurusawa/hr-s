@@ -24,7 +24,7 @@
  
 		SUPObjectList *attributes = [SUPObjectList listWithCapacity:7];
 		SUPAttributeMetaDataRBS* a_username = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			128:
+			336:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"username":@"":@"":
 			@"":300:0:0:
 			@"null":YES:@"":
@@ -33,7 +33,7 @@
 			NO:SUPPersonalizationType_Session:NO];
   		[attributes addThis:a_username];
 		SUPAttributeMetaDataRBS* a_usernameUserDefined = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			129:
+			337:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"usernameUserDefined":@"":@"":
 			@"":-1:0:0:
 			@"false":NO:@"":
@@ -42,7 +42,7 @@
 			NO:SUPPersonalizationType_None:NO];
   		[attributes addThis:a_usernameUserDefined];
 		SUPAttributeMetaDataRBS* a_password = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			130:
+			338:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"password":@"":@"":
 			@"":300:0:0:
 			@"null":YES:@"":
@@ -51,7 +51,7 @@
 			NO:SUPPersonalizationType_Session:YES];
   		[attributes addThis:a_password];
 		SUPAttributeMetaDataRBS* a_passwordUserDefined = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			131:
+			339:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"passwordUserDefined":@"":@"":
 			@"":-1:0:0:
 			@"false":NO:@"":

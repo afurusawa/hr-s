@@ -418,7 +418,7 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 53:
+    case 261:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -429,7 +429,7 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 53:
+    case 261:
         self.surrogateKey = v;
         break;;
     default:
@@ -441,31 +441,31 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 40:
+    case 248:
         return self.employeeName;
-    case 41:
+    case 249:
         return self.employeeID;
-    case 42:
+    case 250:
         return self.employeePassword;
-    case 43:
+    case 251:
         return self.address;
-    case 44:
+    case 252:
         return self.department;
-    case 45:
+    case 253:
         return self.position;
-    case 46:
+    case 254:
         return self.manager;
-    case 47:
+    case 255:
         return self.email;
-    case 48:
+    case 256:
         return self.phone;
-    case 49:
+    case 257:
         return self.picture;
-    case 50:
+    case 258:
         return self.firstName;
-    case 51:
+    case 259:
         return self.lastName;
-    case 52:
+    case 260:
         return self.fax;
     default:
          return [super getAttributeNullableString:id_];
@@ -476,43 +476,43 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 40:
+    case 248:
         self.employeeName = v;
         break;;
-    case 41:
+    case 249:
         self.employeeID = v;
         break;;
-    case 42:
+    case 250:
         self.employeePassword = v;
         break;;
-    case 43:
+    case 251:
         self.address = v;
         break;;
-    case 44:
+    case 252:
         self.department = v;
         break;;
-    case 45:
+    case 253:
         self.position = v;
         break;;
-    case 46:
+    case 254:
         self.manager = v;
         break;;
-    case 47:
+    case 255:
         self.email = v;
         break;;
-    case 48:
+    case 256:
         self.phone = v;
         break;;
-    case 49:
+    case 257:
         self.picture = v;
         break;;
-    case 50:
+    case 258:
         self.firstName = v;
         break;;
-    case 51:
+    case 259:
         self.lastName = v;
         break;;
-    case 52:
+    case 260:
         self.fax = v;
         break;;
     default:
@@ -524,9 +524,9 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 54:
+    case 262:
         return self.updateManagerCalled;
-    case 55:
+    case 263:
         return self.updatePasswordCalled;
     default:
          return [super getAttributeBoolean:id_];
@@ -537,10 +537,10 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 54:
+    case 262:
         self.updateManagerCalled = v;
         break;;
-    case 55:
+    case 263:
         self.updatePasswordCalled = v;
         break;;
     default:
@@ -552,7 +552,7 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 39:
+    case 247:
         return self.id_;
     default:
          return [super getAttributeInt:id_];
@@ -563,7 +563,7 @@ static SUPEntityMetaDataRBS* HR_SuiteUsers_META_DATA;
 {
     switch(id_)
     {
-    case 39:
+    case 247:
         self.id_ = v;
         break;;
     default:

@@ -61,13 +61,13 @@ static SUPClassMetaDataRBS* HR_SuiteKeyPackageName_META_DATA;
 {
     switch(id_)
     {
-    case 121:
+    case 329:
         return self.key_name;
-    case 123:
+    case 331:
         return self.package_name;
-    case 122:
+    case 330:
         return self.user_name;
-    case 124:
+    case 332:
         return self.domain_name;
     default:
         return [super getAttributeString:id_];
@@ -78,16 +78,16 @@ static SUPClassMetaDataRBS* HR_SuiteKeyPackageName_META_DATA;
 {
     switch(id_)
     {
-    case 121:
+    case 329:
         self.key_name = v;
         break;;
-    case 123:
+    case 331:
         self.package_name = v;
         break;;
-    case 122:
+    case 330:
         self.user_name = v;
         break;;
-    case 124:
+    case 332:
         self.domain_name = v;
         break;;
     default:

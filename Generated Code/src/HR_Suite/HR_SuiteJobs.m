@@ -238,7 +238,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 8:
+    case 216:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -249,7 +249,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 8:
+    case 216:
         self.surrogateKey = v;
         break;;
     default:
@@ -261,9 +261,9 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 5:
+    case 213:
         return self.jobNumber;
-    case 7:
+    case 215:
         return self.totalHours;
     default:
          return [super getAttributeNullableInt:id_];
@@ -274,10 +274,10 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 5:
+    case 213:
         self.jobNumber = v;
         break;;
-    case 7:
+    case 215:
         self.totalHours = v;
         break;;
     default:
@@ -289,7 +289,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 6:
+    case 214:
         return self.jobName;
     default:
          return [super getAttributeNullableString:id_];
@@ -300,7 +300,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 6:
+    case 214:
         self.jobName = v;
         break;;
     default:
@@ -312,7 +312,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 4:
+    case 212:
         return self.id_;
     default:
          return [super getAttributeInt:id_];
@@ -323,7 +323,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobs_META_DATA;
 {
     switch(id_)
     {
-    case 4:
+    case 212:
         self.id_ = v;
         break;;
     default:

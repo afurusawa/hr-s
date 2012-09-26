@@ -185,9 +185,9 @@ static SUPEntityMetaDataRBS* HR_SuiteChangeLogImpl_META_DATA;
 {
     switch(id_)
     {
-    case 112:
+    case 320:
         return self.rootSurrogateKey;
-    case 109:
+    case 317:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -198,10 +198,10 @@ static SUPEntityMetaDataRBS* HR_SuiteChangeLogImpl_META_DATA;
 {
     switch(id_)
     {
-    case 112:
+    case 320:
         self.rootSurrogateKey = v;
         break;;
-    case 109:
+    case 317:
         self.surrogateKey = v;
         break;;
     default:
@@ -213,7 +213,7 @@ static SUPEntityMetaDataRBS* HR_SuiteChangeLogImpl_META_DATA;
 {
     switch(id_)
     {
-    case 110:
+    case 318:
         return self.operationType;
     default:
          return [super getAttributeChar:id_];
@@ -224,7 +224,7 @@ static SUPEntityMetaDataRBS* HR_SuiteChangeLogImpl_META_DATA;
 {
     switch(id_)
     {
-    case 110:
+    case 318:
         self.operationType = v;
         break;;
     default:
@@ -236,9 +236,9 @@ static SUPEntityMetaDataRBS* HR_SuiteChangeLogImpl_META_DATA;
 {
     switch(id_)
     {
-    case 111:
+    case 319:
         return self.rootEntityType;
-    case 108:
+    case 316:
         return self.entityType;
     default:
          return [super getAttributeInt:id_];
@@ -249,10 +249,10 @@ static SUPEntityMetaDataRBS* HR_SuiteChangeLogImpl_META_DATA;
 {
     switch(id_)
     {
-    case 111:
+    case 319:
         self.rootEntityType = v;
         break;;
-    case 108:
+    case 316:
         self.entityType = v;
         break;;
     default:

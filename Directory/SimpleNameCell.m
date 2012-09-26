@@ -1,16 +1,18 @@
 //
-//  NotificationCell.m
-//  Timesheet
+//  SimpleNameCell.m
+//  HRDirectory
 //
-//  Created by Rapid Consulting on 8/22/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Alex Chiu on 8/8/12.
+//  Copyright (c) 2012 Alex Chiu. All rights reserved.
 //
 
-#import "NotificationCell.h"
+#import "SimpleNameCell.h"
 
-@implementation NotificationCell
-@synthesize status;
-@synthesize timestamp;
+@implementation SimpleNameCell
+
+@synthesize lblFirstName = _lblFirstName;
+@synthesize lblLastName = _lblLastName;
+@synthesize lblDepartment = _lblDepartment;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -24,8 +26,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

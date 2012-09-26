@@ -147,7 +147,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOfflineAuthentication_META_DATA;
 {
     switch(id_)
     {
-    case 113:
+    case 321:
         return self.user;
     default:
          return [super getAttributeString:id_];
@@ -158,7 +158,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOfflineAuthentication_META_DATA;
 {
     switch(id_)
     {
-    case 113:
+    case 321:
         self.user = v;
         break;;
     default:
@@ -170,7 +170,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOfflineAuthentication_META_DATA;
 {
     switch(id_)
     {
-    case 114:
+    case 322:
         return self.passwordHash;
     default:
          return [super getAttributeInt:id_];
@@ -181,7 +181,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOfflineAuthentication_META_DATA;
 {
     switch(id_)
     {
-    case 114:
+    case 322:
         self.passwordHash = v;
         break;;
     default:

@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_id = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			9:
+			217:
 			[SUPDataType forName:@"int"]:@"integer":@"id":@"":@"a":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_id setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_employeeID = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			10:
+			218:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"employeeID":@"":@"b":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_employeeID setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_leaveType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			11:
+			219:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"leaveType":@"":@"c":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_leaveType setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_startDate = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			12:
+			220:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"startDate":@"":@"d":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_startDate setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_endDate = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			13:
+			221:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"endDate":@"":@"e":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_endDate setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_reason = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			14:
+			222:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"reason":@"":@"f":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -85,7 +85,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_reason setColumn:@"f"];
 		SUPAttributeMetaDataRBS* a_signCode = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			15:
+			223:
 			[SUPDataType forName:@"int?"]:@"integer":@"signCode":@"":@"g":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -94,7 +94,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_signCode setColumn:@"g"];
 		SUPAttributeMetaDataRBS* a_timestamp = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			16:
+			224:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"timestamp":@"":@"h":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -103,7 +103,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_timestamp setColumn:@"h"];
 		SUPAttributeMetaDataRBS* a_managerNotes = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			17:
+			225:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"managerNotes":@"":@"i":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -148,7 +148,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			18:
+			226:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"j":
 			@"":-1:0:0:
 			@"null":NO:@"":

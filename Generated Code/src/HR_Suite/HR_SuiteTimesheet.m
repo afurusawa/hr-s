@@ -338,7 +338,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 28:
+    case 236:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -349,7 +349,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 28:
+    case 236:
         self.surrogateKey = v;
         break;;
     default:
@@ -361,9 +361,9 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 23:
+    case 231:
         return self.hours;
-    case 24:
+    case 232:
         return self.signCode;
     default:
          return [super getAttributeNullableInt:id_];
@@ -374,10 +374,10 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 23:
+    case 231:
         self.hours = v;
         break;;
-    case 24:
+    case 232:
         self.signCode = v;
         break;;
     default:
@@ -389,17 +389,17 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 20:
+    case 228:
         return self.date;
-    case 21:
+    case 229:
         return self.employeeID;
-    case 22:
+    case 230:
         return self.job;
-    case 25:
+    case 233:
         return self.timestamp;
-    case 26:
+    case 234:
         return self.day;
-    case 27:
+    case 235:
         return self.managerNotes;
     default:
          return [super getAttributeNullableString:id_];
@@ -410,22 +410,22 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 20:
+    case 228:
         self.date = v;
         break;;
-    case 21:
+    case 229:
         self.employeeID = v;
         break;;
-    case 22:
+    case 230:
         self.job = v;
         break;;
-    case 25:
+    case 233:
         self.timestamp = v;
         break;;
-    case 26:
+    case 234:
         self.day = v;
         break;;
-    case 27:
+    case 235:
         self.managerNotes = v;
         break;;
     default:
@@ -437,9 +437,9 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 29:
+    case 237:
         return self.updateSignCodeCalled;
-    case 30:
+    case 238:
         return self.createByDayCalled;
     default:
          return [super getAttributeBoolean:id_];
@@ -450,10 +450,10 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 29:
+    case 237:
         self.updateSignCodeCalled = v;
         break;;
-    case 30:
+    case 238:
         self.createByDayCalled = v;
         break;;
     default:
@@ -465,7 +465,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 19:
+    case 227:
         return self.id_;
     default:
          return [super getAttributeInt:id_];
@@ -476,7 +476,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheet_META_DATA;
 {
     switch(id_)
     {
-    case 19:
+    case 227:
         self.id_ = v;
         break;;
     default:

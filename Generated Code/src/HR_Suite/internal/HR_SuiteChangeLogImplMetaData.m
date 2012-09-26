@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_operationType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			110:
+			318:
 			[SUPDataType forName:@"char"]:@"char(1)":@"operationType":@"":@"c":
 			@"":1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_operationType setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_rootEntityType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			111:
+			319:
 			[SUPDataType forName:@"int"]:@"integer":@"rootEntityType":@"":@"d":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_rootEntityType setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_rootSurrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			112:
+			320:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"rootSurrogateKey":@"":@"e":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_rootSurrogateKey setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_entityType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			108:
+			316:
 			[SUPDataType forName:@"int"]:@"integer":@"entityType":@"":@"a":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_entityType setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			109:
+			317:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"b":
 			@"":-1:0:0:
 			@"null":NO:@"":
