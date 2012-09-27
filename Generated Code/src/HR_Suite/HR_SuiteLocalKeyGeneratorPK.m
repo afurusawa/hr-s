@@ -59,7 +59,7 @@ static SUPClassMetaDataRBS* HR_SuiteLocalKeyGeneratorPK_META_DATA;
 {
     switch(id_)
     {
-    case 375:
+    case 167:
         return self.batchId;
     default:
         return [super getAttributeLong:id_];
@@ -70,7 +70,7 @@ static SUPClassMetaDataRBS* HR_SuiteLocalKeyGeneratorPK_META_DATA;
 {
     switch(id_)
     {
-    case 375:
+    case 167:
         self.batchId = v;
         break;;
     default:
@@ -82,7 +82,7 @@ static SUPClassMetaDataRBS* HR_SuiteLocalKeyGeneratorPK_META_DATA;
 {
     switch(id_)
     {
-    case 374:
+    case 166:
         return self.remoteId;
     default:
         return [super getAttributeString:id_];
@@ -93,7 +93,7 @@ static SUPClassMetaDataRBS* HR_SuiteLocalKeyGeneratorPK_META_DATA;
 {
     switch(id_)
     {
-    case 374:
+    case 166:
         self.remoteId = v;
         break;;
     default:

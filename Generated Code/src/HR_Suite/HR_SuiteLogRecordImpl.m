@@ -311,7 +311,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 267:
+    case 59:
         return self.messageId;
     default:
          return [super getAttributeLong:id_];
@@ -322,7 +322,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 267:
+    case 59:
         self.messageId = v;
         break;;
     default:
@@ -334,17 +334,17 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 270:
+    case 62:
         return self.eisCode;
-    case 271:
+    case 63:
         return self.message;
-    case 272:
+    case 64:
         return self.component;
-    case 273:
+    case 65:
         return self.entityKey;
-    case 274:
+    case 66:
         return self.operation;
-    case 275:
+    case 67:
         return self.requestId;
     default:
          return [super getAttributeNullableString:id_];
@@ -355,22 +355,22 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 270:
+    case 62:
         self.eisCode = v;
         break;;
-    case 271:
+    case 63:
         self.message = v;
         break;;
-    case 272:
+    case 64:
         self.component = v;
         break;;
-    case 273:
+    case 65:
         self.entityKey = v;
         break;;
-    case 274:
+    case 66:
         self.operation = v;
         break;;
-    case 275:
+    case 67:
         self.requestId = v;
         break;;
     default:
@@ -382,7 +382,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 276:
+    case 68:
         return self.timestamp;
     default:
          return [super getAttributeNullableDateTime:id_];
@@ -393,7 +393,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 276:
+    case 68:
         self.timestamp = v;
         break;;
     default:
@@ -405,9 +405,9 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 268:
+    case 60:
         return self.level;
-    case 269:
+    case 61:
         return self.code;
     default:
          return [super getAttributeInt:id_];
@@ -418,10 +418,10 @@ static SUPEntityMetaDataRBS* HR_SuiteLogRecordImpl_META_DATA;
 {
     switch(id_)
     {
-    case 268:
+    case 60:
         self.level = v;
         break;;
-    case 269:
+    case 61:
         self.code = v;
         break;;
     default:

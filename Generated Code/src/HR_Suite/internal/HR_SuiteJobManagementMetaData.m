@@ -31,16 +31,16 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_id = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			208:
-			[SUPDataType forName:@"decimal"]:@"decimal(28,8)":@"id":@"":@"a":
-			@"":-1:28:8:
+			0:
+			[SUPDataType forName:@"int"]:@"integer":@"id":@"":@"a":
+			@"":-1:0:0:
 			@"null":NO:@"":
 			NO:NO:NO:NO:NO:NO:
 			GeneratedScheme_NONE:
 			NO:SUPPersonalizationType_None:NO];
 		[a_id setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_employeeID = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			209:
+			1:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"employeeID":@"":@"b":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -49,9 +49,9 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_employeeID setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_jobNumber = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			210:
-			[SUPDataType forName:@"decimal?"]:@"decimal(28,8)":@"jobNumber":@"":@"c":
-			@"":-1:28:8:
+			2:
+			[SUPDataType forName:@"int?"]:@"integer":@"jobNumber":@"":@"c":
+			@"":-1:0:0:
 			@"null":NO:@"":
 			NO:NO:YES:NO:NO:NO:
 			GeneratedScheme_NONE:
@@ -94,7 +94,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			211:
+			3:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"d":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -155,7 +155,7 @@
  		SUPOperationMetaData* o_findByPrimaryKey_1 = [SUPOperationMetaData createOperationMetaData:4:(SUPString)@"findByPrimaryKey":[SUPDataType forName:@"JobManagement"]:true];
 	  	{
 			SUPObjectList *parameters_list = nil;
-	 		SUPParameterMetaData* p_findByPrimaryKey_id = [SUPParameterMetaData createParameterMetaData:1:(SUPString)@"id":[SUPDataType forName:@"decimal"]];
+	 		SUPParameterMetaData* p_findByPrimaryKey_id = [SUPParameterMetaData createParameterMetaData:1:(SUPString)@"id":[SUPDataType forName:@"int"]];
  			parameters_list = [SUPObjectList listWithCapacity:1];
 			[parameters_list addThis:p_findByPrimaryKey_id];
 			o_findByPrimaryKey_1.parameters = parameters_list;

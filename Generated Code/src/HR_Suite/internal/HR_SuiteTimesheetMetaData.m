@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_id = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			227:
+			19:
 			[SUPDataType forName:@"int"]:@"integer":@"id":@"":@"a":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_id setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_date = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			228:
+			20:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"date":@"":@"b":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_date setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_employeeID = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			229:
+			21:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"employeeID":@"":@"c":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_employeeID setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_job = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			230:
+			22:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"job":@"":@"d":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_job setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_hours = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			231:
+			23:
 			[SUPDataType forName:@"int?"]:@"integer":@"hours":@"":@"e":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_hours setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_signCode = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			232:
+			24:
 			[SUPDataType forName:@"int?"]:@"integer":@"signCode":@"":@"f":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -85,7 +85,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_signCode setColumn:@"f"];
 		SUPAttributeMetaDataRBS* a_timestamp = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			233:
+			25:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"timestamp":@"":@"g":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -94,7 +94,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_timestamp setColumn:@"g"];
 		SUPAttributeMetaDataRBS* a_day = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			234:
+			26:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"day":@"":@"h":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -103,7 +103,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_day setColumn:@"h"];
 		SUPAttributeMetaDataRBS* a_managerNotes = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			235:
+			27:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"managerNotes":@"":@"i":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -112,7 +112,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_managerNotes setColumn:@"i"];
 		SUPAttributeMetaDataRBS* a_updateSignCodeCalled = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			237:
+			29:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"updateSignCodeCalled":@"":@"l":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -121,7 +121,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_updateSignCodeCalled setColumn:@"l"];
 		SUPAttributeMetaDataRBS* a_createByDayCalled = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			238:
+			30:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"createByDayCalled":@"":@"m":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -166,7 +166,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			236:
+			28:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"j":
 			@"":-1:0:0:
 			@"null":NO:@"":

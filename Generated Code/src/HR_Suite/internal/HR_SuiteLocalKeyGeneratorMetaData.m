@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_firstId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			383:
+			175:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"firstId":@"":@"first_id":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_firstId setColumn:@"first_id"];
 		SUPAttributeMetaDataRBS* a_lastId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			384:
+			176:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"lastId":@"":@"last_id":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_lastId setColumn:@"last_id"];
 		SUPAttributeMetaDataRBS* a_nextId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			385:
+			177:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"nextId":@"":@"next_id":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_nextId setColumn:@"next_id"];
 		SUPAttributeMetaDataRBS* a_remoteId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			381:
+			173:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"remoteId":@"":@"remote_id":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_remoteId setColumn:@"remote_id"];
 		SUPAttributeMetaDataRBS* a_batchId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			382:
+			174:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"batchId":@"":@"batch_id":
 			@"":-1:0:0:
 			@"null":NO:@"":

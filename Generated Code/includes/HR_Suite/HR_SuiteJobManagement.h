@@ -21,13 +21,13 @@
 @interface HR_SuiteJobManagement : SUPAbstractEntityRBS<SUPMobileBusinessObject, SUPClassWithMetaData>
 {
 @private
-    NSNumber* _id;
+    int32_t _id;
     NSString* _employeeID;
     NSNumber* _jobNumber;
     int64_t _surrogateKey;
 }
 
-@property(retain,nonatomic) NSNumber* id_;
+@property(assign,nonatomic) int32_t id_;
 @property(retain,nonatomic) NSString* employeeID;
 @property(retain,nonatomic) NSNumber* jobNumber;
 @property(assign,nonatomic) int64_t surrogateKey;
@@ -139,7 +139,7 @@
   @throws SUPPersistenceException
  */
 
-+ (HR_SuiteJobManagement*)findByPrimaryKey:(NSNumber*)id_;
++ (HR_SuiteJobManagement*)findByPrimaryKey:(int32_t)id_;
 /*!
   @method
   @abstract Generated class method 
@@ -161,10 +161,10 @@ typedef SUPObjectList HR_SuiteJobManagementList;
 
 -(SUPLong) getAttributeLong:(int)id_;
 -(void) setAttributeLong:(int)id_:(SUPLong)v;
--(SUPNullableDecimal) getAttributeNullableDecimal:(int)id_;
--(void) setAttributeNullableDecimal:(int)id_:(SUPNullableDecimal)v;
+-(SUPNullableInt) getAttributeNullableInt:(int)id_;
+-(void) setAttributeNullableInt:(int)id_:(SUPNullableInt)v;
 -(SUPString) getAttributeNullableString:(int)id_;
 -(void) setAttributeNullableString:(int)id_:(SUPString)v;
--(SUPDecimal) getAttributeDecimal:(int)id_;
--(void) setAttributeDecimal:(int)id_:(SUPDecimal)v;
+-(SUPInt) getAttributeInt:(int)id_;
+-(void) setAttributeInt:(int)id_:(SUPInt)v;
 @end

@@ -210,7 +210,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-3010" y="-1232"/>
+            <point key="canvasLocation" x="-1370" y="-872"/>
         </scene>
         <!--History View Controller - User History-->
         <scene sceneID="5EM-sJ-gIn">
@@ -364,7 +364,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="405" y="-6156"/>
+            <point key="canvasLocation" x="-391" y="-1048"/>
         </scene>
         <!--View Controller - View Leave Requests-->
         <scene sceneID="xcY-UN-tWq">
@@ -428,7 +428,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1751" y="-3277"/>
+            <point key="canvasLocation" x="705" y="2715"/>
         </scene>
         <!--Detail View Controller - Detail View-->
         <scene sceneID="Yr2-mH-3xz">
@@ -580,7 +580,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-829" y="-3277"/>
+            <point key="canvasLocation" x="1627" y="2715"/>
         </scene>
         <!--View Controller - Job Management-->
         <scene sceneID="Z4E-MS-8Ot">
@@ -760,7 +760,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-799" y="3031"/>
+            <point key="canvasLocation" x="697" y="4440"/>
         </scene>
         <!--Member View Controller - Directory-->
         <scene sceneID="Mdq-Jq-PtF">
@@ -840,7 +840,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="187" y="3738"/>
+            <point key="canvasLocation" x="1683" y="5147"/>
         </scene>
         <!--Manager Approval View Controller - Approval Overview-->
         <scene sceneID="Ji8-Jb-fWx">
@@ -985,7 +985,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-4985" y="-3172"/>
+            <point key="canvasLocation" x="1627" y="1504"/>
         </scene>
         <!--Manager User View Controller - MViewTimesheets Inbox-->
         <scene sceneID="sqS-bo-O2K">
@@ -1053,7 +1053,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5907" y="-3172"/>
+            <point key="canvasLocation" x="705" y="1504"/>
         </scene>
         <!--User Week View Controller - User Week View-->
         <scene sceneID="Bpb-pE-eAr">
@@ -1386,7 +1386,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GGc-4p-Y37">
-                                <rect key="frame" x="63" y="15" width="160" height="37"/>
+                                <rect key="frame" x="72" y="15" width="160" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1567554169" green="0.69305954390000002" blue="0.77562415080000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1403,7 +1403,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bhM-BN-wMa">
-                                <rect key="frame" x="546" y="15" width="160" height="37"/>
+                                <rect key="frame" x="537" y="15" width="160" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1567554169" green="0.69305954390000002" blue="0.77562415080000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1485,7 +1485,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5883" y="-4404"/>
+            <point key="canvasLocation" x="-391" y="-3332"/>
         </scene>
         <!--User Leave Request View Controller - U Leave Request-->
         <scene sceneID="dZ4-cN-GEI">
@@ -1744,7 +1744,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1759" y="-4475"/>
+            <point key="canvasLocation" x="-391" y="-2211"/>
         </scene>
         <!--User Leave Type View Controller-->
         <scene sceneID="Q6G-he-4yJ">
@@ -1793,7 +1793,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-925" y="-4475"/>
+            <point key="canvasLocation" x="443" y="-2211"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="4gg-fH-F3C">
@@ -1971,7 +1971,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-4977" y="-4404"/>
+            <point key="canvasLocation" x="443" y="-3332"/>
         </scene>
         <!--Job View Controller - Jobs-->
         <scene sceneID="YS5-ME-U66">
@@ -2037,7 +2037,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-4144" y="-4404"/>
+            <point key="canvasLocation" x="1276" y="-3332"/>
         </scene>
         <!--Login View Controller - Login-->
         <scene sceneID="FXm-eb-T7X">
@@ -2178,7 +2178,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5939" y="1408"/>
+            <point key="canvasLocation" x="-3843" y="1520"/>
         </scene>
         <!--Home View Controller - HR Suite Main-->
         <scene sceneID="rHt-gM-78Y">
@@ -2190,10 +2190,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AFy-Fg-FZP">
-                                <rect key="frame" x="101" y="288" width="150" height="150"/>
+                                <rect key="frame" x="89" y="475" width="590" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Timesheet">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal">
                                     <color key="titleColor" red="0.88043478259999997" green="0.49150542730000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2204,35 +2204,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="2" kind="push" id="u6r-Gv-1tN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h6S-IR-Pau">
-                                <rect key="frame" x="312" y="484" width="150" height="150"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Timesheet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ahR-dQ-Xez">
+                                <rect key="frame" x="199" y="503" width="371" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Leave Requests">
-                                    <color key="titleColor" red="0.02421649977" green="0.66836734689999999" blue="0.1081250128" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FZy-Xy-Iic">
-                                <rect key="frame" x="311" y="288" width="152" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Purchase Order">
-                                    <color key="titleColor" red="0.1567554169" green="0.69305954390000002" blue="0.77562415080000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="77"/>
+                                <color key="textColor" red="0.90196078430000004" green="0.52941176469999995" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wAc-vS-wec">
-                                <rect key="frame" x="101" y="95" width="150" height="150"/>
+                                <rect key="frame" x="89" y="295" width="590" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Directory">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal">
                                     <color key="titleColor" red="0.20389711653731524" green="0.35835119934580995" blue="0.88043478259999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2243,30 +2226,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="openHRDirectory:" destination="xSa-lp-Xq2" eventType="touchUpInside" id="ASo-35-3Qo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FYB-Ec-ZkC">
-                                <rect key="frame" x="518" y="484" width="150" height="150"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Directory" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="feX-Xj-y1n">
+                                <rect key="frame" x="219" y="316" width="331" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Task Management">
-                                    <color key="titleColor" red="0.64460161417662576" green="0.13729982167593832" blue="0.77562415080000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ncU-XC-MCP">
-                                <rect key="frame" x="518" y="674" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="History">
-                                    <color key="titleColor" red="0.77562415080000002" green="0.32712200332617619" blue="0.25957738824604687" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="77"/>
+                                <color key="textColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2315,7 +2281,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-2961" y="1000"/>
+            <point key="canvasLocation" x="-2841" y="1536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Tf-zx-ey5">
@@ -2333,7 +2299,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-6869" y="1408"/>
+            <point key="canvasLocation" x="-4773" y="1520"/>
         </scene>
         <!--Job View Controller - Jobs-->
         <scene sceneID="Btj-KB-K3P">
@@ -2389,7 +2355,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="187" y="2583"/>
+            <point key="canvasLocation" x="1683" y="3992"/>
         </scene>
         <!--Manager User View Controller - MViewTimesheets Inbox-->
         <scene sceneID="TVW-ZU-5Yc">
@@ -2456,7 +2422,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5907" y="-3172"/>
+            <point key="canvasLocation" x="705" y="1504"/>
         </scene>
         <!--History View Controller - History-->
         <scene sceneID="xcQ-oZ-6dt">
@@ -2517,7 +2483,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="429" y="-5030"/>
+            <point key="canvasLocation" x="677" y="-270"/>
         </scene>
         <!--Manager User View Controller - MViewTimesheets Inbox-->
         <scene sceneID="3KI-ae-oYF">
@@ -2585,7 +2551,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5907" y="-3172"/>
+            <point key="canvasLocation" x="705" y="1504"/>
         </scene>
         <!--Home View Controller - Main Menu-->
         <scene sceneID="JMi-wx-LhV">
@@ -2635,7 +2601,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-6211" y="3760"/>
+            <point key="canvasLocation" x="-4739" y="4056"/>
         </scene>
         <!--Search View Controller - Search-->
         <scene sceneID="2uz-Z6-2He">
@@ -2744,7 +2710,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5155" y="3161"/>
+            <point key="canvasLocation" x="-3683" y="3457"/>
         </scene>
         <!--Add Entry View Controller - Account Creation-->
         <scene sceneID="uBL-Wq-F14">
@@ -3063,7 +3029,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5155" y="4449"/>
+            <point key="canvasLocation" x="-3683" y="4745"/>
         </scene>
         <!--Employee Details View Controller - Profile-->
         <scene sceneID="vu2-yg-6Rp">
@@ -3309,7 +3275,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-4303" y="3161"/>
+            <point key="canvasLocation" x="-2223" y="3373"/>
         </scene>
         <!--OfflineD Home View Controller - Main Menu-->
         <scene sceneID="esi-3J-tf5">
@@ -3366,7 +3332,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-6131" y="6376"/>
+            <point key="canvasLocation" x="-2627" y="6504"/>
         </scene>
         <!--Offline Search View Controller - Search-->
         <scene sceneID="CmK-Xp-jxp">
@@ -3478,7 +3444,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5195" y="5737"/>
+            <point key="canvasLocation" x="-1691" y="5865"/>
         </scene>
         <!--Offline Add Entry View Controller - Account Creation-->
         <scene sceneID="YPM-NF-KXq">
@@ -3797,7 +3763,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-5075" y="7065"/>
+            <point key="canvasLocation" x="-1571" y="7193"/>
         </scene>
         <!--Offline Employee Details View Controller-->
         <scene sceneID="pMk-wE-RFH">
@@ -4043,7 +4009,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-4303" y="5747"/>
+            <point key="canvasLocation" x="-515" y="5667"/>
         </scene>
     </scenes>
     <resources>
@@ -4070,12 +4036,442 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="tm_tuesday.png" width="71" height="71"/>
         <image name="tm_wednesday.png" width="71" height="71"/>
     </resources>
+    <classes>
+        <class className="AddEntryViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="dropDownList:"/>
+                <relationship kind="outlet" name="lblUserWarning" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="managersTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tfAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfFirstName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfLastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPhone" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfUsername" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DHomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="browseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnAddEmployee" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="DayCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DayCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="hoursField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EmployeeDetailsViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmployeeDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="beginDeleteEmployee:"/>
+                <relationship kind="action" name="dropDownManagers:"/>
+                <relationship kind="action" name="editEntryOrCancel:"/>
+                <relationship kind="action" name="saveEdit:"/>
+                <relationship kind="outlet" name="deleteBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dropDownBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagePortrait" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="managerTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="saveBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmployeeName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfMngFax" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfMngPhone" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPhoneNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tvAddress" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="HistoryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="managersNote" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="status" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HistoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="segmentPressed:"/>
+                <relationship kind="outlet" name="historyTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="lrhistoryTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="segmentBar" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="action" name="openHRDirectory:"/>
+            </relationships>
+        </class>
+        <class className="JMCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JMCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="jobNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="removeButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="JMJobViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JMJobViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="jobTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="JMMemberViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JMMemberViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="employeeTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="JMViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JMViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="removeTask:"/>
+                <relationship kind="action" name="removeTeamMember:"/>
+                <relationship kind="outlet" name="addTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="addTeamMemberButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="assignTaskLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="indicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="jobTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="selectTeamMemberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workerTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="JobViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JobViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clearJob:"/>
+                <relationship kind="outlet" name="jobTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="LRHistoryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LRHistoryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leaveType" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="managersNote" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reason" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="status" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="signInAction:"/>
+                <relationship kind="outlet" name="incorrectLoginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signInButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MHistoryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MHistoryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MHistoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MHistoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="historyTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MLRDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MLRDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="approve:"/>
+                <relationship kind="action" name="deny:"/>
+                <relationship kind="outlet" name="employeeName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="endDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="leaveType" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="managerNotes" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="reason" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="startDate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="submittedOn" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MLRViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MLRViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="leaveRequestTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ManagerApprovalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ManagerApprovalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="approveTimesheet:"/>
+                <relationship kind="action" name="denyTimesheet:"/>
+                <relationship kind="outlet" name="managerNotes" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="overviewTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="totalHoursLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ManagerUserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ManagerUserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="workerTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MemberCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemberCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="department" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="position" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NotificationCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotificationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="status" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timestamp" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OfflineAddEntryViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfflineAddEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouchedHideKeyboard:"/>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="dropDownList:"/>
+                <relationship kind="outlet" name="lblUserWarning" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="managersTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tfAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfFirstName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfLastName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPhone" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfUsername" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="OfflineDHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfflineDHomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="browseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnAddEmployee" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="OfflineEmployeeDetailsViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfflineEmployeeDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="beginDeleteEmployee:"/>
+                <relationship kind="action" name="dropDownManagers:"/>
+                <relationship kind="action" name="editEntryOrCancel:"/>
+                <relationship kind="action" name="saveEdit:"/>
+                <relationship kind="outlet" name="deleteBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dropDownBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagePortrait" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="managerTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="saveBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmployeeName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfId" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfMngPhone" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPhoneNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tvAddress" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="OfflineSearchViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfflineSearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeToggleSettings:"/>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="btnAdd" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="toggleSegment" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SearchViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="outlet" name="btnAdd" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="toggleSegment" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SimpleNameCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SimpleNameCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblDepartment" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblFirstName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblLastName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TeamMemberCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeamMemberCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="deleteButtonHalf" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TimesheetViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimesheetViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="timeEntry:"/>
+                <relationship kind="outlet" name="MHistory" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="MJobManager" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="MLeaveRequests" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="MSettings" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="MTimesheets" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="UHistory" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ULeaveRequests" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="USettings" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="UTimeEntry" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="notificationTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UDayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UDayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="action" name="addTask_iPhone:"/>
+                <relationship kind="action" name="donePressed:"/>
+                <relationship kind="action" name="hoursBeginEditing:"/>
+                <relationship kind="action" name="hoursEntered:"/>
+                <relationship kind="action" name="removeTask:"/>
+                <relationship kind="action" name="switchPressed:"/>
+                <relationship kind="outlet" name="addTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dayLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dayTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="hoursField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lockSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="lockSwitchLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalHours" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UnderlyingView" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnderlyingView.h"/>
+        </class>
+        <class className="UserCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserCell.h"/>
+        </class>
+        <class className="UserLeaveRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserLeaveRequestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clearRequest:"/>
+                <relationship kind="action" name="datePicked:"/>
+                <relationship kind="action" name="dateSubmit:"/>
+                <relationship kind="action" name="editDidBegin:"/>
+                <relationship kind="action" name="submitRequest:"/>
+                <relationship kind="action" name="typeSelector:"/>
+                <relationship kind="outlet" name="dateCheckBadge" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dateCheckLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="doneBar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="endField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="leaveType" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="leaveTypeCheckBadge" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="leaveTypeCheckLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reasonCheckBadge" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="reasonCheckLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reasonField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="UserLeaveTypeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserLeaveTypeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="leaveTypeTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UserWeekViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserWeekViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="fridaySelected:"/>
+                <relationship kind="action" name="mondaySelected:"/>
+                <relationship kind="action" name="nextWeek:"/>
+                <relationship kind="action" name="previousWeek:"/>
+                <relationship kind="action" name="saturdaySelected:"/>
+                <relationship kind="action" name="showManagerNotes:"/>
+                <relationship kind="action" name="signTimesheet:"/>
+                <relationship kind="action" name="sundaySelected:"/>
+                <relationship kind="action" name="thursdaySelected:"/>
+                <relationship kind="action" name="tuesdaySelected:"/>
+                <relationship kind="action" name="wednesdaySelected:"/>
+                <relationship kind="outlet" name="fridayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fridayHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fridayProjects" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fridaysDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="managerNotesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mondayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mondayHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mondayProjects" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mondaysDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nextWeekButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousWeekButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saturdayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saturdayHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="saturdayProjects" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="saturdaysDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="status" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sundayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sundayHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sundayProjects" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sundaysDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thursdayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="thursdayHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thursdayProjects" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thursdaysDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tuesdayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tuesdayHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tuesdayProjects" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tuesdaysDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wednesdayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wednesdayHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wednesdayProjects" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wednesdaysDate" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wSV-wn-fvG"/>
+        <segue reference="Kvh-kc-4yI"/>
     </inferredMetricsTieBreakers>
 </document>

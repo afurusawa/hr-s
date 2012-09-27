@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_deviceId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			301:
+			93:
 			[SUPDataType forName:@"string"]:@"varchar(200)":@"deviceId":@"":@"device_id":
 			@"":200:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_deviceId setColumn:@"device_id"];
 		SUPAttributeMetaDataRBS* a_username = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			302:
+			94:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"username":@"":@"user_name":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_username setColumn:@"user_name"];
 		SUPAttributeMetaDataRBS* a_appname = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			303:
+			95:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"appname":@"":@"h":
 			@"":100:0:0:
 			@"sup":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_appname setColumn:@"h"];
 		SUPAttributeMetaDataRBS* a_enable = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			304:
+			96:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"enable":@"":@"i":
 			@"":-1:0:0:
 			@"false":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_enable setColumn:@"i"];
 		SUPAttributeMetaDataRBS* a_adminLock = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			305:
+			97:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"adminLock":@"":@"admin_lock":
 			@"":-1:0:0:
 			@"false":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_adminLock setColumn:@"admin_lock"];
 		SUPAttributeMetaDataRBS* a_interval = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			306:
+			98:
 			[SUPDataType forName:@"int"]:@"integer":@"interval":@"":@"l":
 			@"":-1:0:0:
 			@"0":NO:@"":
@@ -85,7 +85,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_interval setColumn:@"l"];
 		SUPAttributeMetaDataRBS* a_protocol = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			307:
+			99:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"protocol":@"":@"m":
 			@"":100:0:0:
 			@"TCN":NO:@"":
@@ -94,7 +94,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_protocol setColumn:@"m"];
 		SUPAttributeMetaDataRBS* a_address = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			308:
+			100:
 			[SUPDataType forName:@"string?"]:@"varchar(300)":@"address":@"":@"n":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -103,7 +103,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_address setColumn:@"n"];
 		SUPAttributeMetaDataRBS* a_domain = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			297:
+			89:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"domain":@"":@"domain":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -112,7 +112,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_domain setColumn:@"domain"];
 		SUPAttributeMetaDataRBS* a_package = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			298:
+			90:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"package":@"":@"pkg":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -121,7 +121,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_package setColumn:@"pkg"];
 		SUPAttributeMetaDataRBS* a_syncGroup = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			299:
+			91:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"syncGroup":@"":@"sync_group":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -130,7 +130,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_syncGroup setColumn:@"sync_group"];
 		SUPAttributeMetaDataRBS* a_clientId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			300:
+			92:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"clientId":@"":@"cid":
 			@"":100:0:0:
 			@"null":NO:@"":

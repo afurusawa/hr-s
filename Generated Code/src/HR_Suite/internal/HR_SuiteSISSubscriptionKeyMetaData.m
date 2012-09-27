@@ -24,7 +24,7 @@
  
 		SUPObjectList *attributes = [SUPObjectList listWithCapacity:7];
 		SUPAttributeMetaDataRBS* a_domain = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			292:
+			84:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"domain":@"":@"":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -33,7 +33,7 @@
 			NO:SUPPersonalizationType_None:NO];
   		[attributes addThis:a_domain];
 		SUPAttributeMetaDataRBS* a_package = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			293:
+			85:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"package":@"":@"":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -42,7 +42,7 @@
 			NO:SUPPersonalizationType_None:NO];
   		[attributes addThis:a_package];
 		SUPAttributeMetaDataRBS* a_syncGroup = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			294:
+			86:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"syncGroup":@"":@"":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -51,7 +51,7 @@
 			NO:SUPPersonalizationType_None:NO];
   		[attributes addThis:a_syncGroup];
 		SUPAttributeMetaDataRBS* a_clientId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			295:
+			87:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"clientId":@"":@"":
 			@"":300:0:0:
 			@"null":NO:@"":

@@ -211,9 +211,9 @@ static SUPEntityMetaDataRBS* HR_SuitePackageProperties_META_DATA;
 {
     switch(id_)
     {
-    case 313:
+    case 105:
         return self.value;
-    case 312:
+    case 104:
         return self.key;
     default:
          return [super getAttributeString:id_];
@@ -224,10 +224,10 @@ static SUPEntityMetaDataRBS* HR_SuitePackageProperties_META_DATA;
 {
     switch(id_)
     {
-    case 313:
+    case 105:
         self.value = v;
         break;;
-    case 312:
+    case 104:
         self.key = v;
         break;;
     default:

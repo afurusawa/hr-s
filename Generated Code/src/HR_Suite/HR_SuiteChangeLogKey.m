@@ -59,7 +59,7 @@ static SUPClassMetaDataRBS* HR_SuiteChangeLogKey_META_DATA;
 {
     switch(id_)
     {
-    case 315:
+    case 107:
         return self.surrogateKey;
     default:
         return [super getAttributeLong:id_];
@@ -70,7 +70,7 @@ static SUPClassMetaDataRBS* HR_SuiteChangeLogKey_META_DATA;
 {
     switch(id_)
     {
-    case 315:
+    case 107:
         self.surrogateKey = v;
         break;;
     default:
@@ -82,7 +82,7 @@ static SUPClassMetaDataRBS* HR_SuiteChangeLogKey_META_DATA;
 {
     switch(id_)
     {
-    case 314:
+    case 106:
         return self.entityType;
     default:
         return [super getAttributeInt:id_];
@@ -93,7 +93,7 @@ static SUPClassMetaDataRBS* HR_SuiteChangeLogKey_META_DATA;
 {
     switch(id_)
     {
-    case 314:
+    case 106:
         self.entityType = v;
         break;;
     default:

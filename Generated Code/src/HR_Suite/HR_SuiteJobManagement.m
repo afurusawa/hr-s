@@ -26,12 +26,11 @@
     return _surrogateKey;
 }
 
-- (void)setId_:(NSNumber*)newId_
+- (void)setId_:(int32_t)newId_
 {
     if (newId_ != self->_id)
     {
-		[self->_id release];
-        self->_id = [newId_ retain];
+        self->_id = newId_;
         self.isDirty = YES;
     }
 }
@@ -120,11 +119,6 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 
 - (void)dealloc
 {
-    if(_id)
-    {
-        [_id release];
-        _id = nil;
-    }
     if(_employeeID)
     {
         [_employeeID release];
@@ -228,7 +222,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
     switch(id_)
     {
-    case 211:
+    case 3:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -239,7 +233,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
     switch(id_)
     {
-    case 211:
+    case 3:
         self.surrogateKey = v;
         break;;
     default:
@@ -247,26 +241,26 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
         break;;
     }
 }
--(SUPNullableDecimal) getAttributeNullableDecimal:(int)id_
+-(SUPNullableInt) getAttributeNullableInt:(int)id_
 {
     switch(id_)
     {
-    case 210:
+    case 2:
         return self.jobNumber;
     default:
-         return [super getAttributeNullableDecimal:id_];
+         return [super getAttributeNullableInt:id_];
     }
 }
 
--(void) setAttributeNullableDecimal:(int)id_:(SUPNullableDecimal)v
+-(void) setAttributeNullableInt:(int)id_:(SUPNullableInt)v
 {
     switch(id_)
     {
-    case 210:
+    case 2:
         self.jobNumber = v;
         break;;
     default:
-        [super setAttributeNullableDecimal:id_:v];
+        [super setAttributeNullableInt:id_:v];
         break;;
     }
 }
@@ -274,7 +268,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
     switch(id_)
     {
-    case 209:
+    case 1:
         return self.employeeID;
     default:
          return [super getAttributeNullableString:id_];
@@ -285,7 +279,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
     switch(id_)
     {
-    case 209:
+    case 1:
         self.employeeID = v;
         break;;
     default:
@@ -293,26 +287,26 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
         break;;
     }
 }
--(SUPDecimal) getAttributeDecimal:(int)id_
+-(SUPInt) getAttributeInt:(int)id_
 {
     switch(id_)
     {
-    case 208:
+    case 0:
         return self.id_;
     default:
-         return [super getAttributeDecimal:id_];
+         return [super getAttributeInt:id_];
     }
 }
 
--(void) setAttributeDecimal:(int)id_:(SUPDecimal)v
+-(void) setAttributeInt:(int)id_:(SUPInt)v
 {
     switch(id_)
     {
-    case 208:
+    case 0:
         self.id_ = v;
         break;;
     default:
-        [super setAttributeDecimal:id_:v];
+        [super setAttributeInt:id_:v];
         break;;
     }
 }
@@ -346,7 +340,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
 	NSString* str = [NSString stringWithFormat:@"\
 	JobManagement = \n\
-	    id = %@,\n\
+	    id = %i,\n\
 	    employeeID = %@,\n\
 	    jobNumber = %@,\n\
 	    pending = %i,\n\
@@ -421,7 +415,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 
 
 
-+ (HR_SuiteJobManagement*)findByPrimaryKey:(NSNumber*)id_
++ (HR_SuiteJobManagement*)findByPrimaryKey:(int32_t)id_
 {
 	NSMutableString *sql = nil;
 	NSMutableString *_selectSQL = nil;
@@ -431,9 +425,9 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 	[sql autorelease];
 	SUPStringList *ids = [SUPStringList listWithCapacity:0];
 	SUPObjectList *dts = [SUPObjectList getInstance];
-	[dts addObject:[SUPDataType forName:@"decimal"]];
+	[dts addObject:[SUPDataType forName:@"int"]];
 	SUPObjectList* values = [SUPObjectList getInstance];
-	[values addObject:id_];
+	[values addObject:[NSNumber numberWithInt:id_]];
 	
 	SUPObjectList* res = (SUPObjectList*)[[[self class] delegate] findWithSQL:sql withDataTypes:dts withValues:values withIDs:ids withClass:[HR_SuiteJobManagement class]];
 	if(res && ([res size] > 0))

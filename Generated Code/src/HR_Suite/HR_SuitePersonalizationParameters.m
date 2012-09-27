@@ -121,9 +121,9 @@ static SUPClassMetaDataRBS* HR_SuitePersonalizationParameters_META_DATA;
 {
     switch(id_)
     {
-    case 336:
+    case 128:
         return self.username;
-    case 338:
+    case 130:
         return self.password;
     default:
         return [super getAttributeString:id_];
@@ -134,10 +134,10 @@ static SUPClassMetaDataRBS* HR_SuitePersonalizationParameters_META_DATA;
 {
     switch(id_)
     {
-    case 336:
+    case 128:
         self.username = v;
         break;;
-    case 338:
+    case 130:
         self.password = v;
         break;;
     default:
@@ -149,9 +149,9 @@ static SUPClassMetaDataRBS* HR_SuitePersonalizationParameters_META_DATA;
 {
     switch(id_)
     {
-    case 337:
+    case 129:
         return self.usernameUserDefined;
-    case 339:
+    case 131:
         return self.passwordUserDefined;
     default:
         return [super getAttributeBoolean:id_];
@@ -162,10 +162,10 @@ static SUPClassMetaDataRBS* HR_SuitePersonalizationParameters_META_DATA;
 {
     switch(id_)
     {
-    case 337:
+    case 129:
         self.usernameUserDefined = v;
         break;;
-    case 339:
+    case 131:
         self.passwordUserDefined = v;
         break;;
     default:

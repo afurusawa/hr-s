@@ -318,7 +318,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 226:
+    case 18:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -329,7 +329,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 226:
+    case 18:
         self.surrogateKey = v;
         break;;
     default:
@@ -341,7 +341,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 223:
+    case 15:
         return self.signCode;
     default:
          return [super getAttributeNullableInt:id_];
@@ -352,7 +352,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 223:
+    case 15:
         self.signCode = v;
         break;;
     default:
@@ -364,19 +364,19 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 218:
+    case 10:
         return self.employeeID;
-    case 219:
+    case 11:
         return self.leaveType;
-    case 220:
+    case 12:
         return self.startDate;
-    case 221:
+    case 13:
         return self.endDate;
-    case 222:
+    case 14:
         return self.reason;
-    case 224:
+    case 16:
         return self.timestamp;
-    case 225:
+    case 17:
         return self.managerNotes;
     default:
          return [super getAttributeNullableString:id_];
@@ -387,25 +387,25 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 218:
+    case 10:
         self.employeeID = v;
         break;;
-    case 219:
+    case 11:
         self.leaveType = v;
         break;;
-    case 220:
+    case 12:
         self.startDate = v;
         break;;
-    case 221:
+    case 13:
         self.endDate = v;
         break;;
-    case 222:
+    case 14:
         self.reason = v;
         break;;
-    case 224:
+    case 16:
         self.timestamp = v;
         break;;
-    case 225:
+    case 17:
         self.managerNotes = v;
         break;;
     default:
@@ -417,7 +417,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 217:
+    case 9:
         return self.id_;
     default:
          return [super getAttributeInt:id_];
@@ -428,7 +428,7 @@ static SUPEntityMetaDataRBS* HR_SuiteLeaveRequests_META_DATA;
 {
     switch(id_)
     {
-    case 217:
+    case 9:
         self.id_ = v;
         break;;
     default:

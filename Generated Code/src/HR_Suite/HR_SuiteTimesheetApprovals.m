@@ -280,7 +280,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 245:
+    case 37:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -291,7 +291,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 245:
+    case 37:
         self.surrogateKey = v;
         break;;
     default:
@@ -303,7 +303,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 242:
+    case 34:
         return self.signCode;
     default:
          return [super getAttributeNullableInt:id_];
@@ -314,7 +314,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 242:
+    case 34:
         self.signCode = v;
         break;;
     default:
@@ -326,13 +326,13 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 240:
+    case 32:
         return self.date;
-    case 241:
+    case 33:
         return self.employeeID;
-    case 243:
+    case 35:
         return self.timestamp;
-    case 244:
+    case 36:
         return self.managerNotes;
     default:
          return [super getAttributeNullableString:id_];
@@ -343,16 +343,16 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 240:
+    case 32:
         self.date = v;
         break;;
-    case 241:
+    case 33:
         self.employeeID = v;
         break;;
-    case 243:
+    case 35:
         self.timestamp = v;
         break;;
-    case 244:
+    case 36:
         self.managerNotes = v;
         break;;
     default:
@@ -364,7 +364,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 246:
+    case 38:
         return self.updateManagerCalled;
     default:
          return [super getAttributeBoolean:id_];
@@ -375,7 +375,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 246:
+    case 38:
         self.updateManagerCalled = v;
         break;;
     default:
@@ -387,7 +387,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 239:
+    case 31:
         return self.id_;
     default:
          return [super getAttributeInt:id_];
@@ -398,7 +398,7 @@ static SUPEntityMetaDataRBS* HR_SuiteTimesheetApprovals_META_DATA;
 {
     switch(id_)
     {
-    case 239:
+    case 31:
         self.id_ = v;
         break;;
     default:
