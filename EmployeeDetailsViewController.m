@@ -7,7 +7,6 @@
 //
 
 #import "EmployeeDetailsViewController.h"
-#import "ResumeViewController.h"
 
 @interface EmployeeDetailsViewController ()
 
@@ -15,28 +14,7 @@
 
 @implementation EmployeeDetailsViewController
 
-@synthesize editBtn = _editBtn;
-@synthesize saveBtn = _saveBtn;
-@synthesize scrollView = _scrollView;
-@synthesize deleteBtn = _deleteBtn;
-@synthesize dropDownBtn = _dropDownBtn;
 @synthesize thisEntry = _thisEntry;
-@synthesize imagePortrait = _imagePortrait;
-
-//TextFields for Employee Information
-@synthesize tfEmployeeName = _tfEmployeeName;
-@synthesize tfId = _tfId;
-@synthesize tfPhoneNumber = _tfPhoneNumber;
-@synthesize tfEmail = _tfEmail;
-@synthesize tfPosition = _tfPosition;
-@synthesize tfDepartment = _tfDepartment;
-@synthesize tvAddress = _tvAddress;
-
-//TextField for Manager Information
-@synthesize tfManager = _tfManager;
-@synthesize tfMngPhone = _tfMngPhone;
-@synthesize tfMngFax = _tfMngFax;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -78,15 +56,11 @@
     
     self.scrollView.contentSize = CGSizeMake(768, 960);
     
-    //Keyboard notification listeners *Note has to be in viewDidLoad
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+    [self disableEditing];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self disableEditing];
-    
     [self updateViewWithData];
     
     [self populateManagerLists];
@@ -97,25 +71,8 @@
 
 - (void)viewDidUnload
 {
-    [self setTfEmployeeName:nil];
-    [self setTfPosition:nil];
-    [self setTfPhoneNumber:nil];
-    [self setTfEmail:nil];
-    [self setTfDepartment:nil];
-    [self setTfManager:nil];
-    [self setImagePortrait:nil];
-    [self setTfId:nil];
-    [self setTfMngPhone:nil];
-    [self setTfMngFax:nil];
-    [self setEditBtn:nil];
-    [self setSaveBtn:nil];
-    [self setScrollView:nil];
-    [self setDeleteBtn:nil];
-    [self setTvAddress:nil];
     managerTable = nil;
-    [self setDropDownBtn:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -123,86 +80,16 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-//Disables the textfields to disallow editing
--(void)disableEditing
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.tfEmployeeName.enabled = NO;
-    self.tfId.enabled = NO;
-    self.tfPhoneNumber.enabled = NO;
-    self.tfEmail.enabled = NO;
-    self.tfPosition.enabled = NO;
-    self.tfDepartment.enabled = NO;
-    self.tvAddress.editable = NO;
-    
-    self.tfManager.enabled = NO;
-    self.tfMngPhone.enabled = NO;
-    self.tfMngFax.enabled = NO;
-    
-    [self disableBorders];
-    
-    self.saveBtn.hidden = YES;
-    self.dropDownBtn.hidden = YES;
-    
-    //When disabling edit, change edit button back to the edit icon
-    [self.editBtn setImage:[UIImage imageNamed:@"rm_edit_button_up.png"] forState:UIControlStateNormal];
-    editing = NO;
-}
-
-//Enables the textfields to enable editing
--(void)enableEditing
-{
-    self.tfPhoneNumber.enabled = YES;
-    self.tfEmail.enabled = YES;
-    
-    self.tfPosition.enabled = YES;
-    self.tfDepartment.enabled = YES;
-    self.tvAddress.editable = YES;
-    
-    [self enableBorders];
-    
-    self.dropDownBtn.hidden = NO;
-    self.saveBtn.hidden = NO;
-    
-    //When enabling edit, change edit button to the cancel icon
-    [self.editBtn setImage:[UIImage imageNamed:@"rm_cancel_button_up.png"] forState:UIControlStateNormal];
-    editing = YES;
-}
-
--(void)enableBorders
-{
-    UIColor *color = [UIColor colorWithRed:(229.0/255.0) green:(229.0/255.0) blue:(229.0/255.0) alpha:1.0];
-    self.tfPhoneNumber.backgroundColor = color;
-    self.tfEmail.backgroundColor = color;
-    self.tfPosition.backgroundColor = color;
-    self.tfDepartment.backgroundColor = color;
-    self.tvAddress.backgroundColor = color;
-    self.tfManager.backgroundColor = color;
-}
-
-//Called when disabling editing
--(void)disableBorders
-{
-    self.tfPhoneNumber.backgroundColor = [UIColor clearColor];
-    self.tfEmail.backgroundColor = [UIColor clearColor];
-    self.tfPosition.backgroundColor = [UIColor clearColor];
-    self.tfDepartment.backgroundColor = [UIColor clearColor];
-    self.tvAddress.backgroundColor = [UIColor clearColor];
-    self.tfManager.backgroundColor = [UIColor clearColor];
-}
-
-//Sets the delegates of all the textfields
--(void)setTFDelegates
-{
-    self.tfEmployeeName.delegate = self;
-    self.tfId.delegate = self;
-    self.tfPhoneNumber.delegate = self;
-    self.tfEmail.delegate = self;
-    self.tfPosition.delegate = self;
-    self.tfDepartment.delegate = self;
-    
-    self.tfManager.delegate = self;
-    self.tfMngPhone.delegate = self;
-    self.tfMngFax.delegate = self;
+    if([[segue identifier] isEqualToString:@"MapSegue"])
+    {
+        MapViewController *view = (MapViewController *)[segue destinationViewController];
+        
+        view.name = self.thisEntry.employeeName;
+        view.address = self.thisEntry.address;
+        [view fetchCoordinates];
+    }
 }
 
 /** Actions sections ***********************************************************************************/
@@ -214,14 +101,39 @@
     managerTable.hidden = YES;
     
     if(!editing)
-    {
         [self enableEditing];
-    }
     else if(editing)
     {
         [self updateViewWithData];
         [self disableEditing];
     }
+}
+
+- (IBAction)sendEmail:(id)sender
+{
+    if([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+        [mailViewController setToRecipients:[NSArray arrayWithObject:self.thisEntry.email]];
+        [mailViewController setSubject:@""];
+        [mailViewController setMessageBody:@"" isHTML:NO];
+        
+        [self presentModalViewController:mailViewController animated:YES];
+        
+    }
+    else
+    {
+        NSLog(@"Unable to send mail for some reason");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Error" message:@"Unable to send email at this time" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+    }
+    
+}
+
+- (IBAction)goToMap:(id)sender
+{
+    [self performSegueWithIdentifier:@"MapSegue" sender:self];
 }
 
 /* First function called when the "delete" button is pressed
@@ -238,7 +150,6 @@
 - (IBAction)dropDownManagers:(id)sender
 {
     [self.tfEmployeeName resignFirstResponder];
-    [self.tfId resignFirstResponder];
     [self.tfPhoneNumber resignFirstResponder];
     [self.tfEmail resignFirstResponder ];
     [self.tfPosition resignFirstResponder];
@@ -247,7 +158,6 @@
     
     [self.tfManager resignFirstResponder];
     [self.tfMngPhone resignFirstResponder];
-    [self.tfMngFax resignFirstResponder];
     
     if(managerTable.hidden)
     {
@@ -275,21 +185,20 @@
      ************************/
     
     //Setting portrait
+    NSURL *url;
     if([self.thisEntry.picture length] != 0)
-    {
-        NSURL *url = [[NSURL alloc] initWithString:self.thisEntry.picture];
-        NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
-        UIImage *image = [[UIImage alloc] initWithData:imageData];
-        [self.imagePortrait setImage:image];
-    }
+        url = [[NSURL alloc] initWithString:self.thisEntry.picture];
+    else
+        url = [[NSURL alloc] initWithString:@"http://certifiablygreenblog.com/wp-content/uploads/2010/08/No-Photo-Available.jpg"];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
+    UIImage *image = [[UIImage alloc] initWithData:imageData];
+    [self.imagePortrait setImage:image];
     
     //Getting Full Name
     NSString *firstName = self.thisEntry.firstName;
     NSString *lastName = self.thisEntry.lastName;
     NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
     self.tfEmployeeName.text = fullName;
-    
-    self.tfId.text = [NSString stringWithFormat:@"%d", self.thisEntry.id_];
     
     self.tfPhoneNumber.text = (self.thisEntry.phone != nil) ? [NSString stringWithFormat:@"%@", self.thisEntry.phone] : @"Not available";
     
@@ -300,6 +209,7 @@
     self.tfDepartment.text = self.thisEntry.department;
     
     self.tvAddress.text = self.thisEntry.address;
+    //[self.addressBtn setTitle:self.thisEntry.address forState:UIControlStateNormal];
     
     /***********************
      * Manager Information *
@@ -385,6 +295,7 @@
         }
     }
     
+    //Adds a none option of the manager dropdown list
     [managersList addObject:@"None"];
     [managersUsernameList addObject:@""];
     
@@ -398,6 +309,8 @@
 //Handles the actual deletion of the employee from the SUP database
 -(void)deleteEmployee
 {
+    NSLog(@"Deleting entry...");
+    
     [self.thisEntry delete];
     [self.thisEntry submitPending];
     
@@ -419,25 +332,6 @@
     return nil;
 }
 /* End SUP Section ********************************************************************************/
-
-#pragma mark - UITextFieldDelegate
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    //[textField selectAll:self];
-    return YES;
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    NSLog(@"Return pressed");
-    [textField resignFirstResponder];
-    return YES;
-}
-
--(BOOL)textFieldShouldEndEditing:(UITextField *)textField
-{
-    return YES;
-}
 
 #pragma mark - UIAlertViewDelegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -469,7 +363,7 @@
     UITableViewCell *cell = [managerTable dequeueReusableCellWithIdentifier:cellIndentifier];
     
     cell.textLabel.text = [managersList objectAtIndex:indexPath.row];
-    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
     
     return cell;
 }
@@ -480,14 +374,22 @@
     self.tfManager.text = [managersList objectAtIndex:indexPath.row];
     
     //Changing the subsequent textfields to fit the currently selected manager man
-    //HR_SuiteUsers *manager = [self getManager:[managersUsernameList objectAtIndex:indexPath.row]];
-    //self.tfMngPhone.text = manager.phone;
+    HR_SuiteUsers *manager = [self getManager:[managersUsernameList objectAtIndex:indexPath.row]];
+    self.tfMngPhone.text = manager.phone;
     
     //Change the selected manager login (their unique identifier) to the manager selected
     managerUsername = [managersUsernameList objectAtIndex:indexPath.row];
     
     //Hide the drop down table
     managerTable.hidden = YES;
+}
+
+#pragma mark - MFMailComposeDelegate
+-(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
 }
 
 @end

@@ -1,20 +1,19 @@
 //
-//  OfflineAddEntryViewController.m
+//  iPhoneAddEntryViewController.m
 //  HRDirectory
 //
-//  Created by Alex Chiu on 9/18/12.
+//  Created by Alex Chiu on 9/19/12.
 //  Copyright (c) 2012 Alex Chiu. All rights reserved.
 //
 
-#import "OfflineAddEntryViewController.h"
+#import "iPhoneAddEntryViewController.h"
 #import "AppDelegate.h"
 
-@interface OfflineAddEntryViewController ()
+@interface iPhoneAddEntryViewController ()
 
 @end
 
-@implementation OfflineAddEntryViewController
-
+@implementation iPhoneAddEntryViewController
 @synthesize scrollView = _scrollView;
 @synthesize lblUserWarning = _lblUserWarning;
 
@@ -29,11 +28,12 @@
 @synthesize tfAddress = _tfAddress;
 @synthesize tfManager = _tfManager;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -49,7 +49,7 @@
     NSLog(@"%@ did load", [self class]);
     [super viewDidLoad];
     
-    self.scrollView.contentSize = CGSizeMake(768, 850);
+    self.scrollView.contentSize = CGSizeMake(320, 501);
     
     self.lblUserWarning.hidden = YES;
     self.tfManager.enabled = NO;
@@ -63,8 +63,8 @@
     
     [self setTFDelegates];
     
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
 }
 
 - (void)viewDidUnload
@@ -143,24 +143,26 @@
 
 /* End Actions **********************************************************************************/
 
-/* Data *************************************************************************************/
+/* SUP Data *************************************************************************************/
 -(void)addNewEmployee
 {
     BOOL finEmployee = YES;
     
     NSString *firstName = self.tfFirstName.text;
     NSString *lastName = self.tfLastName.text;
-    NSString *employeeName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    NSString *ID = self.tfId.text;
     NSString *position = self.tfPosition.text;
     NSString *department = self.tfDepartment.text;
     NSString *phone = self.tfPhone.text;
     NSString *email = self.tfEmail.text;
     NSString *username = self.tfUsername.text;
     NSString *address = self.tfAddress.text;
-    NSString *employeeID = self.tfUsername.text;
-    NSString *manager = managerUsername;
-    NSString *picture = @"";
     
+    //NSString *manager = self.tfManager.text;
+    
+    
+    //Database operations here
+    HR_SuiteUsers *newEmployee = [[HR_SuiteUsers alloc] init];
     
     /************************************************
      * Checking text fields for correct information *
@@ -175,6 +177,16 @@
     {
         finEmployee = NO;
         NSLog(@"Illegal: Last Name is empty");
+    }
+    if([ID length] == 0)
+    {
+        finEmployee = NO;
+        NSLog(@"Illegal: ID is empty");
+    }
+    if([self employeeExists:ID.intValue])
+    {
+        finEmployee = NO;
+        NSLog(@"Illegal: ID already exists");
     }
     if([position length] == 0)
     {
@@ -206,31 +218,36 @@
     {
         [self startLoadingAnimations];
         
+        /***************************************
+         * Makin new employee
+         ***************************************/
+        newEmployee.employeeName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+        newEmployee.firstName = firstName;
+        newEmployee.lastName = lastName;
+        newEmployee.id_ = [ID intValue];
+        newEmployee.position = position;
+        newEmployee.department = department;
+        newEmployee.address = address;  //ERROR EXPECTED
+        newEmployee.phone = phone;
+        
+        newEmployee.email = email;
+        newEmployee.manager = managerUsername; //ERROR EXPECTED
         
         /*****************************************************
          * Make new login entry if user name does not exists *
          *****************************************************/
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Creating new user" message:@"User will be created with the default password \"temporary\"" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];\
         [alert show];
-        NSString *password = @"temporary";
         
-        AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        NSDictionary *newEntry = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  employeeName, @"employeeName",
-                                  employeeID, @"employeeID",
-                                  password, @"password",
-                                  department, @"department",
-                                  position, @"position",
-                                  manager, @"manager",
-                                  address, @"address",
-                                  email, @"email",
-                                  phone, @"phone",
-                                  firstName, @"firstName",
-                                  lastName, @"lastName",
-                                  picture, @"picture",
-                                  nil];
+        newEmployee.employeeID = username;
+        newEmployee.employeePassword = @"temporary";
         
-        [data.hr_users addObject:newEntry];
+        //Calling create function on SUP
+        [newEmployee create];
+        [newEmployee submitPending];
+        
+        //Synchronizing (takes time)
+        [HR_SuiteHR_SuiteDB synchronize];
         
         [self stopLoadingAnimations];
         
@@ -248,33 +265,25 @@
 //Gets the list of all possible managers
 -(void)populateManagersList
 {
-    NSLog(@"Populating managers list");
+    NSLog(@"Populating managers list...");
     
     managersList = [[NSMutableArray alloc] init];
     managersUsernameList = [[NSMutableArray alloc] init];
     
-    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    NSMutableArray *employeeList = data.hr_users;
+    HR_SuiteUsersList *list = [HR_SuiteUsers findAll];
     
-    for(NSDictionary *person1 in employeeList)
+    for (HR_SuiteUsers *person in list)
     {
-        for(NSDictionary *person2 in employeeList)
+        for(HR_SuiteUsers *managers in list)
         {
-            NSString *person1ID = [person1 objectForKey:@"employeeID"];
-            NSString *person2ID = [person2 objectForKey:@"manager"];
-            
-            if([person1ID isEqualToString:person2ID]) //If a username is within the managers column
+            if([person.employeeID isEqualToString:managers.manager])
             {
-                [managersList addObject:[person1 objectForKey:@"employeeName"]];
-                [managersUsernameList addObject:[person1 objectForKey:@"employeeID"]];
+                [managersList addObject:person.employeeName];
+                [managersUsernameList addObject:person.employeeID];
                 break;
             }
         }
     }
-    
-    //Adds a none option of the manager dropdown list
-    [managersList addObject:@"None"];
-    [managersUsernameList addObject:@""];
     
     //Simple soft error checking to see if the 2 manager lists are the same size
     if([managersList count] != [managersUsernameList count])
@@ -285,16 +294,25 @@
 
 -(BOOL)managerExists:(NSString *)mgrUsername
 {
-    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    NSDictionary *user = [data findByUsername:mgrUsername];
-    return user!=nil;
+    HR_SuiteUsersList *mgr = [HR_SuiteUsers findByEmployeeID:mgrUsername];
+    return ([mgr length] != 0);
 }
 
--(NSDictionary *)getManager:(NSString *)mgrUsername
+-(HR_SuiteUsers *)getManager:(NSString *)mgrUsername
 {
-    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    HR_SuiteUsersList *users = [HR_SuiteUsers findByEmployeeID:mgrUsername];
     
-    return [data findByUsername:mgrUsername];
+    if([users length] == 1)
+    {
+        return [users getObject:0];
+    }
+    return nil;
+}
+
+-(BOOL)employeeExists:(int32_t)ID
+{
+    HR_SuiteUsers *emp = [HR_SuiteUsers findByPrimaryKey:ID];
+    return (emp != nil);
 }
 
 /** End SUP stufff ******************************************************************************/
@@ -353,10 +371,9 @@
     if([textField isEqual:self.tfUsername])
     {
         //Check if username exists
-        AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        NSDictionary *user = [data findByUsername:self.tfUsername.text];
+        HR_SuiteUsersList *users = [HR_SuiteUsers findByEmployeeID:self.tfUsername.text];
         
-        if(user == nil)
+        if([users length] != 0)
         {
             self.lblUserWarning.hidden = YES;
         }
@@ -385,7 +402,7 @@
     UITableViewCell *cell =  [managersTable dequeueReusableCellWithIdentifier:cellIndentifier];
     
     cell.textLabel.text = [managersList objectAtIndex:indexPath.row];
-    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
     
     return cell;
 }

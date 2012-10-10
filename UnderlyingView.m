@@ -37,7 +37,6 @@
     [loadingView removeFromSuperview];
 }
 
-
 /* Selector for when the keyboard appears
  * Will shrink the view size so user can scroll to look at their data on the shrunken view
  */
@@ -100,4 +99,77 @@
         keyboardShown = NO;
     }
 }
+
+//Receives a string and strips it down to only numbers
+-(NSString *)stripEverythingButNumbers:(NSString *)phoneNumber
+{
+    NSCharacterSet *digits = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    NSScanner *scanner = [NSScanner scannerWithString:phoneNumber];
+    
+    NSMutableString *resultString = [NSMutableString stringWithCapacity:phoneNumber.length];
+    
+    //Scanner will loop through the string
+    while(![scanner isAtEnd])
+    {
+        NSString *buffer;
+        if([scanner scanCharactersFromSet:digits intoString:&buffer])
+        {
+            [resultString appendString:buffer];
+        }
+        else
+            [scanner setScanLocation:([scanner scanLocation]+1)];
+    }
+    return resultString;
+}
+
+//Simple method to see if a character is a digit
+-(BOOL)characterIsDigit:(char)ch
+{
+    NSCharacterSet *digits = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    
+    return [digits characterIsMember:ch];
+}
+
+//Takes a raw input of numbers only!
+-(NSString *)formatPhoneNumber:(NSString *)phoneNumber
+{
+    NSMutableString *resultPhoneNumber;
+    
+    NSString *currentString = [self stripEverythingButNumbers:phoneNumber];
+    int length = [currentString length];
+    
+    //If the length of the input is greater than the standard 10 digits,
+    // it will drop the digits after it.
+    if(length >= 10)
+    {
+        currentString = [phoneNumber substringToIndex:10];
+        length = 10;
+    }
+    
+    if(length >= 6)
+    {
+        NSRange range = NSMakeRange(3, 3);
+        
+        NSString *first3 = [currentString substringToIndex:3];
+        NSString *next3 = [currentString substringWithRange:range];
+        NSString *last4 = [currentString substringFromIndex:6];
+        
+        resultPhoneNumber = [NSString stringWithFormat:@"(%@)-%@-%@", first3, next3, last4];
+    }
+    else if(length >= 3) //If 6>length>3
+    {
+        NSString *first3 = [currentString substringToIndex:3];
+        NSString *next3 = [currentString substringFromIndex:3];
+        
+        resultPhoneNumber = [NSString stringWithFormat:@"(%@)-%@", first3, next3];
+    }
+    
+    else if(length >= 0)// 3 > length > 0
+    {
+        resultPhoneNumber = [NSString stringWithFormat:@"(%@", currentString];
+    }
+    
+    return resultPhoneNumber;
+}
+
 @end

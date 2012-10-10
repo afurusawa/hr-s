@@ -12,11 +12,16 @@
 {
     UIActivityIndicatorView *indicator;
     UIView *loadingView;
-    
     BOOL keyboardShown;
 }
 
 -(void)startLoadingAnimations;
 -(void)stopLoadingAnimations;
+-(NSString *)stripEverythingButNumbers:(NSString*)phoneNumber;
+-(BOOL)characterIsDigit:(char)ch;
+-(NSString*)formatNumber:(NSString*)mobileNumber;
+-(int)getLength:(NSString*)mobileNumber;
+-(NSString *)formatPhoneNumber:(NSString *)phoneNumber;
+
 
 @end

@@ -1,24 +1,25 @@
 //
-//  SearchViewController.m
+//  IPhoneSearchViewController.m
 //  HRDirectory
 //
-//  Created by Alex Chiu on 8/8/12.
+//  Created by Alex Chiu on 9/7/12.
 //  Copyright (c) 2012 Alex Chiu. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "IPhoneSearchViewController.h"
+
 #import "SimpleNameCell.h"
-#import "EmployeeDetailsViewController.h"
+#import "IPhoneEmployeeDetailsViewController.h"
 #import "HR_SuiteUsers.h"
 
-@interface SearchViewController ()
+@interface IPhoneSearchViewController ()
 
 @end
 
-@implementation SearchViewController
-@synthesize btnAdd = _btnAdd;
-@synthesize searchBar;
+@implementation IPhoneSearchViewController
 
+@synthesize btnAdd = _btnAdd;
+@synthesize searchBar = _searchBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,9 +33,6 @@
 - (void)viewDidLoad
 {
     NSLog(@"%@ did load", [self class]);
-    
-    selectedSearchOption = @"firstname";
-    
     [super viewDidLoad];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -42,7 +40,8 @@
     /**********************
      * Add-allowing Check *
      **********************/
-    if(!appDelegate.isManager)
+    appDelegate.isManager = appDelegate.manager==0;
+    if(appDelegate.manager==1)
     {
         self.btnAdd.hidden = YES;
     }
@@ -57,7 +56,6 @@
 - (void)viewDidUnload
 {
     table = nil;
-    toggleSegment = nil;
     [self setBtnAdd:nil];
     [self setSearchBar:nil];
     [super viewDidUnload];
@@ -79,14 +77,40 @@
     [self stopLoadingAnimations];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (IBAction)goBack:(id)sender
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-/************************************************************
- * Use this to modify how to get data from the SUP database *
- ************************************************************/
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan)
+    {
+        [self.searchBar resignFirstResponder];
+    }
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"DetailSegue"])
+    {
+        iPhoneEmployeeDetailsViewController *edView = [segue destinationViewController];
+        //Getting index of the cell selected
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *indexPath = [table indexPathForCell:cell];
+        
+        edView.thisEntry = [displayEmployeeArray objectAtIndex:[indexPath row]];
+        
+        //Resigns keyboard when pushing to the next view. Fixes graphical glitches
+        [self.searchBar resignFirstResponder];
+        self.searchBar.text = @"";
+        self.searchBar.showsCancelButton = NO;
+
+    }
+}
+
 -(void)getDataFromSUP
 {
     NSLog(@"Loading data from SUP...");
@@ -105,35 +129,9 @@
     NSLog(@"Loaded %d entries", [employeeList length]);
 }
 
-
-
-- (IBAction)changeToggleSettings:(id)sender
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    [self searchBar:self.searchBar textDidChange:self.searchBar.text];
-}
-
-- (IBAction)goBack:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([[segue identifier] isEqualToString:@"DetailSegue"])
-    {
-        EmployeeDetailsViewController *edView = [segue destinationViewController];
-        //Getting index of the cell selected
-        UITableViewCell *cell = (UITableViewCell *)sender;
-        NSIndexPath *indexPath = [table indexPathForCell:cell];
-        
-        edView.thisEntry = [displayEmployeeArray objectAtIndex:[indexPath row]];
-        
-        //Resigns keyboard when pushing to the next view. Fixes graphical glitches
-        [self.searchBar resignFirstResponder];
-        self.searchBar.text = @"";
-        self.searchBar.showsCancelButton = NO;
-        
-    }
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -151,23 +149,25 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"EmployeeCell";
-    SimpleNameCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     //Getting current index
     int index = indexPath.row;
     
-    cell.lblFirstName.text = [[displayEmployeeArray objectAtIndex:index] firstName];
-    cell.lblLastName.text = [[displayEmployeeArray objectAtIndex:index] lastName];
-    cell.lblDepartment.text = [[displayEmployeeArray objectAtIndex:index] department];
-    // Configure the cell...
+    NSString *fName = [[displayEmployeeArray objectAtIndex:index] firstName];
+    NSString *lName = [[displayEmployeeArray objectAtIndex:index] lastName];
+    NSString *displayName = [NSString stringWithFormat:@"%@, %@", lName, fName];
+    
+    cell.textLabel.text = displayName;
+    cell.detailTextLabel.text = [[displayEmployeeArray objectAtIndex:index] department];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
+    //Nothing needed here yet
 }
 
 #pragma mark - UISearchBarDelegate
@@ -192,19 +192,14 @@
         {
             NSRange r;
             
-            //Checking to see which part to search (first name, last name, or position)
-            switch ([toggleSegment selectedSegmentIndex])
-            {
-                case 0:
-                    r = [entry.firstName rangeOfString:searchText options:NSCaseInsensitiveSearch];
-                    break;
-                case 1:
-                    r = [entry.lastName rangeOfString:searchText options:NSCaseInsensitiveSearch];
-                    break;
-                case 2:
-                    r = [entry.department rangeOfString:searchText options:NSCaseInsensitiveSearch];
-                    break;
-            }
+            //Checks everything at once as opposed to the ipad version.
+            NSString *fName = entry.firstName;
+            NSString *lName = entry.lastName;
+            NSString *dept = entry.department;
+            NSString *combined = [NSString stringWithFormat:@"%@ %@ %@", fName, lName, dept];
+            
+            //Searchin the first name, last name, and department
+            r = [combined rangeOfString:searchText options:NSCaseInsensitiveSearch];
             
             if(r.location != NSNotFound)
             {
@@ -238,3 +233,4 @@
 
 
 @end
+

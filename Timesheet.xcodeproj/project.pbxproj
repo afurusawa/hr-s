@@ -95,6 +95,19 @@
 		76E44E9D160A3FA10072FB34 /* OfflineEmployeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E44E91160A3F9F0072FB34 /* OfflineEmployeeDetailsViewController.m */; };
 		76E44EA1160A3FA10072FB34 /* OfflineSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E44E99160A3FA10072FB34 /* OfflineSearchViewController.m */; };
 		76E44EA6160A45210072FB34 /* OfflineDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E44EA5160A45210072FB34 /* OfflineDHomeViewController.m */; };
+		76E6410E16261DDF003C2AD1 /* UnderlyingEmployeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6410D16261DDF003C2AD1 /* UnderlyingEmployeeDetailsViewController.m */; };
+		76E6411216261F08003C2AD1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6411116261F07003C2AD1 /* MapViewController.m */; };
+		76E6411516261F26003C2AD1 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6411416261F26003C2AD1 /* LocationAnnotation.m */; };
+		76E6411716261F54003C2AD1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6411616261F54003C2AD1 /* CoreLocation.framework */; };
+		76E6411916261F9A003C2AD1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6411816261F9A003C2AD1 /* MapKit.framework */; };
+		76E6411B16262077003C2AD1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6411A16262077003C2AD1 /* MessageUI.framework */; };
+		76E6412E16262846003C2AD1 /* iPhoneUnderlyingEmployeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6411F16262846003C2AD1 /* iPhoneUnderlyingEmployeeDetailsViewController.m */; };
+		76E6412F16262846003C2AD1 /* iPhoneOfflineAddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6412216262846003C2AD1 /* iPhoneOfflineAddEntryViewController.m */; };
+		76E6413016262846003C2AD1 /* iPhoneOfflineEmployeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6412416262846003C2AD1 /* iPhoneOfflineEmployeeDetailsViewController.m */; };
+		76E6413116262846003C2AD1 /* iPhoneOfflineSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6412616262846003C2AD1 /* iPhoneOfflineSearchViewController.m */; };
+		76E6413216262846003C2AD1 /* IPhoneAddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6412916262846003C2AD1 /* IPhoneAddEntryViewController.m */; };
+		76E6413316262846003C2AD1 /* iPhoneEmployeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6412B16262846003C2AD1 /* iPhoneEmployeeDetailsViewController.m */; };
+		76E6413416262846003C2AD1 /* IPhoneSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6412D16262846003C2AD1 /* IPhoneSearchViewController.m */; };
 		AD0BD2CB15C9A0A1009D6CB6 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD2CA15C9A0A1009D6CB6 /* HistoryViewController.m */; };
 		AD0BD2D115C9A95C009D6CB6 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD2D015C9A95C009D6CB6 /* HistoryCell.m */; };
 		AD0BD2D315C9AEC2009D6CB6 /* historyView_retriever.php in Resources */ = {isa = PBXBuildFile; fileRef = AD0BD2D215C9AEC2009D6CB6 /* historyView_retriever.php */; };
@@ -358,6 +371,29 @@
 		76E44EA4160A45210072FB34 /* OfflineDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineDHomeViewController.h; sourceTree = "<group>"; };
 		76E44EA5160A45210072FB34 /* OfflineDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineDHomeViewController.m; sourceTree = "<group>"; };
 		76E44EA7160A54D00072FB34 /* OfflineSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineSearchViewController.h; sourceTree = "<group>"; };
+		76E6410C16261DDF003C2AD1 /* UnderlyingEmployeeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderlyingEmployeeDetailsViewController.h; sourceTree = "<group>"; };
+		76E6410D16261DDF003C2AD1 /* UnderlyingEmployeeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderlyingEmployeeDetailsViewController.m; sourceTree = "<group>"; };
+		76E6411016261F07003C2AD1 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		76E6411116261F07003C2AD1 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		76E6411316261F26003C2AD1 /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
+		76E6411416261F26003C2AD1 /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
+		76E6411616261F54003C2AD1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		76E6411816261F9A003C2AD1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		76E6411A16262077003C2AD1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		76E6411E16262846003C2AD1 /* iPhoneUnderlyingEmployeeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneUnderlyingEmployeeDetailsViewController.h; sourceTree = "<group>"; };
+		76E6411F16262846003C2AD1 /* iPhoneUnderlyingEmployeeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneUnderlyingEmployeeDetailsViewController.m; sourceTree = "<group>"; };
+		76E6412116262846003C2AD1 /* iPhoneOfflineAddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneOfflineAddEntryViewController.h; sourceTree = "<group>"; };
+		76E6412216262846003C2AD1 /* iPhoneOfflineAddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneOfflineAddEntryViewController.m; sourceTree = "<group>"; };
+		76E6412316262846003C2AD1 /* iPhoneOfflineEmployeeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneOfflineEmployeeDetailsViewController.h; sourceTree = "<group>"; };
+		76E6412416262846003C2AD1 /* iPhoneOfflineEmployeeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneOfflineEmployeeDetailsViewController.m; sourceTree = "<group>"; };
+		76E6412516262846003C2AD1 /* iPhoneOfflineSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneOfflineSearchViewController.h; sourceTree = "<group>"; };
+		76E6412616262846003C2AD1 /* iPhoneOfflineSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneOfflineSearchViewController.m; sourceTree = "<group>"; };
+		76E6412816262846003C2AD1 /* IPhoneAddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPhoneAddEntryViewController.h; sourceTree = "<group>"; };
+		76E6412916262846003C2AD1 /* IPhoneAddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPhoneAddEntryViewController.m; sourceTree = "<group>"; };
+		76E6412A16262846003C2AD1 /* iPhoneEmployeeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneEmployeeDetailsViewController.h; sourceTree = "<group>"; };
+		76E6412B16262846003C2AD1 /* iPhoneEmployeeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneEmployeeDetailsViewController.m; sourceTree = "<group>"; };
+		76E6412C16262846003C2AD1 /* IPhoneSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPhoneSearchViewController.h; sourceTree = "<group>"; };
+		76E6412D16262846003C2AD1 /* IPhoneSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPhoneSearchViewController.m; sourceTree = "<group>"; };
 		AD0BD2C915C9A0A1009D6CB6 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		AD0BD2CA15C9A0A1009D6CB6 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		AD0BD2CF15C9A95C009D6CB6 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
@@ -489,6 +525,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E6411B16262077003C2AD1 /* MessageUI.framework in Frameworks */,
+				76E6411916261F9A003C2AD1 /* MapKit.framework in Frameworks */,
+				76E6411716261F54003C2AD1 /* CoreLocation.framework in Frameworks */,
 				6A4925AF15D1A2EA009DE64F /* MobileCoreServices.framework in Frameworks */,
 				6A4925B115D1A2FB009DE64F /* SystemConfiguration.framework in Frameworks */,
 				6A4925AD15D1A2DB009DE64F /* CFNetwork.framework in Frameworks */,
@@ -748,37 +787,29 @@
 		6AFCE377160254A300892E71 /* Directory */ = {
 			isa = PBXGroup;
 			children = (
+				76E6411D16262845003C2AD1 /* iPhone */,
+				76E6411C16262267003C2AD1 /* Online */,
 				76E44EA3160A3FAB0072FB34 /* Offline */,
-				6AFCE40216025E7A00892E71 /* DHomeViewController.h */,
-				6AFCE40316025E7A00892E71 /* DHomeViewController.m */,
-				6AFCE4151602BFC600892E71 /* Search */,
-				6AFCE4141602BFC400892E71 /* Browse */,
+				76E6410C16261DDF003C2AD1 /* UnderlyingEmployeeDetailsViewController.h */,
+				76E6410D16261DDF003C2AD1 /* UnderlyingEmployeeDetailsViewController.m */,
+				76E6411316261F26003C2AD1 /* LocationAnnotation.h */,
+				76E6411416261F26003C2AD1 /* LocationAnnotation.m */,
+				76E6411016261F07003C2AD1 /* MapViewController.h */,
+				76E6411116261F07003C2AD1 /* MapViewController.m */,
 				6AFCE378160257B500892E71 /* SimpleNameCell.h */,
 				6AFCE379160257B500892E71 /* SimpleNameCell.m */,
+				6AFCE4141602BFC400892E71 /* Old */,
 			);
 			name = Directory;
 			sourceTree = "<group>";
 		};
-		6AFCE4141602BFC400892E71 /* Browse */ = {
+		6AFCE4141602BFC400892E71 /* Old */ = {
 			isa = PBXGroup;
 			children = (
 				6AFCE3751602549E00892E71 /* ContactsTableViewController.h */,
 				6AFCE3761602549E00892E71 /* ContactsTableViewController.m */,
 			);
-			name = Browse;
-			sourceTree = "<group>";
-		};
-		6AFCE4151602BFC600892E71 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				6AFCE40716028FC400892E71 /* SearchViewController.h */,
-				6AFCE40816028FC400892E71 /* SearchViewController.m */,
-				6AFCE40A1602A1C100892E71 /* EmployeeDetailsViewController.h */,
-				6AFCE40B1602A1C100892E71 /* EmployeeDetailsViewController.m */,
-				76012B4D1607DA9E0059A6A8 /* AddEntryViewController.h */,
-				76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */,
-			);
-			name = Search;
+			name = Old;
 			sourceTree = "<group>";
 		};
 		76E44EA3160A3FAB0072FB34 /* Offline */ = {
@@ -794,6 +825,58 @@
 				76E44EA5160A45210072FB34 /* OfflineDHomeViewController.m */,
 			);
 			name = Offline;
+			sourceTree = "<group>";
+		};
+		76E6411C16262267003C2AD1 /* Online */ = {
+			isa = PBXGroup;
+			children = (
+				6AFCE40216025E7A00892E71 /* DHomeViewController.h */,
+				6AFCE40316025E7A00892E71 /* DHomeViewController.m */,
+				6AFCE40716028FC400892E71 /* SearchViewController.h */,
+				6AFCE40816028FC400892E71 /* SearchViewController.m */,
+				6AFCE40A1602A1C100892E71 /* EmployeeDetailsViewController.h */,
+				6AFCE40B1602A1C100892E71 /* EmployeeDetailsViewController.m */,
+				76012B4D1607DA9E0059A6A8 /* AddEntryViewController.h */,
+				76012B4E1607DA9E0059A6A8 /* AddEntryViewController.m */,
+			);
+			name = Online;
+			sourceTree = "<group>";
+		};
+		76E6411D16262845003C2AD1 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				76E6411E16262846003C2AD1 /* iPhoneUnderlyingEmployeeDetailsViewController.h */,
+				76E6411F16262846003C2AD1 /* iPhoneUnderlyingEmployeeDetailsViewController.m */,
+				76E6412016262846003C2AD1 /* Offline */,
+				76E6412716262846003C2AD1 /* Online */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		76E6412016262846003C2AD1 /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+				76E6412116262846003C2AD1 /* iPhoneOfflineAddEntryViewController.h */,
+				76E6412216262846003C2AD1 /* iPhoneOfflineAddEntryViewController.m */,
+				76E6412316262846003C2AD1 /* iPhoneOfflineEmployeeDetailsViewController.h */,
+				76E6412416262846003C2AD1 /* iPhoneOfflineEmployeeDetailsViewController.m */,
+				76E6412516262846003C2AD1 /* iPhoneOfflineSearchViewController.h */,
+				76E6412616262846003C2AD1 /* iPhoneOfflineSearchViewController.m */,
+			);
+			path = Offline;
+			sourceTree = "<group>";
+		};
+		76E6412716262846003C2AD1 /* Online */ = {
+			isa = PBXGroup;
+			children = (
+				76E6412816262846003C2AD1 /* IPhoneAddEntryViewController.h */,
+				76E6412916262846003C2AD1 /* IPhoneAddEntryViewController.m */,
+				76E6412A16262846003C2AD1 /* iPhoneEmployeeDetailsViewController.h */,
+				76E6412B16262846003C2AD1 /* iPhoneEmployeeDetailsViewController.m */,
+				76E6412C16262846003C2AD1 /* IPhoneSearchViewController.h */,
+				76E6412D16262846003C2AD1 /* IPhoneSearchViewController.m */,
+			);
+			path = Online;
 			sourceTree = "<group>";
 		};
 		AD0BD2C715C99E5A009D6CB6 /* History */ = {
@@ -1000,6 +1083,8 @@
 		ADB0A9C015A25B1E0039C723 = {
 			isa = PBXGroup;
 			children = (
+				76E6411A16262077003C2AD1 /* MessageUI.framework */,
+				76E6411816261F9A003C2AD1 /* MapKit.framework */,
 				6A5D639E1625E60400BEC742 /* Generated Code */,
 				6AD14A251614339D008C42CD /* Default-568h@2x.png */,
 				6AFCE4111602A31600892E71 /* ResumeViewController.h */,
@@ -1020,6 +1105,7 @@
 		ADB0A9CE15A25B1F0039C723 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76E6411616261F54003C2AD1 /* CoreLocation.framework */,
 				6A4925B015D1A2FB009DE64F /* SystemConfiguration.framework */,
 				6A4925AE15D1A2EA009DE64F /* MobileCoreServices.framework */,
 				6A4925AC15D1A2DB009DE64F /* CFNetwork.framework */,
@@ -1336,6 +1422,16 @@
 				6A5D64231625E60400BEC742 /* HR_SuiteTimesheetApprovalsMetaData.m in Sources */,
 				6A5D64241625E60400BEC742 /* HR_SuiteTimesheetMetaData.m in Sources */,
 				6A5D64251625E60400BEC742 /* HR_SuiteUsersMetaData.m in Sources */,
+				76E6410E16261DDF003C2AD1 /* UnderlyingEmployeeDetailsViewController.m in Sources */,
+				76E6411216261F08003C2AD1 /* MapViewController.m in Sources */,
+				76E6411516261F26003C2AD1 /* LocationAnnotation.m in Sources */,
+				76E6412E16262846003C2AD1 /* iPhoneUnderlyingEmployeeDetailsViewController.m in Sources */,
+				76E6412F16262846003C2AD1 /* iPhoneOfflineAddEntryViewController.m in Sources */,
+				76E6413016262846003C2AD1 /* iPhoneOfflineEmployeeDetailsViewController.m in Sources */,
+				76E6413116262846003C2AD1 /* iPhoneOfflineSearchViewController.m in Sources */,
+				76E6413216262846003C2AD1 /* IPhoneAddEntryViewController.m in Sources */,
+				76E6413316262846003C2AD1 /* iPhoneEmployeeDetailsViewController.m in Sources */,
+				76E6413416262846003C2AD1 /* IPhoneSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

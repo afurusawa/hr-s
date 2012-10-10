@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12A269" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
@@ -3207,15 +3206,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ManagerCell" textLabel="Yct-YN-N4V" rowHeight="32" style="IBUITableViewCellStyleDefault" id="3U0-vt-vHo">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ManagerCell" textLabel="Yct-YN-N4V" rowHeight="32" style="IBUITableViewCellStyleDefault" id="3U0-vt-vHo">
                                                 <rect key="frame" x="0.0" y="22" width="452" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="452" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="432" height="31"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yct-YN-N4V">
-                                                            <rect key="frame" x="10" y="0.0" width="432" height="31"/>
+                                                            <rect key="frame" x="10" y="0.0" width="412" height="31"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3224,6 +3223,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <connections>
+                                                    <segue destination="Irv-6l-sZb" kind="push" identifier="MapSegue" id="cvS-Qu-WRN"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -3231,6 +3233,36 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <outlet property="delegate" destination="mGd-qG-xoo" id="HOl-Za-3nD"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mIZ-aN-RxM">
+                                        <rect key="frame" x="370" y="194" width="378" height="71"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToMap:" destination="mGd-qG-xoo" eventType="touchUpInside" id="gfM-UY-vn2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7xs-Xy-Wk6">
+                                        <rect key="frame" x="175" y="419" width="452" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendEmail:" destination="mGd-qG-xoo" eventType="touchUpInside" id="CoF-Bb-soX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -3256,10 +3288,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressBtn" destination="mIZ-aN-RxM" id="nQL-Sk-UGs"/>
                         <outlet property="deleteBtn" destination="vrw-xD-UPe" id="ScA-rF-u9z"/>
                         <outlet property="dropDownBtn" destination="itn-Yx-rgW" id="VVb-Tp-fxj"/>
                         <outlet property="editBtn" destination="B7j-ci-PPx" id="w9N-WX-3GM"/>
-                        <outlet property="imagePortrait" destination="4Lb-lS-0oM" id="JqO-m4-3iC"/>
+                        <outlet property="imagePortrait" destination="4Lb-lS-0oM" id="1ii-ob-AJu"/>
                         <outlet property="managerTable" destination="z3o-Ag-lVd" id="cRu-LX-t3I"/>
                         <outlet property="saveBtn" destination="3if-gV-ERP" id="2Ew-c0-ldb"/>
                         <outlet property="scrollView" destination="veC-6g-8mB" id="s0h-71-BJD"/>
@@ -3275,7 +3308,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OH0-qJ-byX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2223" y="3373"/>
+            <point key="canvasLocation" x="-2039" y="3457"/>
         </scene>
         <!--OfflineD Home View Controller - Main Menu-->
         <scene sceneID="esi-3J-tf5">
@@ -3875,6 +3908,22 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B2C-lI-sB6">
+                                        <rect key="frame" x="178" y="426" width="452" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendEmail:" destination="mGd-qG-xoo" eventType="touchUpInside" id="gvf-9t-Zyr"/>
+                                            <action selector="sendEmail:" destination="9gC-hB-7YP" eventType="touchUpInside" id="k5b-VQ-3nB"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V1E-Om-ctH">
                                         <rect key="frame" x="163" y="633" width="186" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3903,6 +3952,22 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gIy-Rq-XBA">
+                                        <rect key="frame" x="368" y="195" width="378" height="71"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToMap:" destination="mGd-qG-xoo" eventType="touchUpInside" id="b03-N8-w5I"/>
+                                            <action selector="goToMap:" destination="9gC-hB-7YP" eventType="touchUpInside" id="pFr-QR-qj9"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zWE-tZ-H9U">
                                         <rect key="frame" x="601" y="493" width="43" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3990,9 +4055,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressBtn" destination="gIy-Rq-XBA" id="wwH-iN-ijx"/>
                         <outlet property="deleteBtn" destination="V1E-Om-ctH" id="E6n-Jd-ROj"/>
                         <outlet property="dropDownBtn" destination="zWE-tZ-H9U" id="Xau-Vy-pza"/>
                         <outlet property="editBtn" destination="aRd-ex-50K" id="Doy-3u-REi"/>
+                        <outlet property="emailBtn" destination="B2C-lI-sB6" id="MW5-gC-d2f"/>
                         <outlet property="imagePortrait" destination="IdY-oS-jdQ" id="4Fd-n0-9Q9"/>
                         <outlet property="managerTable" destination="jA9-g4-PJZ" id="sBX-PR-MjZ"/>
                         <outlet property="saveBtn" destination="a84-Bs-5rV" id="L1R-ZX-LwP"/>
@@ -4005,11 +4072,36 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="tfPhoneNumber" destination="gex-fZ-aUI" id="pnt-wY-MAo"/>
                         <outlet property="tfPosition" destination="omL-II-CxV" id="hmM-dL-72b"/>
                         <outlet property="tvAddress" destination="ksN-dC-kGv" id="1oc-qr-guB"/>
+                        <segue destination="Irv-6l-sZb" kind="push" identifier="MapSegue" id="xw6-eO-Mo3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liE-UQ-rmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-515" y="5667"/>
+            <point key="canvasLocation" x="-731" y="5875"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ElX-yJ-Jwr">
+            <objects>
+                <viewController id="Irv-6l-sZb" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gHo-8M-fzj">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="OKr-Xd-BCf">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iAF-S7-cJt"/>
+                    <connections>
+                        <outlet property="mapView" destination="OKr-Xd-BCf" id="SCN-U5-1hD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oct-jq-emc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-495" y="4109"/>
         </scene>
     </scenes>
     <resources>
@@ -4074,30 +4166,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="taskLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="EmployeeDetailsViewController" superclassName="UnderlyingView">
+        <class className="EmployeeDetailsViewController" superclassName="UnderlyingEmployeeDetailsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EmployeeDetailsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="beginDeleteEmployee:"/>
                 <relationship kind="action" name="dropDownManagers:"/>
                 <relationship kind="action" name="editEntryOrCancel:"/>
+                <relationship kind="action" name="goToMap:"/>
                 <relationship kind="action" name="saveEdit:"/>
-                <relationship kind="outlet" name="deleteBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dropDownBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="editBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imagePortrait" candidateClass="UIImageView"/>
+                <relationship kind="action" name="sendEmail:"/>
                 <relationship kind="outlet" name="managerTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="saveBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfEmployeeName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfId" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfMngFax" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfMngPhone" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfPhoneNumber" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tvAddress" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="HistoryCell" superclassName="UITableViewCell">
@@ -4237,6 +4315,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="workerTable" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
         <class className="MemberCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MemberCell.h"/>
             <relationships>
@@ -4281,29 +4365,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="btnAddEmployee" candidateClass="UIButton"/>
             </relationships>
         </class>
-        <class className="OfflineEmployeeDetailsViewController" superclassName="UnderlyingView">
+        <class className="OfflineEmployeeDetailsViewController" superclassName="UnderlyingEmployeeDetailsViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OfflineEmployeeDetailsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="beginDeleteEmployee:"/>
                 <relationship kind="action" name="dropDownManagers:"/>
                 <relationship kind="action" name="editEntryOrCancel:"/>
+                <relationship kind="action" name="goToMap:"/>
                 <relationship kind="action" name="saveEdit:"/>
-                <relationship kind="outlet" name="deleteBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dropDownBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="editBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imagePortrait" candidateClass="UIImageView"/>
+                <relationship kind="action" name="sendEmail:"/>
                 <relationship kind="outlet" name="managerTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="saveBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfEmployeeName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfId" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfMngPhone" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfPhoneNumber" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tvAddress" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="OfflineSearchViewController" superclassName="UnderlyingView">
@@ -4320,6 +4391,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="SearchViewController" superclassName="UnderlyingView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changeToggleSettings:"/>
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="outlet" name="btnAdd" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
@@ -4378,6 +4450,27 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="lockSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="lockSwitchLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="totalHours" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UnderlyingEmployeeDetailsViewController" superclassName="UnderlyingView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UnderlyingEmployeeDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="deleteBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dropDownBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="emailBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imagePortrait" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="saveBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tfDepartment" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmail" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfEmployeeName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfManager" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfMngPhone" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPhoneNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tfPosition" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tvAddress" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="UnderlyingView" superclassName="UIViewController">
@@ -4473,5 +4566,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="wSV-wn-fvG"/>
+        <segue reference="xw6-eO-Mo3"/>
     </inferredMetricsTieBreakers>
 </document>

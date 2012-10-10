@@ -1,19 +1,19 @@
 //
-//  OfflineAddEntryViewController.m
+//  iPhoneOfflineAddEntryViewController.m
 //  HRDirectory
 //
-//  Created by Alex Chiu on 9/18/12.
+//  Created by Alex Chiu on 9/19/12.
 //  Copyright (c) 2012 Alex Chiu. All rights reserved.
 //
 
-#import "OfflineAddEntryViewController.h"
+#import "iPhoneOfflineAddEntryViewController.h"
 #import "AppDelegate.h"
 
-@interface OfflineAddEntryViewController ()
+@interface iPhoneOfflineAddEntryViewController ()
 
 @end
 
-@implementation OfflineAddEntryViewController
+@implementation iPhoneOfflineAddEntryViewController
 
 @synthesize scrollView = _scrollView;
 @synthesize lblUserWarning = _lblUserWarning;
@@ -29,11 +29,12 @@
 @synthesize tfAddress = _tfAddress;
 @synthesize tfManager = _tfManager;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -49,7 +50,7 @@
     NSLog(@"%@ did load", [self class]);
     [super viewDidLoad];
     
-    self.scrollView.contentSize = CGSizeMake(768, 850);
+    self.scrollView.contentSize = CGSizeMake(320, 501);
     
     self.lblUserWarning.hidden = YES;
     self.tfManager.enabled = NO;
@@ -63,8 +64,8 @@
     
     [self setTFDelegates];
     
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
 }
 
 - (void)viewDidUnload
@@ -102,7 +103,7 @@
     self.tfEmail.delegate = self;
     self.tfEmail.keyboardType = UIKeyboardTypeEmailAddress;
     self.tfUsername.delegate = self;
-    self.tfAddress.delegate = self;
+    //self.tfAddress.delegate = self;
     
     self.tfManager.delegate = self;
 }
@@ -143,7 +144,7 @@
 
 /* End Actions **********************************************************************************/
 
-/* Data *************************************************************************************/
+/* SUP Data *************************************************************************************/
 -(void)addNewEmployee
 {
     BOOL finEmployee = YES;
@@ -226,7 +227,7 @@
                                   email, @"email",
                                   phone, @"phone",
                                   firstName, @"firstName",
-                                  lastName, @"lastName",
+                                  firstName, @"lastName",
                                   picture, @"picture",
                                   nil];
         
@@ -249,8 +250,8 @@
 -(void)populateManagersList
 {
     NSLog(@"Populating managers list");
-    
-    managersList = [[NSMutableArray alloc] init];
+
+    managersList = [[NSMutableArray alloc] init];  
     managersUsernameList = [[NSMutableArray alloc] init];
     
     AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -281,6 +282,7 @@
     {
         NSLog(@"The managerList and managerUsernameList have different sizes, error has occured");
     }
+    NSLog(@"Finished populating manager's list");
 }
 
 -(BOOL)managerExists:(NSString *)mgrUsername
@@ -385,7 +387,6 @@
     UITableViewCell *cell =  [managersTable dequeueReusableCellWithIdentifier:cellIndentifier];
     
     cell.textLabel.text = [managersList objectAtIndex:indexPath.row];
-    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
     
     return cell;
 }

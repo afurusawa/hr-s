@@ -1,24 +1,20 @@
 //
-//  SearchViewController.m
+//  iPhoneOfflineSearchViewController.m
 //  HRDirectory
 //
-//  Created by Alex Chiu on 8/8/12.
+//  Created by Alex Chiu on 9/19/12.
 //  Copyright (c) 2012 Alex Chiu. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "iPhoneOfflineSearchViewController.h"
 #import "SimpleNameCell.h"
-#import "EmployeeDetailsViewController.h"
-#import "HR_SuiteUsers.h"
+#import "AppDelegate.h"
 
-@interface SearchViewController ()
+@interface iPhoneOfflineSearchViewController ()
 
 @end
 
-@implementation SearchViewController
-@synthesize btnAdd = _btnAdd;
-@synthesize searchBar;
-
+@implementation iPhoneOfflineSearchViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,16 +33,6 @@
     
     [super viewDidLoad];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    /**********************
-     * Add-allowing Check *
-     **********************/
-    if(!appDelegate.isManager)
-    {
-        self.btnAdd.hidden = YES;
-    }
-    
     //Keyboard notification listeners *Note has to be in viewDidLoad
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
@@ -54,19 +40,17 @@
     [self startLoadingAnimations];
 }
 
-- (void)viewDidUnload
-{
-    table = nil;
-    toggleSegment = nil;
-    [self setBtnAdd:nil];
-    [self setSearchBar:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self getDataFromSUP];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    appDelegate.isManager = appDelegate.manager == 0;
+    if(appDelegate.manager == 1) //1 is not a manager
+    {
+        self.btnAdd.hidden = YES;
+    }
+    
+    [self gettingData];
     
     //Sorting the employeeArray
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
@@ -79,49 +63,30 @@
     [self stopLoadingAnimations];
 }
 
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-/************************************************************
- * Use this to modify how to get data from the SUP database *
- ************************************************************/
--(void)getDataFromSUP
+
+-(void)gettingData
 {
-    NSLog(@"Loading data from SUP...");
-    employeeArray = [[NSMutableArray alloc] init];
+    AppDelegate *singleton = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
-    HR_SuiteUsersList *employeeList = [HR_SuiteUsers findAll];
-    
-    if([employeeList length] > 0)
-    {
-        NSLog(@"Load successful. Length = %d", [employeeList length]);
-        for(HR_SuiteUsers *persons in employeeList)
-        {
-            [employeeArray addObject:persons];
-        }
-    }
-    NSLog(@"Loaded %d entries", [employeeList length]);
-}
-
-
-
-- (IBAction)changeToggleSettings:(id)sender
-{
-    [self searchBar:self.searchBar textDidChange:self.searchBar.text];
-}
-
-- (IBAction)goBack:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
+    employeeArray = singleton.hr_users; //pointer, not copy
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString:@"DetailSegue"])
     {
-        EmployeeDetailsViewController *edView = [segue destinationViewController];
+        OfflineEmployeeDetailsViewController *edView = [segue destinationViewController];
         //Getting index of the cell selected
         UITableViewCell *cell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [table indexPathForCell:cell];
@@ -132,8 +97,13 @@
         [self.searchBar resignFirstResponder];
         self.searchBar.text = @"";
         self.searchBar.showsCancelButton = NO;
-        
     }
+}
+
+
+- (IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -151,23 +121,25 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"EmployeeCell";
-    SimpleNameCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     //Getting current index
     int index = indexPath.row;
     
-    cell.lblFirstName.text = [[displayEmployeeArray objectAtIndex:index] firstName];
-    cell.lblLastName.text = [[displayEmployeeArray objectAtIndex:index] lastName];
-    cell.lblDepartment.text = [[displayEmployeeArray objectAtIndex:index] department];
-    // Configure the cell...
+    NSString *fName = [[displayEmployeeArray objectAtIndex:index] objectForKey:@"firstName"];
+    NSString *lName = [[displayEmployeeArray objectAtIndex:index] objectForKey:@"lastName"];
+    NSString *displayName = [NSString stringWithFormat:@"%@, %@", lName, fName];
+    
+    cell.textLabel.text = displayName;
+    cell.detailTextLabel.text = [[displayEmployeeArray objectAtIndex:index] objectForKey:@"department"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
+    //Nothing needed here yet
 }
 
 #pragma mark - UISearchBarDelegate
@@ -188,23 +160,18 @@
     {
         [displayEmployeeArray removeAllObjects];
         
-        for (HR_SuiteUsers *entry in employeeArray)
+        for (NSDictionary *entry in employeeArray)
         {
             NSRange r;
+
+            //Checks everything at once as opposed to the ipad version.
+            NSString *fName = [entry objectForKey:@"firstName"];
+            NSString *lName = [entry objectForKey:@"lastName"];
+            NSString *dept = [entry objectForKey:@"department"];
+            NSString *combined = [NSString stringWithFormat:@"%@ %@ %@", fName, lName, dept];
             
-            //Checking to see which part to search (first name, last name, or position)
-            switch ([toggleSegment selectedSegmentIndex])
-            {
-                case 0:
-                    r = [entry.firstName rangeOfString:searchText options:NSCaseInsensitiveSearch];
-                    break;
-                case 1:
-                    r = [entry.lastName rangeOfString:searchText options:NSCaseInsensitiveSearch];
-                    break;
-                case 2:
-                    r = [entry.department rangeOfString:searchText options:NSCaseInsensitiveSearch];
-                    break;
-            }
+            //Searchin the first name, last name, and department
+            r = [combined rangeOfString:searchText options:NSCaseInsensitiveSearch];
             
             if(r.location != NSNotFound)
             {
@@ -235,6 +202,5 @@
     [self searchBar:self.searchBar textDidChange:@""];
     self.searchBar.showsCancelButton = NO;
 }
-
 
 @end

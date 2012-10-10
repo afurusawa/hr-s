@@ -1,20 +1,18 @@
 //
-//  OfflineEmployeeDetailsViewController.m
+//  iPhoneEmployeeDetailsViewController.m
 //  HRDirectory
 //
-//  Created by Alex Chiu on 9/18/12.
+//  Created by Alex Chiu on 9/19/12.
 //  Copyright (c) 2012 Alex Chiu. All rights reserved.
 //
 
-#import "OfflineEmployeeDetailsViewController.h"
-#import "AppDelegate.h"
-#import "MapViewController.h"
+#import "iPhoneEmployeeDetailsViewController.h"
 
-@interface OfflineEmployeeDetailsViewController ()
+@interface iPhoneEmployeeDetailsViewController ()
 
 @end
 
-@implementation OfflineEmployeeDetailsViewController
+@implementation iPhoneEmployeeDetailsViewController
 
 @synthesize thisEntry = _thisEntry;
 
@@ -41,7 +39,7 @@
     
     //Initially hides the drop down list for selecting managers
     managerTable.hidden = YES;
-    managerUsername = [self.thisEntry objectForKey:@"manager"];
+    managerUsername = self.thisEntry.manager;
     
     //If no manager, only allow edit for his own
     if(!isManager)
@@ -50,13 +48,17 @@
         self.deleteBtn.hidden = YES;
         
         //If current username is not equal to the display person's username
-        if(![user isEqualToString:[self.thisEntry objectForKey:@"employeeID"]])
+        if(![user isEqualToString:self.thisEntry.employeeID])
         {   //Disallow editing
             self.editBtn.hidden = YES;
         }
     }
     
-    self.scrollView.contentSize = CGSizeMake(768, 960);
+    self.scrollView.contentSize = CGSizeMake(320, 532);
+    
+    //Keyboard notification listeners *Note has to be in viewDidLoad
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
     
     [self disableEditing];
 }
@@ -73,8 +75,8 @@
 
 - (void)viewDidUnload
 {
+    managerTable = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -88,8 +90,8 @@
     {
         MapViewController *view = (MapViewController *)[segue destinationViewController];
         
-        view.name = [self.thisEntry objectForKey:@"employeeName"];
-        view.address = [self.thisEntry objectForKey:@"address"];
+        view.name = self.thisEntry.employeeName;
+        view.address = self.thisEntry.address;
         [view fetchCoordinates];
     }
 }
@@ -117,12 +119,11 @@
     {
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
         mailViewController.mailComposeDelegate = self;
-        [mailViewController setToRecipients:[NSArray arrayWithObject:[self.thisEntry objectForKey:@"email"]]];
+        [mailViewController setToRecipients:[NSArray arrayWithObject:self.thisEntry.email]];
         [mailViewController setSubject:@""];
         [mailViewController setMessageBody:@"" isHTML:NO];
         
         [self presentModalViewController:mailViewController animated:YES];
-        
     }
     else
     {
@@ -133,9 +134,28 @@
     
 }
 
-- (IBAction)goToMap:(id)sender
+//Makes a call to the person
+- (IBAction)makeCall:(id)sender
 {
-    [self performSegueWithIdentifier:@"MapSegue" sender:self];
+    NSString *phoneNumber = [self stripEverythingButNumbers:self.thisEntry.phone];
+    NSString *phoneCommand = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSLog(@"%@", phoneCommand);
+    NSURL *phoneUrl = [[NSURL alloc] initWithString:phoneCommand];
+    [[UIApplication sharedApplication] openURL: phoneUrl];
+}
+
+- (IBAction)callManager:(id)sender
+{
+    NSString *phoneNumber = [self stripEverythingButNumbers:[self.tfMngPhone text]];
+    NSString *phoneCommand = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSLog(@"%@", phoneCommand);
+    NSURL *phoneUrl = [[NSURL alloc] initWithString:phoneCommand];
+    [[UIApplication sharedApplication] openURL: phoneUrl];
+}
+
+- (IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /* First function called when the "delete" button is pressed
@@ -172,15 +192,15 @@
         managerTable.hidden = YES;
     }
 }
+
 /* End Actions *****************************************************************************************/
 
-/* Methods that use Singleton data ****************************************************************************/
+/* Methods that use SUP data ****************************************************************************/
 -(void)updateViewWithData
 {
     NSLog(@"Updating view with data...");
     
-    NSDictionary *manager = [self getManager:[self.thisEntry objectForKey:@"manager"]];
-    NSLog(@"Manager name: %@", [manager objectForKey:@"employeeName"]);
+    HR_SuiteUsers *manager = [self getManager:self.thisEntry.manager]; //Error expected: manager is now the identifier instead of id
     
     /************************
      * Employee information *
@@ -188,41 +208,34 @@
     
     //Setting portrait
     NSURL *url;
-    UIImage *image;
-    //They don't want the application to take pictures from online so commented out.
-    /*
-     if([[self.thisEntry objectForKey:@"picture"] length] != 0)
-     {
-     url = [[NSURL alloc] initWithString:[self.thisEntry objectForKey:@"picture"]];
-     NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
-     image = [[UIImage alloc] initWithData:imageData];
-     }
-     */
-    image = [UIImage imageNamed:@"user_group.png"];
+    if([self.thisEntry.picture length] != 0)
+        url = [[NSURL alloc] initWithString:self.thisEntry.picture];
+    else
+        url = [[NSURL alloc] initWithString:@"http://certifiablygreenblog.com/wp-content/uploads/2010/08/No-Photo-Available.jpg"];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
+    UIImage *image = [[UIImage alloc] initWithData:imageData];
     [self.imagePortrait setImage:image];
     
     //Getting Full Name
-    NSString *firstName = [self.thisEntry objectForKey:@"firstName"];
-    NSString *lastName = [self.thisEntry objectForKey:@"lastName"];
+    NSString *firstName = self.thisEntry.firstName;
+    NSString *lastName = self.thisEntry.lastName;
     NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
     self.tfEmployeeName.text = fullName;
+        
+    self.tfPhoneNumber.text = self.thisEntry.phone;
+     
+    self.tfEmail.text = [NSString stringWithFormat:@"%@", self.thisEntry.email];
     
-    //self.tfId.text = [NSString stringWithFormat:@"%d", self.thisEntry.id_];
+    self.tfPosition.text = self.thisEntry.position;
     
-    NSString *phone = [self.thisEntry objectForKey:@"phone"];
-    self.tfPhoneNumber.text = (phone != nil) ? [NSString stringWithFormat:@"%@", phone] : @"Not available";
+    self.tfDepartment.text = self.thisEntry.department;
     
-    self.tfEmail.text = [NSString stringWithFormat:@"%@", [self.thisEntry objectForKey:@"email"]];
-    
-    self.tfPosition.text = [self.thisEntry objectForKey:@"position"];
-    
-    self.tfDepartment.text = [self.thisEntry objectForKey:@"department"];
-    
-    self.tvAddress.text = [self.thisEntry objectForKey:@"address"];
+    self.tvAddress.text = self.thisEntry.address;
     
     /***********************
      * Manager Information *
      ***********************/
+    
     if(manager == nil)
     {
         self.tfManager.text = @"None";
@@ -230,12 +243,12 @@
     }
     else
     {
-        NSString *mgrFirstName = [manager objectForKey:@"firstName"];
-        NSString *mgrLastName = [manager objectForKey:@"lastName"];
+        NSString *mgrFirstName = manager.firstName;
+        NSString *mgrLastName = manager.lastName;
         NSString *mgrName = [NSString stringWithFormat:@"%@ %@", mgrFirstName, mgrLastName];
         self.tfManager.text = mgrName;
         
-        self.tfMngPhone.text = [NSString stringWithFormat:@"%@",[manager objectForKey:@"phone"]];
+        self.tfMngPhone.text = [NSString stringWithFormat:@"%@",manager.phone];
     }
     
     NSLog(@"Finish updating view");
@@ -245,42 +258,29 @@
 {
     NSLog(@"Updating entry after the edit");
     
+    //Cannot Edit Name.
+    //Cannot Edit ID number
+    
+    self.thisEntry.phone = self.tfPhoneNumber.text;
+    
+    self.thisEntry.email = self.tfEmail.text;
+    
+    self.thisEntry.department = self.tfDepartment.text;
+    
+    self.thisEntry.position = self.tfPosition.text;
+    
+    self.thisEntry.manager = managerUsername;
+    
+    self.thisEntry.address = self.tvAddress.text;
+    
     [self startLoadingAnimations];
     
-    NSString *firstName = [self.thisEntry objectForKey:@"firstName"];
-    NSString *lastName = [self.thisEntry objectForKey:@"lastName"];
-    NSString *employeeName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-    NSString *employeeID = [self.thisEntry objectForKey:@"employeeID"];
-    NSString *password = [self.thisEntry objectForKey:@"password"];
-    NSString *picture = [self.thisEntry objectForKey:@"picture"];
-    NSString *phone =  self.tfPhoneNumber.text;
-    NSString *email = self.tfEmail.text;
-    NSString *department = self.tfDepartment.text;
-    NSString *position = self.tfPosition.text;
-    NSString *manager = managerUsername;
-    NSString *address = self.tvAddress.text;
+    //Updating entry to the SUP database
+    [self.thisEntry update];
+    [self.thisEntry submitPending];
     
-    //Deleting entry in offline MSMutable Array
-    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [data.hr_users removeObjectIdenticalTo:self.thisEntry];
-    
-    
-    //Creating new dictionary
-    self.thisEntry = [NSDictionary dictionaryWithObjectsAndKeys:
-                      employeeName, @"employeeName",
-                      employeeID, @"employeeID",
-                      password, @"password",
-                      department, @"department",
-                      position, @"position",
-                      manager, @"manager",
-                      address, @"address",
-                      email, @"email",
-                      phone, @"phone",
-                      firstName, @"firstName",
-                      firstName, @"lastName",
-                      picture, @"picture",
-                      nil];
-    [data.hr_users addObject:self.thisEntry];
+    //Synching database (takes time)
+    [HR_SuiteHR_SuiteDB synchronize];
     
     //Updating View
     [self updateViewWithData];
@@ -303,28 +303,19 @@
     managersList = [[NSMutableArray alloc] init];
     managersUsernameList = [[NSMutableArray alloc] init];
     
-    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    NSMutableArray *employeeList = data.hr_users;
-    
-    for(NSDictionary *person1 in employeeList)
+    HR_SuiteUsersList *employeeList = [HR_SuiteUsers findAll];
+    for(HR_SuiteUsers *person in employeeList)
     {
-        for(NSDictionary *person2 in employeeList)
+        for(HR_SuiteUsers *managers in employeeList)
         {
-            NSString *person1ID = [person1 objectForKey:@"employeeID"];
-            NSString *person2ID = [person2 objectForKey:@"manager"];
-            
-            if([person1ID isEqualToString:person2ID]) //If a username is within the managers column
+            if([person.employeeID isEqualToString:managers.manager])
             {
-                [managersList addObject:[person1 objectForKey:@"employeeName"]];
-                [managersUsernameList addObject:[person1 objectForKey:@"employeeID"]];
+                [managersList addObject:person.employeeName];
+                [managersUsernameList addObject:person.employeeID];
                 break;
             }
         }
     }
-    
-    //Adds a none option of the manager dropdown list
-    [managersList addObject:@"None"];
-    [managersUsernameList addObject:@""];
     
     //Simple soft error checking to see if the 2 manager lists are the same size
     if([managersList count] != [managersUsernameList count])
@@ -338,26 +329,27 @@
 {
     NSLog(@"Deleting entry...");
     
-    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [data.hr_users removeObjectIdenticalTo:self.thisEntry];
+    [self.thisEntry delete];
+    [self.thisEntry submitPending];
+    
+    [HR_SuiteHR_SuiteDB synchronize];
     
     //Exits goes back to the list view when finished.
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(NSDictionary *)getManager:(NSString *)mgrUsername
+-(HR_SuiteUsers *)getManager:(NSString *)mgrUsername
 {
-    AppDelegate *data = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    HR_SuiteUsersList *users = [HR_SuiteUsers findByEmployeeID:mgrUsername];
     
-    return [data findByUsername:mgrUsername];
+    if([users length]!= 0)
+    {
+        return [users getObject:0];
+    }
+    
+    return nil;
 }
 /* End SUP Section ********************************************************************************/
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    NSLog(@"Return pressed");
-    [textField resignFirstResponder];
-    return YES;
-}
 
 #pragma mark - UIAlertViewDelegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -389,6 +381,7 @@
     UITableViewCell *cell = [managerTable dequeueReusableCellWithIdentifier:cellIndentifier];
     
     cell.textLabel.text = [managersList objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[self getManager:[managersList objectAtIndex:indexPath.row]].id_];
     
     return cell;
 }
@@ -399,8 +392,8 @@
     self.tfManager.text = [managersList objectAtIndex:indexPath.row];
     
     //Changing the subsequent textfields to fit the currently selected manager man
-    NSDictionary *manager = [self getManager:[managersUsernameList objectAtIndex:indexPath.row]];
-    self.tfMngPhone.text = [manager objectForKey:@"phone"];
+    HR_SuiteUsers *manager = [self getManager:[managersUsernameList objectAtIndex:indexPath.row]];
+    self.tfMngPhone.text = manager.phone;
     
     //Change the selected manager login (their unique identifier) to the manager selected
     managerUsername = [managersUsernameList objectAtIndex:indexPath.row];

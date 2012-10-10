@@ -59,10 +59,13 @@
     [managersTable reloadData];
     managersTable.hidden = YES;
     
+    self.tfManager.text = @"None";
+    managerUsername = @"";
+    
     [self setTFDelegates];
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:self.view.window];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
 }
 
 - (void)viewDidUnload
@@ -92,10 +95,13 @@
     self.tfFirstName.delegate = self;
     self.tfLastName.delegate = self;
     self.tfId.delegate = self;
+    self.tfId.keyboardType = UIKeyboardTypeNumberPad;
     self.tfDepartment.delegate = self;
     self.tfPosition.delegate = self;
     self.tfPhone.delegate = self;
+    self.tfPhone.keyboardType = UIKeyboardTypePhonePad;
     self.tfEmail.delegate = self;
+    self.tfEmail.keyboardType = UIKeyboardTypeEmailAddress;
     self.tfUsername.delegate = self;
     self.tfAddress.delegate = self;
     
@@ -216,6 +222,7 @@
         /***************************************
          * Makin new employee
          ***************************************/
+        newEmployee.employeeName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
         newEmployee.firstName = firstName;
         newEmployee.lastName = lastName;
         newEmployee.id_ = [ID intValue];
@@ -247,7 +254,8 @@
         
         [self.navigationController popViewControllerAnimated:YES];
     }
-    else
+    
+    else //If not all required filled in, it will display and error message
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Not all textfields are filled in." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
@@ -277,6 +285,10 @@
             }
         }
     }
+    
+    //Adds a none option of the manager dropdown list
+    [managersList addObject:@"None"];
+    [managersUsernameList addObject:@""];
     
     //Simple soft error checking to see if the 2 manager lists are the same size
     if([managersList count] != [managersUsernameList count])
@@ -317,9 +329,45 @@
     return YES;
 }
 
+//Setting it to go to the next text field if return is pressed.
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    
+    if(textField.tag != 9)
+    {
+        int newTag = textField.tag +1;
+        UITextField *tf = (UITextField *)[self.view viewWithTag:newTag];
+        [tf becomeFirstResponder];
+    }
+    return YES;
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    //Handles Delete
+    if([string length] == 0)
+        return YES;
+    
+    if([textField isEqual:[self tfPhone]])
+    {
+        NSString *rawDigits = [self stripEverythingButNumbers:textField.text];
+        int length = [rawDigits length];
+        
+        //Only allows characters and 10 digits
+        if(![self characterIsDigit:[string characterAtIndex:0]] || length >=10)
+            return NO;
+        else
+            textField.text = [self formatPhoneNumber:rawDigits];
+        
+        
+    }
+    if([textField isEqual:self.tfId])
+    {
+        if(![self characterIsDigit:[string characterAtIndex:0]])
+            return NO;
+    }
+    
     return YES;
 }
 

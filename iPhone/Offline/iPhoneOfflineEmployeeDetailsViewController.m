@@ -1,20 +1,20 @@
 //
-//  OfflineEmployeeDetailsViewController.m
+//  iPhoneOfflineEmployeeDetailsViewController.m
 //  HRDirectory
 //
-//  Created by Alex Chiu on 9/18/12.
+//  Created by Alex Chiu on 9/19/12.
 //  Copyright (c) 2012 Alex Chiu. All rights reserved.
 //
 
-#import "OfflineEmployeeDetailsViewController.h"
+#import "iPhoneOfflineEmployeeDetailsViewController.h"
 #import "AppDelegate.h"
 #import "MapViewController.h"
 
-@interface OfflineEmployeeDetailsViewController ()
+@interface iPhoneOfflineEmployeeDetailsViewController ()
 
 @end
 
-@implementation OfflineEmployeeDetailsViewController
+@implementation iPhoneOfflineEmployeeDetailsViewController
 
 @synthesize thisEntry = _thisEntry;
 
@@ -56,7 +56,11 @@
         }
     }
     
-    self.scrollView.contentSize = CGSizeMake(768, 960);
+    self.scrollView.contentSize = CGSizeMake(320, 532);
+    
+    //Keyboard notification listeners *Note has to be in viewDidLoad
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
     
     [self disableEditing];
 }
@@ -73,6 +77,8 @@
 
 - (void)viewDidUnload
 {
+    managerTable = nil;
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -122,7 +128,6 @@
         [mailViewController setMessageBody:@"" isHTML:NO];
         
         [self presentModalViewController:mailViewController animated:YES];
-        
     }
     else
     {
@@ -133,9 +138,27 @@
     
 }
 
-- (IBAction)goToMap:(id)sender
+- (IBAction)makeCall:(id)sender
 {
-    [self performSegueWithIdentifier:@"MapSegue" sender:self];
+    NSString *phoneNumber = [self stripEverythingButNumbers:[self.thisEntry objectForKey:@"phone"]];
+    NSString *phoneCommand = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSLog(@"%@", phoneCommand);
+    NSURL *phoneUrl = [[NSURL alloc] initWithString:phoneCommand];
+    [[UIApplication sharedApplication] openURL: phoneUrl];
+}
+
+- (IBAction)callManager:(id)sender
+{
+    NSString *phoneNumber = [self stripEverythingButNumbers:[self.tfMngPhone text]];
+    NSString *phoneCommand = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSLog(@"%@", phoneCommand);
+    NSURL *phoneUrl = [[NSURL alloc] initWithString:phoneCommand];
+    [[UIApplication sharedApplication] openURL: phoneUrl];
+}
+
+- (IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /* First function called when the "delete" button is pressed
@@ -172,9 +195,10 @@
         managerTable.hidden = YES;
     }
 }
+
 /* End Actions *****************************************************************************************/
 
-/* Methods that use Singleton data ****************************************************************************/
+/* Methods that use data ****************************************************************************/
 -(void)updateViewWithData
 {
     NSLog(@"Updating view with data...");
@@ -226,7 +250,7 @@
     if(manager == nil)
     {
         self.tfManager.text = @"None";
-        self.tfMngPhone.text = @" ";
+        self.tfMngPhone.text = @"";
     }
     else
     {
@@ -351,13 +375,7 @@
     
     return [data findByUsername:mgrUsername];
 }
-/* End SUP Section ********************************************************************************/
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    NSLog(@"Return pressed");
-    [textField resignFirstResponder];
-    return YES;
-}
+/* End Data Section ********************************************************************************/
 
 #pragma mark - UIAlertViewDelegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

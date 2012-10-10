@@ -8,22 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "UnderlyingView.h"
-#import "EmployeeDetailsViewController.h"
 
-@interface SearchViewController : UnderlyingView < UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface SearchViewController : UnderlyingView<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 {
     //Instance Variables
     NSMutableArray *employeeArray;
     NSMutableArray *displayEmployeeArray;
     
-    NSIndexPath *indexRow;
-    
     IBOutlet UISegmentedControl *toggleSegment;
     IBOutlet UITableView *table;
+    
+    NSString *selectedSearchOption;
 }
 
 - (IBAction)goBack:(id)sender;
+- (IBAction)changeToggleSettings:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnAdd;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 @end
