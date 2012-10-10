@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_passwordHash = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			114:
+			115:
 			[SUPDataType forName:@"int"]:@"integer":@"passwordHash":@"":@"b":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_passwordHash setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_user = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			113:
+			114:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"user":@"":@"a":
 			@"":300:0:0:
 			@"null":NO:@"":

@@ -24,12 +24,14 @@
     int32_t _id;
     NSString* _employeeID;
     NSNumber* _jobNumber;
+    NSString* _jobName;
     int64_t _surrogateKey;
 }
 
 @property(assign,nonatomic) int32_t id_;
 @property(retain,nonatomic) NSString* employeeID;
 @property(retain,nonatomic) NSNumber* jobNumber;
+@property(retain,nonatomic) NSString* jobName;
 @property(assign,nonatomic) int64_t surrogateKey;
 
 + (SUPEntityMetaDataRBS*)metaData;

@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_id = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			31:
+			32:
 			[SUPDataType forName:@"int"]:@"integer":@"id":@"":@"a":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_id setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_date = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			32:
+			33:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"date":@"":@"b":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_date setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_employeeID = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			33:
+			34:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"employeeID":@"":@"c":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_employeeID setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_signCode = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			34:
+			35:
 			[SUPDataType forName:@"int?"]:@"integer":@"signCode":@"":@"d":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_signCode setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_timestamp = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			35:
+			36:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"timestamp":@"":@"e":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_timestamp setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_managerNotes = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			36:
+			37:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"managerNotes":@"":@"f":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -85,7 +85,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_managerNotes setColumn:@"f"];
 		SUPAttributeMetaDataRBS* a_updateManagerCalled = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			38:
+			39:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"updateManagerCalled":@"":@"h":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -130,7 +130,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			37:
+			38:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"g":
 			@"":-1:0:0:
 			@"null":NO:@"":

@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_id = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			4:
+			5:
 			[SUPDataType forName:@"int"]:@"integer":@"id":@"":@"a":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_id setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_jobNumber = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			5:
+			6:
 			[SUPDataType forName:@"int?"]:@"integer":@"jobNumber":@"":@"b":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_jobNumber setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_jobName = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			6:
+			7:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"jobName":@"":@"c":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_jobName setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_totalHours = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			7:
+			8:
 			[SUPDataType forName:@"int?"]:@"integer":@"totalHours":@"":@"d":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -103,7 +103,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			8:
+			9:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"e":
 			@"":-1:0:0:
 			@"null":NO:@"":

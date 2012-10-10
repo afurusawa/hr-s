@@ -19,6 +19,7 @@
 @synthesize id_ = _id;
 @synthesize employeeID = _employeeID;
 @synthesize jobNumber = _jobNumber;
+@synthesize jobName = _jobName;
 @synthesize surrogateKey = _surrogateKey;
 
 - (int64_t)surrogateKey
@@ -51,6 +52,16 @@
     {
 		[self->_jobNumber release];
         self->_jobNumber = [newJobNumber retain];
+        self.isDirty = YES;
+    }
+}
+
+- (void)setJobName:(NSString*)newJobName
+{
+    if (newJobName != self->_jobName)
+    {
+		[self->_jobName release];
+        self->_jobName = [newJobName retain];
         self.isDirty = YES;
     }
 }
@@ -128,6 +139,11 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
     {
         [_jobNumber release];
         _jobNumber = nil;
+    }
+    if(_jobName)
+    {
+        [_jobName release];
+        _jobName = nil;
     }
 	[super dealloc];
 }
@@ -222,7 +238,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
     switch(id_)
     {
-    case 3:
+    case 4:
         return self.surrogateKey;
     default:
          return [super getAttributeLong:id_];
@@ -233,7 +249,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
     switch(id_)
     {
-    case 3:
+    case 4:
         self.surrogateKey = v;
         break;;
     default:
@@ -270,6 +286,8 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
     {
     case 1:
         return self.employeeID;
+    case 3:
+        return self.jobName;
     default:
          return [super getAttributeNullableString:id_];
     }
@@ -281,6 +299,9 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
     {
     case 1:
         self.employeeID = v;
+        break;;
+    case 3:
+        self.jobName = v;
         break;;
     default:
         [super setAttributeNullableString:id_:v];
@@ -343,6 +364,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 	    id = %i,\n\
 	    employeeID = %@,\n\
 	    jobNumber = %@,\n\
+	    jobName = %@,\n\
 	    pending = %i,\n\
 	    pendingChange = %c,\n\
 	    replayPending = %qi,\n\
@@ -357,6 +379,7 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
     	,self.id_
     	,self.employeeID
     	,self.jobNumber
+    	,self.jobName
     	,self.pending
     	,self.pendingChange
     	,self.replayPending
@@ -401,8 +424,8 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
 	NSMutableString *sql = nil;
 	NSMutableString *_selectSQL = nil;
-	_selectSQL = [[[NSMutableString alloc] initWithCapacity:263] autorelease];
-	[_selectSQL appendString:@" x.\"a\",x.\"b\",x.\"c\",x.\"_pf\",x.\"_pc\",x.\"_rp\",x.\"_rf\",x.\"d\",x.\"_rc\",x.\"_ds\" FROM \"hr_suite_1_0_jobmanagement\" x where (((x.\"_pf\" = 1 or not exists (select x_os.\"d\" from \"hr_suite_1_0_jobmanagement_os\" x_os where x_os.\"d\" = x.\"d\"))))"];
+	_selectSQL = [[[NSMutableString alloc] initWithCapacity:271] autorelease];
+	[_selectSQL appendString:@" x.\"a\",x.\"b\",x.\"c\",x.\"d\",x.\"_pf\",x.\"_pc\",x.\"_rp\",x.\"_rf\",x.\"e\",x.\"_rc\",x.\"_ds\" FROM \"hr_suite_1_0_jobmanagement\" x where (((x.\"_pf\" = 1 or not exists (select x_os.\"e\" from \"hr_suite_1_0_jobmanagement_os\" x_os where x_os.\"e\" = x.\"e\"))))"];
 	sql = [[NSMutableString alloc] initWithFormat:@"select %@", _selectSQL];
 	[sql autorelease];
 	sql = [[NSMutableString alloc] initWithFormat:@"select %@", _selectSQL];
@@ -419,8 +442,8 @@ static SUPEntityMetaDataRBS* HR_SuiteJobManagement_META_DATA;
 {
 	NSMutableString *sql = nil;
 	NSMutableString *_selectSQL = nil;
-	_selectSQL = [[[NSMutableString alloc] initWithCapacity:288] autorelease];
-	[_selectSQL appendString:@"SELECT x.\"a\",x.\"b\",x.\"c\",x.\"_pf\",x.\"_pc\",x.\"_rp\",x.\"_rf\",x.\"d\",x.\"_rc\",x.\"_ds\" FROM \"hr_suite_1_0_jobmanagement\" x WHERE (((x.\"_pf\" = 1 or not exists (select x_os.\"d\" from \"hr_suite_1_0_jobmanagement_os\" x_os where x_os.\"d\" = x.\"d\")))) and ( x.\"a\" = ?)"];
+	_selectSQL = [[[NSMutableString alloc] initWithCapacity:296] autorelease];
+	[_selectSQL appendString:@"SELECT x.\"a\",x.\"b\",x.\"c\",x.\"d\",x.\"_pf\",x.\"_pc\",x.\"_rp\",x.\"_rf\",x.\"e\",x.\"_rc\",x.\"_ds\" FROM \"hr_suite_1_0_jobmanagement\" x WHERE (((x.\"_pf\" = 1 or not exists (select x_os.\"e\" from \"hr_suite_1_0_jobmanagement_os\" x_os where x_os.\"e\" = x.\"e\")))) and ( x.\"a\" = ?)"];
 	sql = [[NSMutableString alloc] initWithFormat:@"%@", _selectSQL];
 	[sql autorelease];
 	SUPStringList *ids = [SUPStringList listWithCapacity:0];

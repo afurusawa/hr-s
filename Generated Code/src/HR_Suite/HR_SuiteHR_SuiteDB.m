@@ -146,7 +146,7 @@ static SUPDatabaseDelegate *g_HR_SuiteHR_SuiteDB_delegate = nil;
 {
     if ((self = [super initWithName:name]))
     {
-        self.manager = (NSObject<SUPDatabaseManager>*)[SUPDatabaseManagerFactory dbManagerOfType:SUPDatabaseManager_UltraLite];
+        self.manager = [SUPDatabaseManagerFactory dbManagerOfType:SUPDatabaseManager_UltraLite];
     	self->_concreteSubclass = [self class];
     	
    	    [self defineMessageListenerForEntity:@"JobManagement" withClass:[HR_SuiteJobManagement class]];

@@ -761,9 +761,9 @@ SUP Methods
     
     self.SUPServerName = @"68.225.30.194";
     self.SUPServerPort = @"5002";
-    self.SUPUserName = @"test";
+    self.SUPUserName = @"afurusawa";
     self.SUPFarmID = @"0";
-    self.SUPPassword = @"test"; //add this line.
+    self.SUPPassword = @"welcome45"; //add this line.
     self.pin = @"1234";
     self.SUPManualRegistration = [defaults boolForKey:@"manualregistration_preference"];
     if(self.SUPManualRegistration)

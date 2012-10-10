@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_value = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			105:
+			106:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"value":@"":@"b":
 			@"":300:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_key = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			104:
+			105:
 			[SUPDataType forName:@"string"]:@"varchar(300)":@"key":@"":@"a":
 			@"":300:0:0:
 			@"null":NO:@"":

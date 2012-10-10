@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_id = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			39:
+			40:
 			[SUPDataType forName:@"int"]:@"integer":@"id":@"":@"a":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_id setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_employeeName = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			40:
+			41:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"employeeName":@"":@"b":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_employeeName setColumn:@"b"];
 		SUPAttributeMetaDataRBS* a_employeeID = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			41:
+			42:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"employeeID":@"":@"c":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_employeeID setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_employeePassword = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			42:
+			43:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"employeePassword":@"":@"d":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_employeePassword setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_address = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			43:
+			44:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"address":@"":@"e":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_address setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_department = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			44:
+			45:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"department":@"":@"f":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -85,7 +85,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_department setColumn:@"f"];
 		SUPAttributeMetaDataRBS* a_position = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			45:
+			46:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"position":@"":@"g":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -94,7 +94,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_position setColumn:@"g"];
 		SUPAttributeMetaDataRBS* a_manager = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			46:
+			47:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"manager":@"":@"h":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -103,7 +103,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_manager setColumn:@"h"];
 		SUPAttributeMetaDataRBS* a_email = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			47:
+			48:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"email":@"":@"i":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -112,7 +112,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_email setColumn:@"i"];
 		SUPAttributeMetaDataRBS* a_phone = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			48:
+			49:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"phone":@"":@"j":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -121,7 +121,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_phone setColumn:@"j"];
 		SUPAttributeMetaDataRBS* a_picture = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			49:
+			50:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"picture":@"":@"l":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -130,7 +130,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_picture setColumn:@"l"];
 		SUPAttributeMetaDataRBS* a_firstName = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			50:
+			51:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"firstName":@"":@"m":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -139,7 +139,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_firstName setColumn:@"m"];
 		SUPAttributeMetaDataRBS* a_lastName = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			51:
+			52:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"lastName":@"":@"n":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -148,7 +148,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_lastName setColumn:@"n"];
 		SUPAttributeMetaDataRBS* a_fax = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			52:
+			53:
 			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"fax":@"":@"o":
 			@"":1200:0:0:
 			@"null":NO:@"":
@@ -157,7 +157,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_fax setColumn:@"o"];
 		SUPAttributeMetaDataRBS* a_updateManagerCalled = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			54:
+			55:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"updateManagerCalled":@"":@"q":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -166,7 +166,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_updateManagerCalled setColumn:@"q"];
 		SUPAttributeMetaDataRBS* a_updatePasswordCalled = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			55:
+			56:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"updatePasswordCalled":@"":@"r":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -211,7 +211,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			53:
+			54:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"p":
 			@"":-1:0:0:
 			@"null":NO:@"":

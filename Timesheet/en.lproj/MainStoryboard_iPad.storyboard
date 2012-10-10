@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="NN9-zo-WeG">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Timesheet View Controller - Timesheet Home-->
         <scene sceneID="4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
                 <viewController title="Timesheet Home" id="2" customClass="TimesheetViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -209,13 +208,13 @@
                         <segue destination="K28-XW-uha" kind="push" identifier="toTimeEntry" id="Kvh-kc-4yI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1370" y="-872"/>
         </scene>
         <!--History View Controller - User History-->
         <scene sceneID="5EM-sJ-gIn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AuV-v7-Bbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="User History" id="jHd-Jg-U8B" customClass="HistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aUc-Qa-HvT">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -363,13 +362,13 @@
                         <segue destination="K28-XW-uha" kind="push" identifier="toHistoryDetails" id="wSV-wn-fvG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AuV-v7-Bbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-391" y="-1048"/>
         </scene>
         <!--View Controller - View Leave Requests-->
         <scene sceneID="xcY-UN-tWq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mEM-6G-Pja" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="View Leave Requests" id="pyq-84-LjV" customClass="MLRViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIF-w4-wj7">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -427,13 +426,13 @@
                         <segue destination="Ffj-6T-Mrf" kind="push" identifier="toLRDetails" id="3pa-A2-vLz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mEM-6G-Pja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="705" y="2715"/>
         </scene>
         <!--Detail View Controller - Detail View-->
         <scene sceneID="Yr2-mH-3xz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vh-Ue-2gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Ffj-6T-Mrf" customClass="MLRDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bDe-9d-P4C">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -579,13 +578,13 @@
                         <outlet property="submittedOn" destination="yta-rZ-0Q7" id="f0i-Td-jv5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vh-Ue-2gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1627" y="2715"/>
         </scene>
         <!--View Controller - Job Management-->
         <scene sceneID="Z4E-MS-8Ot">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OCD-VL-XNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Job Management" id="C2E-Rx-WHI" customClass="JMViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U2q-mV-RGJ">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -759,13 +758,13 @@
                         <outlet property="workerTable" destination="684-zH-RJd" id="zUP-Ku-Keg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCD-VL-XNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="697" y="4440"/>
         </scene>
         <!--Member View Controller - Directory-->
         <scene sceneID="Mdq-Jq-PtF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XVK-Gq-HfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="w5n-Cc-rtX" customClass="JMMemberViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QNB-v0-EWA">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -839,13 +838,13 @@
                         <outlet property="searchBar" destination="tVQ-st-Og1" id="fYd-iT-WEQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XVK-Gq-HfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1683" y="5147"/>
         </scene>
         <!--Manager Approval View Controller - Approval Overview-->
         <scene sceneID="Ji8-Jb-fWx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SR0-Sw-80I" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Approval Overview" id="iss-Az-Vh3" customClass="ManagerApprovalViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XoQ-UF-ID7">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -984,13 +983,13 @@
                         <outlet property="totalHoursLabel" destination="4N7-P6-Zaq" id="Azk-gJ-Jwh"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SR0-Sw-80I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1627" y="1504"/>
         </scene>
         <!--Manager User View Controller - MViewTimesheets Inbox-->
         <scene sceneID="sqS-bo-O2K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sDV-Z1-flc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="MViewTimesheets Inbox" id="SfR-Jf-4OE" customClass="ManagerUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fnR-Qm-h86">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -1052,13 +1051,13 @@
                         <segue destination="iss-Az-Vh3" kind="push" identifier="toInboxChooser" id="l1P-M9-H2v"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDV-Z1-flc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="705" y="1504"/>
         </scene>
         <!--User Week View Controller - User Week View-->
         <scene sceneID="Bpb-pE-eAr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="adT-xu-Hz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="User Week View" id="K28-XW-uha" customClass="UserWeekViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZPG-Hi-pyh">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -1484,13 +1483,13 @@
                         <segue destination="d2a-Hk-ISF" kind="push" identifier="toDayView" id="OgT-fa-E26"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adT-xu-Hz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-391" y="-3332"/>
         </scene>
         <!--User Leave Request View Controller - U Leave Request-->
         <scene sceneID="dZ4-cN-GEI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gky-HS-oNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="U Leave Request" id="r1B-Ho-oyc" customClass="UserLeaveRequestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYj-SQ-WjE">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -1743,13 +1742,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="startField" destination="FGm-rf-ltN" id="cCL-Y0-EE6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gky-HS-oNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-391" y="-2211"/>
         </scene>
         <!--User Leave Type View Controller-->
         <scene sceneID="Q6G-he-4yJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="634-Hj-PMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="typeView" id="tMv-TY-eDN" customClass="UserLeaveTypeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Qk-TP-kwA">
                         <rect key="frame" x="0.0" y="20" width="300" height="400"/>
@@ -1792,13 +1791,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="leaveTypeTable" destination="cdj-y7-dHD" id="YCO-uw-Oby"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="634-Hj-PMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="443" y="-2211"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="4gg-fH-F3C">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ORl-ZM-dPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="d2a-Hk-ISF" customClass="UDayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BPO-EW-dWa">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -1970,13 +1969,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="totalHours" destination="VXg-Ya-5iI" id="53m-PU-RoQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORl-ZM-dPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="443" y="-3332"/>
         </scene>
         <!--Job View Controller - Jobs-->
         <scene sceneID="YS5-ME-U66">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bX8-i1-gtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="jobView" id="8ZB-gS-w9V" customClass="JobViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6TJ-n1-Zvi">
                         <rect key="frame" x="0.0" y="20" width="300" height="400"/>
@@ -2036,13 +2035,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="jobTable" destination="kut-2f-Qq3" id="22G-oa-y4C"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bX8-i1-gtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1276" y="-3332"/>
         </scene>
         <!--Login View Controller - Login-->
         <scene sceneID="FXm-eb-T7X">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y25-WS-x0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Login" id="zIq-FM-2bN" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oft-Qc-eU4">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
@@ -2177,13 +2176,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="xSa-lp-Xq2" kind="push" identifier="toMain" id="sPf-6S-gO5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y25-WS-x0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3843" y="1520"/>
         </scene>
         <!--Home View Controller - HR Suite Main-->
         <scene sceneID="rHt-gM-78Y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LDZ-vO-wWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="HR Suite Main" id="xSa-lp-Xq2" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ooz-3o-cNF">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -2280,13 +2279,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="5zw-4o-AO5" kind="push" identifier="OnlineHomeView" id="S9k-mp-vt8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDZ-vO-wWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2841" y="1536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Tf-zx-ey5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g3d-OE-D0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="NN9-zo-WeG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qWP-W9-bmL">
@@ -2298,13 +2297,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="zIq-FM-2bN" kind="relationship" relationship="rootViewController" id="ean-48-Rf1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3d-OE-D0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4773" y="1520"/>
         </scene>
         <!--Job View Controller - Jobs-->
         <scene sceneID="Btj-KB-K3P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1dk-gS-gFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="JMJobView" id="ocs-FL-9bu" customClass="JMJobViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hqC-UP-ole">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -2354,13 +2353,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="jobTable" destination="SWc-iB-Mgg" id="PzZ-CS-v6g"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dk-gS-gFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1683" y="3992"/>
         </scene>
         <!--Manager User View Controller - MViewTimesheets Inbox-->
         <scene sceneID="TVW-ZU-5Yc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PiO-HG-cEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="MViewTimesheets Inbox" id="OGO-6B-XGY" customClass="ManagerUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ynT-NK-zRv">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
@@ -2421,13 +2420,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="workerTable" destination="Wua-hU-Opc" id="SbE-hB-p2l"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PiO-HG-cEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="705" y="1504"/>
         </scene>
         <!--History View Controller - History-->
         <scene sceneID="xcQ-oZ-6dt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xwk-2R-iYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="oTI-7P-50Q" customClass="MHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="khP-BE-Gie">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -2482,13 +2481,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="historyTable" destination="w0N-rA-kdb" id="jmq-g0-zuc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwk-2R-iYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="677" y="-270"/>
         </scene>
         <!--Manager User View Controller - MViewTimesheets Inbox-->
         <scene sceneID="3KI-ae-oYF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3vg-bN-33G" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="MViewTimesheets Inbox" id="sw8-nv-M7G" customClass="ManagerUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D0H-76-7Io">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -2550,13 +2549,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="workerTable" destination="zyG-rv-SVM" id="iFY-Kg-WVw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vg-bN-33G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="705" y="1504"/>
         </scene>
         <!--Home View Controller - Main Menu-->
         <scene sceneID="JMi-wx-LhV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mp-HQ-mmU" sceneMemberID="firstResponder"/>
                 <viewController id="5zw-4o-AO5" customClass="DHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w9E-qV-pvZ">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -2600,13 +2599,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="btnAddEmployee" destination="jtb-QV-ah7" id="fCQ-ZX-Are"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mp-HQ-mmU" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4739" y="4056"/>
         </scene>
         <!--Search View Controller - Search-->
         <scene sceneID="2uz-Z6-2He">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="twY-9c-H6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Search" id="TAq-rq-666" customClass="SearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7qF-Pw-b0m">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -2709,13 +2708,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="mGd-qG-xoo" kind="push" identifier="DetailSegue" id="juL-Qu-Khg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twY-9c-H6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3683" y="3457"/>
         </scene>
         <!--Add Entry View Controller - Account Creation-->
         <scene sceneID="uBL-Wq-F14">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l6u-pn-eYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="H3X-gP-F9S" customClass="AddEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X3o-4h-Zng" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -3028,13 +3027,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="tfUsername" destination="tuh-fF-3NM" id="rsv-hK-Kvl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6u-pn-eYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3683" y="4745"/>
         </scene>
         <!--Employee Details View Controller - Profile-->
         <scene sceneID="vu2-yg-6Rp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OH0-qJ-byX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="mGd-qG-xoo" customClass="EmployeeDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XF6-Gu-zjI">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -3274,13 +3273,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="tvAddress" destination="sIp-p6-gcS" id="caC-3p-JiS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OH0-qJ-byX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2223" y="3373"/>
         </scene>
         <!--OfflineD Home View Controller - Main Menu-->
         <scene sceneID="esi-3J-tf5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YAY-J9-ReE" sceneMemberID="firstResponder"/>
                 <viewController id="Hhg-qy-XjO" customClass="OfflineDHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sWq-xM-QHK">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -3331,13 +3330,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="btnAddEmployee" destination="RCc-Lc-7T5" id="ke7-IV-FcU"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAY-J9-ReE" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2627" y="6504"/>
         </scene>
         <!--Offline Search View Controller - Search-->
         <scene sceneID="CmK-Xp-jxp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2f-go-cag" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Search" id="kwQ-gM-TFY" customClass="OfflineSearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eh2-ul-IAZ">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -3443,13 +3442,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="9gC-hB-7YP" kind="push" identifier="DetailSegue" id="oDS-5y-esr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2f-go-cag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1691" y="5865"/>
         </scene>
         <!--Offline Add Entry View Controller - Account Creation-->
         <scene sceneID="YPM-NF-KXq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CzH-4e-cA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Bwr-aS-zA5" customClass="OfflineAddEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fyB-12-7W2" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -3762,13 +3761,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="tfUsername" destination="xLa-ak-mVq" id="IPg-ej-eeV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CzH-4e-cA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1571" y="7193"/>
         </scene>
         <!--Offline Employee Details View Controller-->
         <scene sceneID="pMk-wE-RFH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="liE-UQ-rmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="9gC-hB-7YP" customClass="OfflineEmployeeDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U1c-Yu-1K2">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -4008,6 +4007,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="tvAddress" destination="ksN-dC-kGv" id="1oc-qr-guB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="liE-UQ-rmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-515" y="5667"/>
         </scene>
@@ -4472,6 +4472,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Kvh-kc-4yI"/>
+        <segue reference="wSV-wn-fvG"/>
     </inferredMetricsTieBreakers>
 </document>

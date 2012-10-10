@@ -24,7 +24,7 @@
  
 		SUPObjectList *attributes = [SUPObjectList listWithCapacity:7];
 		SUPAttributeMetaDataRBS* a_entityType = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			106:
+			107:
 			[SUPDataType forName:@"int"]:@"integer":@"entityType":@"":@"":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -33,7 +33,7 @@
 			NO:SUPPersonalizationType_None:NO];
   		[attributes addThis:a_entityType];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			107:
+			108:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"":
 			@"":-1:0:0:
 			@"null":NO:@"":

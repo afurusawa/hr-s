@@ -31,7 +31,7 @@
 
 		SUPObjectList *attributes = [SUPObjectList getInstance];
 		SUPAttributeMetaDataRBS* a_remoteId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			69:
+			70:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"remoteId":@"":@"a":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -40,7 +40,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_remoteId setColumn:@"a"];
 		SUPAttributeMetaDataRBS* a_component = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			71:
+			72:
 			[SUPDataType forName:@"string"]:@"varchar(200)":@"component":@"":@"c":
 			@"":200:0:0:
 			@"null":NO:@"":
@@ -49,7 +49,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_component setColumn:@"c"];
 		SUPAttributeMetaDataRBS* a_entityKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			72:
+			73:
 			[SUPDataType forName:@"string"]:@"varchar(256)":@"entityKey":@"":@"d":
 			@"":256:0:0:
 			@"null":NO:@"":
@@ -58,7 +58,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_entityKey setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_attributes = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			73:
+			74:
 			[SUPDataType forName:@"string"]:@"LONG VARCHAR":@"attributes":@"":@"e":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -67,7 +67,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_attributes setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_operation = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			74:
+			75:
 			[SUPDataType forName:@"string"]:@"varchar(100)":@"operation":@"":@"f":
 			@"":100:0:0:
 			@"null":NO:@"":
@@ -76,7 +76,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_operation setColumn:@"f"];
 		SUPAttributeMetaDataRBS* a_parameters = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			75:
+			76:
 			[SUPDataType forName:@"string"]:@"LONG VARCHAR":@"parameters":@"":@"g":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -85,7 +85,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_parameters setColumn:@"g"];
 		SUPAttributeMetaDataRBS* a_replayLog = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			76:
+			77:
 			[SUPDataType forName:@"string?"]:@"LONG VARCHAR":@"replayLog":@"":@"h":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -94,7 +94,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayLog setColumn:@"h"];
 		SUPAttributeMetaDataRBS* a_exception = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			77:
+			78:
 			[SUPDataType forName:@"string?"]:@"LONG VARCHAR":@"exception":@"":@"i":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -103,7 +103,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_exception setColumn:@"i"];
 		SUPAttributeMetaDataRBS* a_completed = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			78:
+			79:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"completed":@"":@"j":
 			@"":-1:0:0:
 			@"null":NO:@"":
@@ -112,7 +112,7 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_completed setColumn:@"j"];
 		SUPAttributeMetaDataRBS* a_requestId = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			70:
+			71:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"requestId":@"":@"b":
 			@"":-1:0:0:
 			@"null":NO:@"":

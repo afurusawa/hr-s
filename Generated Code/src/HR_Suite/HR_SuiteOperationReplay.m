@@ -269,7 +269,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 70:
+    case 71:
         return self.requestId;
     default:
          return [super getAttributeLong:id_];
@@ -280,7 +280,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 70:
+    case 71:
         self.requestId = v;
         break;;
     default:
@@ -292,9 +292,9 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 76:
-        return self.replayLog;
     case 77:
+        return self.replayLog;
+    case 78:
         return self.exception;
     default:
          return [super getAttributeNullableString:id_];
@@ -305,10 +305,10 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 76:
+    case 77:
         self.replayLog = v;
         break;;
-    case 77:
+    case 78:
         self.exception = v;
         break;;
     default:
@@ -320,17 +320,17 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 69:
+    case 70:
         return self.remoteId;
-    case 71:
-        return self.component;
     case 72:
-        return self.entityKey;
+        return self.component;
     case 73:
-        return self.attributes;
+        return self.entityKey;
     case 74:
-        return self.operation;
+        return self.attributes;
     case 75:
+        return self.operation;
+    case 76:
         return self.parameters;
     default:
          return [super getAttributeString:id_];
@@ -341,22 +341,22 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 69:
+    case 70:
         self.remoteId = v;
         break;;
-    case 71:
+    case 72:
         self.component = v;
         break;;
-    case 72:
+    case 73:
         self.entityKey = v;
         break;;
-    case 73:
+    case 74:
         self.attributes = v;
         break;;
-    case 74:
+    case 75:
         self.operation = v;
         break;;
-    case 75:
+    case 76:
         self.parameters = v;
         break;;
     default:
@@ -368,7 +368,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 78:
+    case 79:
         return self.completed;
     default:
          return [super getAttributeBoolean:id_];
@@ -379,7 +379,7 @@ static SUPEntityMetaDataRBS* HR_SuiteOperationReplay_META_DATA;
 {
     switch(id_)
     {
-    case 78:
+    case 79:
         self.completed = v;
         break;;
     default:

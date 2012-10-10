@@ -57,6 +57,15 @@
 			GeneratedScheme_NONE:
 			NO:SUPPersonalizationType_None:NO];
 		[a_jobNumber setColumn:@"c"];
+		SUPAttributeMetaDataRBS* a_jobName = [SUPAttributeMetaDataRBS attributeMetaDataWith:
+			3:
+			[SUPDataType forName:@"string?"]:@"varchar(1200)":@"jobName":@"":@"d":
+			@"":1200:0:0:
+			@"null":NO:@"":
+			NO:NO:YES:NO:NO:NO:
+			GeneratedScheme_NONE:
+			NO:SUPPersonalizationType_None:NO];
+		[a_jobName setColumn:@"d"];
 		SUPAttributeMetaDataRBS* a_pending = [SUPAttributeMetaDataRBS attributeMetaDataWith:
 			20001:
 			[SUPDataType forName:@"boolean"]:@"tinyint":@"pending":@"":@"_pf":
@@ -94,14 +103,14 @@
 			NO:SUPPersonalizationType_None:NO];
 		[a_replayFailure setColumn:@"_rf"];
 		SUPAttributeMetaDataRBS* a_surrogateKey = [SUPAttributeMetaDataRBS attributeMetaDataWith:
-			3:
-			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"d":
+			4:
+			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"surrogateKey":@"":@"e":
 			@"":-1:0:0:
 			@"null":NO:@"":
 			YES:NO:NO:NO:NO:NO:
 			GeneratedScheme_GLOBAL:
 			NO:SUPPersonalizationType_None:NO];
-		[a_surrogateKey setColumn:@"d"];
+		[a_surrogateKey setColumn:@"e"];
 		SUPAttributeMetaDataRBS* a_replayCounter = [SUPAttributeMetaDataRBS attributeMetaDataWith:
 			20004:
 			[SUPDataType forName:@"long"]:@"decimal(20,0)":@"replayCounter":@"_rc":@"_rc":
@@ -124,6 +133,7 @@
 		[attributes addThis:a_id];
 		[attributes addThis:a_employeeID];
 		[attributes addThis:a_jobNumber];
+		[attributes addThis:a_jobName];
 		[attributes addThis:a_pending];
 		[attributes addThis:a_pendingChange];
 		[attributes addThis:a_replayPending];
